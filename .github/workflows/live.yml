@@ -1,0 +1,76 @@
+name: Update live.json (Twitch)
+
+on:
+  schedule:
+    - cron: "*/2 * * * *"   # toutes les 2 minutes
+  workflow_dispatch: {}      # déclenchement manuel
+
+jobs:
+  update-live-json:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get Twitch App Token
+        id: twitch_token
+        run: |
+          RESP=$(curl -s -X POST "https://id.twitch.tv/oauth2/token" \
+            -d "client_id=${{ secrets.TWITCH_CLIENT_ID }}" \
+            -d "client_secret=${{ secrets.TWITCH_CLIENT_SECRET }}" \
+            -d "grant_type=client_credentials")
+          TOKEN=$(echo "$RESP" | jq -r '.access_token')
+          echo "token=$TOKEN" >> $GITHUB_OUTPUT
+
+      - name: Get Twitch User ID
+        id: twitch_user
+        run: |
+          RESP=$(curl -s -H "Client-ID: ${{ secrets.TWITCH_CLIENT_ID }}" \
+                      -H "Authorization: Bearer ${{ steps.twitch_token.outputs.token }}" \
+                      "https://api.twitch.tv/helix/users?login=${{ secrets.TWITCH_LOGIN }}")
+          USER_ID=$(echo "$RESP" | jq -r '.data[0].id')
+          echo "uid=$USER_ID" >> $GITHUB_OUTPUT
+
+      - name: Check Twitch Live
+        id: twitch_live
+        run: |
+          RESP=$(curl -s -H "Client-ID: ${{ secrets.TWITCH_CLIENT_ID }}" \
+                      -H "Authorization: Bearer ${{ steps.twitch_token.outputs.token }}" \
+                      "https://api.twitch.tv/helix/streams?user_id=${{ steps.twitch_user.outputs.uid }}")
+          LIVE=$(echo "$RESP" | jq -r 'if (.data | length) > 0 and .data[0].type == "live" then "true" else "false" end')
+          TITLE=$(echo "$RESP" | jq -r '.data[0].title // empty')
+          URL="https://www.twitch.tv/${{ secrets.TWITCH_LOGIN }}"
+          echo "live=$LIVE" >> $GITHUB_OUTPUT
+          echo "title=$TITLE" >> $GITHUB_OUTPUT
+          echo "url=$URL" >> $GITHUB_OUTPUT
+
+      - name: Build live.json
+        run: |
+          NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          cat > live.json <<EOF
+          {
+            "twitch": {
+              "live": ${{ steps.twitch_live.outputs.live }},
+              "title": ${{
+                steps.twitch_live.outputs.title && steps.twitch_live.outputs.title != '' && toJson(steps.twitch_live.outputs.title) || 'null'
+              }},
+              "url": "${{ steps.twitch_live.outputs.url }}"
+            },
+            "updated": "$NOW"
+          }
+          EOF
+          cat live.json
+
+      - name: Commit live.json if changed
+        run: |
+          if ! git diff --quiet -- live.json 2>/dev/null; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add live.json
+            git commit -m "Update live.json [skip ci]"
+            git push
+          else
+            echo "No changes in live.json"
+          fi
