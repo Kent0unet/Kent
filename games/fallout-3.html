@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fallout 3 — Kent</title>
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <style>
+    :root{ --bg:#0f1226; --card:#15193a; --text:#e7e9ff; --muted:#aeb4ff; --accent:#7c9bff; }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:#0f1226; color:var(--text);}
+    .container{max-width:900px; margin:0 auto; padding:24px 16px 56px;}
+    a{color:var(--accent); text-decoration:none}
+    a:hover{opacity:.9}
+    .back{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; background:#12163a; border:1px solid #2b2f59}
+    .title{margin:16px 0 14px; font-size:clamp(24px,5vw,36px);}
+    .cover{width:100%; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,.35)}
+
+    .review{margin-top:16px; background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:18px; box-shadow:0 10px 30px rgba(0,0,0,.3)}
+    .review h2{margin:0 0 8px}
+    .stars{display:flex; gap:6px; font-size:26px; cursor:pointer; user-select:none}
+    .stars button{background:none;border:none;color:#ffcc33;filter:drop-shadow(0 0 4px rgba(255,204,51,.4))}
+    .stars button.dim{color:#666a7a; filter:none}
+    .opinion{width:100%; min-height:140px; padding:12px; border-radius:10px; background:#0e1333; border:1px solid #2b2f59; color:var(--text);}
+    .save{margin-top:10px; padding:10px 14px; border-radius:10px; border:1px solid #394085; background:#171c45; color:var(--text); cursor:pointer}
+    .vod{margin-top:28px}
+    iframe{width:100%; height:460px; border:none; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a class="back" href="../index.html#jeux">← Retour aux jeux terminés</a>
+    <h1 class="title">Fallout 3</h1>
+
+    <!-- Image de couverture (change l'URL si besoin) -->
+    <img class="cover" src="https://images5.alphacoders.com/326/326690.jpg" alt="Fallout 3">
+
+    <section class="review">
+      <h2>Note & Critique</h2>
+      <div id="stars" class="stars" aria-label="Note en étoiles" role="radiogroup"></div>
+      <textarea id="opinion" class="opinion" placeholder="Ton avis sur Fallout 3…"></textarea>
+      <button id="save" class="save">💾 Enregistrer (local)</button>
+      <p id="saved" style="opacity:.7; margin-top:6px; display:none;">Sauvegardé ! (stocké sur cet appareil)</p>
+    </section>
+
+    <section class="vod">
+      <h2>VOD (playlist)</h2>
+      <!-- Remplace l'ID de playlist après list= -->
+      <iframe src="https://www.youtube.com/embed/videoseries?list=PLHbVCtNmmixGydzYg8EhKhbifCrI9aoiQ" allowfullscreen></iframe>
+    </section>
+  </div>
+
+  <script>
+    // --- Stars rating + avis en localStorage ---
+    const KEY = 'kent_game_fallout3';
+    const starsEl = document.getElementById('stars');
+    const opEl = document.getElementById('opinion');
+    const saveBtn = document.getElementById('save');
+    const savedTxt = document.getElementById('saved');
+
+    let state = { rating: 0, opinion: '' };
+    try{ const s = JSON.parse(localStorage.getItem(KEY)); if(s) state = s; }catch{}
+
+    function renderStars(){
+      starsEl.innerHTML = '';
+      for(let i=1;i<=5;i++){
+        const b = document.createElement('button');
+        b.type = 'button'; b.setAttribute('aria-label', i + ' étoile' + (i>1?'s':''));
+        b.textContent = '★';
+        if(i>state.rating) b.classList.add('dim');
+        b.addEventListener('click', ()=>{ state.rating = i; renderStars(); });
+        starsEl.appendChild(b);
+      }
+    }
+    renderStars();
+    opEl.value = state.opinion || '';
+
+    saveBtn.addEventListener('click', ()=>{
+      state.opinion = opEl.value.trim();
+      localStorage.setItem(KEY, JSON.stringify(state));
+      savedTxt.style.display = 'block';
+      setTimeout(()=> savedTxt.style.display='none', 1500);
+    });
+  </script>
+</body>
+</html>
