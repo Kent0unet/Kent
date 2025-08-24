@@ -2,17 +2,23 @@ name: Update live.json (Twitch)
 
 on:
   schedule:
-    - cron: "*/2 * * * *"   # toutes les 2 minutes
-  workflow_dispatch: {}      # déclenchement manuel
+    - cron: "*/2 * * * *"     # toutes les 2 min
+  workflow_dispatch: {}        # exécution manuelle
 
 jobs:
   update-live-json:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write          # IMPORTANT: autorise le push
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
 
       - name: Get Twitch App Token
         id: twitch_token
@@ -21,7 +27,11 @@ jobs:
             -d "client_id=${{ secrets.TWITCH_CLIENT_ID }}" \
             -d "client_secret=${{ secrets.TWITCH_CLIENT_SECRET }}" \
             -d "grant_type=client_credentials")
+          echo "$RESP"
           TOKEN=$(echo "$RESP" | jq -r '.access_token')
+          if [ -z "$TOKEN" ] || [ "$TOKEN" = "null" ]; then
+            echo "Failed to get token"; exit 1
+          fi
           echo "token=$TOKEN" >> $GITHUB_OUTPUT
 
       - name: Get Twitch User ID
@@ -30,7 +40,11 @@ jobs:
           RESP=$(curl -s -H "Client-ID: ${{ secrets.TWITCH_CLIENT_ID }}" \
                       -H "Authorization: Bearer ${{ steps.twitch_token.outputs.token }}" \
                       "https://api.twitch.tv/helix/users?login=${{ secrets.TWITCH_LOGIN }}")
+          echo "$RESP"
           USER_ID=$(echo "$RESP" | jq -r '.data[0].id')
+          if [ -z "$USER_ID" ] || [ "$USER_ID" = "null" ]; then
+            echo "User not found"; exit 1
+          fi
           echo "uid=$USER_ID" >> $GITHUB_OUTPUT
 
       - name: Check Twitch Live
@@ -39,12 +53,13 @@ jobs:
           RESP=$(curl -s -H "Client-ID: ${{ secrets.TWITCH_CLIENT_ID }}" \
                       -H "Authorization: Bearer ${{ steps.twitch_token.outputs.token }}" \
                       "https://api.twitch.tv/helix/streams?user_id=${{ steps.twitch_user.outputs.uid }}")
+          echo "$RESP"
           LIVE=$(echo "$RESP" | jq -r 'if (.data | length) > 0 and .data[0].type == "live" then "true" else "false" end')
           TITLE=$(echo "$RESP" | jq -r '.data[0].title // empty')
           URL="https://www.twitch.tv/${{ secrets.TWITCH_LOGIN }}"
-          echo "live=$LIVE" >> $GITHUB_OUTPUT
+          echo "live=$LIVE"  >> $GITHUB_OUTPUT
           echo "title=$TITLE" >> $GITHUB_OUTPUT
-          echo "url=$URL" >> $GITHUB_OUTPUT
+          echo "url=$URL"     >> $GITHUB_OUTPUT
 
       - name: Build live.json
         run: |
@@ -61,16 +76,19 @@ jobs:
             "updated": "$NOW"
           }
           EOF
+          echo "---- live.json ----"
           cat live.json
+          echo
+          echo "Branch: $(git rev-parse --abbrev-ref HEAD)"
+          ls -la
 
-      - name: Commit live.json if changed
+      - name: Commit & push live.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if ! git diff --quiet -- live.json 2>/dev/null; then
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add live.json
-            git commit -m "Update live.json [skip ci]"
-            git push
-          else
-            echo "No changes in live.json"
-          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add live.json
+          git commit -m "Update live.json [skip ci]" || echo "No changes to commit"
+          # S'assure qu'on pousse bien sur main
+          git push origin HEAD:main
