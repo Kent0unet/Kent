@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kent — Créateur multigaming</title>
-  <meta name="description" content="Portfolio / landing page minimaliste hébergé sur GitHub Pages." />
+  <title>Kent — Créateur MultiGaming</title>
+  <meta name="description" content="Portfolio / landing page minimaliste hébergé sur GitHub Pages. Créateur MultiGaming." />
   <style>
     :root{
       --maxw:1000px; --pad: clamp(16px, 2.5vw, 28px);
@@ -31,10 +31,10 @@
     .btn{appearance:none; border:none; background:var(--accent); color:#0b1025; font-weight:700; padding:12px 18px; border-radius:16px; cursor:pointer}
     .btn.secondary{background:transparent; color:var(--text); border:1px solid #334;
       box-shadow: inset 0 0 0 1px rgba(255,255,255,.06)}
-    .card-grid{max-width:var(--maxw); margin:0 auto; padding:0 var(--pad) 64px; display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:18px}
-    .card{background:var(--card); border-radius:18px; padding:18px; border:1px solid rgba(255,255,255,.06);
+    .card-grid{max-width:var(--maxw); margin:0 auto; padding:0 var(--pad) 80px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:26px}
+    .card{background:var(--card); border-radius:18px; padding:24px; border:1px solid rgba(255,255,255,.06);
       box-shadow: 0 10px 30px rgba(0,0,0,.25)}
-    .card h3{margin:6px 0 6px; font-size:18px}
+    .card h3{margin:6px 0 10px; font-size:18px}
     .card p{margin:0; color:var(--muted)}
     footer{max-width:var(--maxw); margin:0 auto; padding:32px var(--pad) 56px; color:#cbd0ff80}
     .tag{display:inline-block; font-size:12px; padding:4px 10px; border-radius:999px; background:#22274d; color:#bfc6ff}
@@ -59,6 +59,10 @@
       50%{transform:scale(1.08); box-shadow:0 0 20px rgba(255,0,0,1)}
       100%{transform:scale(1); box-shadow:0 0 8px rgba(255,0,0,.7)}
     }
+
+    /* Contact link color */
+    a.mail-link{color:#7c9bff; font-weight:600;}
+    a.mail-link:hover{color:#a8c4ff;}
   </style>
 </head>
 <body>
@@ -75,8 +79,8 @@
   <section class="hero">
     <div>
       <span class="tag">GitHub Pages • Portfolio</span>
-      <h1>Salut, c'est Kent 👋<br/>Créateur de contenu multigaming.</h1>
-      <p>Je partage mes aventures sur plusieurs jeux (Fallout, New Vegas, Outer Worlds et bien d'autres) en live et en vidéo. Mon univers, c'est le gaming au sens large, toujours avec ma communauté.</p>
+      <h1>Salut, c'est Kent 👋<br/>Créateur de contenu MultiGaming.</h1>
+      <p>Je partage mes aventures sur plusieurs jeux (Fallout, Final Fantasy, Souls Like et bien d'autres) en live et en vidéo. Mon univers, c'est le gaming au sens large, toujours avec ma communauté.</p>
       <div class="cta">
         <a class="btn" href="#projets">Voir mes projets</a>
         <a class="btn secondary" href="#contact">Me contacter</a>
@@ -90,6 +94,13 @@
         <a class="pill" href="https://discord.com/invite/sheygSg" target="_blank" rel="noopener">💬 Discord</a>
       </div>
     </div>
+  </section>
+
+  <section id="jeux" class="card-grid">
+    <article class="card" style="grid-column:1/-1; text-align:center;">
+      <div class="pill">🏆 Les jeux terminés en Stream :</div>
+      <h3>Final Fantasy XVI • Elden Ring • Fallout New Vegas • ...</h3>
+    </article>
   </section>
 
   <section id="videos" class="card-grid">
@@ -117,7 +128,7 @@
     <article class="card">
       <div class="pill">🎮 Chaînes & Lives</div>
       <h3>YouTube & Twitch</h3>
-      <p>Lives multigaming, vidéos détente ou défis épiques. Fallout, RPG, FPS et découvertes de nouveaux univers.</p>
+      <p>Lives MultiGaming, vidéos détente ou défis épiques. Fallout, RPG, FPS et découvertes de nouveaux univers.</p>
     </article>
     <article class="card">
       <div class="pill">👥 Communauté</div>
@@ -132,7 +143,7 @@
   </section>
 
   <footer id="contact">
-    <p>Tu veux collaborer ou en savoir plus ? Écris à <a href="mailto:contactkentprod@gmail.com">contactkentprod@gmail.com</a> ou passe sur YouTube/Twitch.</p>
+    <p>Tu veux collaborer ou en savoir plus ? Écris à <a class="mail-link" href="mailto:contactkentprod@gmail.com">contactkentprod@gmail.com</a> ou passe sur YouTube/Twitch.</p>
     <p class="stack" style="margin-top:8px">
       <a class="pill" href="https://www.youtube.com/@Kent9Prod" target="_blank" rel="noopener">▶️ YouTube (principal)</a>
       <a class="pill" href="https://www.youtube.com/@KentProd" target="_blank" rel="noopener">▶️ YouTube (secondaire)</a>
