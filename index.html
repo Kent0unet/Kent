@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kent — Site GitHub Pages</title>
+  <title>Kent — Créateur multigaming</title>
   <meta name="description" content="Portfolio / landing page minimaliste hébergé sur GitHub Pages." />
   <style>
     :root{
@@ -41,54 +41,123 @@
     .pill{display:inline-flex; align-items:center; gap:8px; border:1px solid #2b2f59; padding:8px 12px; border-radius:999px; color:#c9ceff80}
     .stack{display:flex; gap:8px; flex-wrap:wrap}
     .code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:#0b0e24; padding:2px 6px; border-radius:6px}
+  .live-badge{background:#b00020;color:#fff;border-color:#ff3355;font-weight:800}
+    .live-badge::after{content:"";display:inline-block;width:8px;height:8px;border-radius:999px;background:#fff;box-shadow:0 0 8px #fff}
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">Kent<span class="code">.io</span></div>
+    <div class="logo">Kent<span class="code">.gg</span></div>
     <nav>
       <a href="#projets">Projets</a>
       <a href="#contact">Contact</a>
       <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
     </nav>
+    <a id="liveBadge" class="pill live-badge" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener" style="display:none">🔴 EN LIVE</a>
   </header>
 
   <section class="hero">
     <div>
       <span class="tag">GitHub Pages • Portfolio</span>
-      <h1>Salut, c'est Kent 👋<br/>Créateur de contenu & gamer.</h1>
-      <p>Voici un starter tout prêt pour publier en quelques minutes sur GitHub Pages. Modifie le texte, ajoute tes liens et <em>push</em> !</p>
+      <h1>Salut, c'est Kent 👋<br/>Créateur de contenu multigaming.</h1>
+      <p>Je partage mes aventures sur plusieurs jeux (Fallout, New Vegas, Outer Worlds et bien d'autres) en live et en vidéo. Mon univers, c'est le gaming au sens large, toujours avec ma communauté.</p>
       <div class="cta">
         <a class="btn" href="#projets">Voir mes projets</a>
         <a class="btn secondary" href="#contact">Me contacter</a>
       </div>
+      <div class="stack" style="margin-top:10px">
+        <a class="pill" href="https://www.youtube.com/@Kent9Prod" target="_blank" rel="noopener">▶️ YouTube (principal)</a>
+        <a class="pill" href="https://www.youtube.com/@KentProd" target="_blank" rel="noopener">▶️ YouTube (secondaire)</a>
+        <a class="pill" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">🔴 Twitch</a>
+        <a class="pill" href="https://www.instagram.com/micka_kent/" target="_blank" rel="noopener">📸 Instagram</a>
+        <a class="pill" href="https://www.tiktok.com/@micka_kent" target="_blank" rel="noopener">🎵 TikTok</a>
+        <a class="pill" href="https://discord.com/invite/sheygSg" target="_blank" rel="noopener">💬 Discord</a>
+      </div>
     </div>
+  </section>
+
+  <section id="videos" class="card-grid">
+    <article class="card">
+      <div class="pill">🆕 Dernières vidéos</div>
+      <h3>YouTube — Kent9Prod</h3>
+      <p>Les nouveautés arrivent en premier sur la chaîne principale. Clique pour voir la liste complète des dernières vidéos.</p>
+      <p style="margin-top:8px"><a class="btn secondary" href="https://www.youtube.com/@Kent9Prod/videos" target="_blank" rel="noopener">Voir les dernières vidéos</a></p>
+    </article>
+    <article class="card">
+      <div class="pill">🆕 Dernières vidéos</div>
+      <h3>YouTube — KentProd</h3>
+      <p>La chaîne secondaire pour d'autres formats et tests.</p>
+      <p style="margin-top:8px"><a class="btn secondary" href="https://www.youtube.com/@KentProd/videos" target="_blank" rel="noopener">Voir les dernières vidéos</a></p>
+    </article>
+    <article class="card">
+      <div class="pill">🔴 Live</div>
+      <h3>Twitch</h3>
+      <p>Quand je suis en live, le badge rouge s'allume en haut du site.</p>
+      <p style="margin-top:8px"><a class="btn" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">Aller sur le live</a></p>
+    </article>
   </section>
 
   <section id="projets" class="card-grid">
     <article class="card">
-      <div class="pill">🎮 Miniatures YouTube</div>
-      <h3>Fallout / Outer Worlds</h3>
-      <p>Un échantillon de miniatures et projets liés aux séries que j'adore.</p>
+      <div class="pill">🎮 Chaînes & Lives</div>
+      <h3>YouTube & Twitch</h3>
+      <p>Lives multigaming, vidéos détente ou défis épiques. Fallout, RPG, FPS et découvertes de nouveaux univers.</p>
     </article>
     <article class="card">
-      <div class="pill">🛒 Ventes Vinted</div>
+      <div class="pill">👥 Communauté</div>
+      <h3>Discord & Réseaux</h3>
+      <p>Un espace convivial où on discute gaming, partage de tips et bonnes vibes. Rejoins le serveur !</p>
+    </article>
+    <article class="card">
+      <div class="pill">🛒 Vinted</div>
       <h3>Jeux & Matériel</h3>
-      <p>Je recycle du matos et des jeux vidéo — demande si une ref t'intéresse.</p>
-    </article>
-    <article class="card">
-      <div class="pill">🧰 Outils</div>
-      <h3>Prompts & Templates</h3>
-      <p>Mes prompts et modèles pour accélérer la création de contenu.</p>
+      <p>Jeux vidéo, matos info, comics/BD. Écris si tu cherches une ref précise.</p>
     </article>
   </section>
 
   <footer id="contact">
-    <p>Tu veux bosser avec moi ? Écris à <a href="mailto:contact@example.com">contact@example.com</a> ou passe sur Twitch/YouTube.</p>
+    <p>Tu veux collaborer ou en savoir plus ? Écris à <a href="mailto:contactkentprod@gmail.com">contactkentprod@gmail.com</a> ou passe sur YouTube/Twitch.</p>
+    <p class="stack" style="margin-top:8px">
+      <a class="pill" href="https://www.youtube.com/@Kent9Prod" target="_blank" rel="noopener">▶️ YouTube (principal)</a>
+      <a class="pill" href="https://www.youtube.com/@KentProd" target="_blank" rel="noopener">▶️ YouTube (secondaire)</a>
+      <a class="pill" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">🔴 Twitch</a>
+      <a class="pill" href="https://www.instagram.com/micka_kent/" target="_blank" rel="noopener">📸 Instagram</a>
+      <a class="pill" href="https://www.tiktok.com/@micka_kent" target="_blank" rel="noopener">🎵 TikTok</a>
+      <a class="pill" href="https://discord.com/invite/sheygSg" target="_blank" rel="noopener">💬 Discord</a>
+    </p>
     <p style="margin-top:8px">© <span id="year"></span> Kent. Fait avec ❤️ et hébergé sur GitHub Pages.</p>
   </footer>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  <script>
+    // --- LIVE badge logic (auto via live.json) ---
+    const badge = document.getElementById('liveBadge');
+    const LIVE_JSON = 'live.json';
+
+    async function refreshLive(){
+      try{
+        const res = await fetch(`${LIVE_JSON}?t=${Date.now()}`);
+        if(!res.ok) throw new Error('live.json not found');
+        const data = await res.json();
+        const twitchLive = !!(data && data.twitch && data.twitch.live);
+        const ytLive = !!(data && data.youtube && data.youtube.live);
+        let url = null;
+        if(twitchLive) url = data.twitch.url || 'https://www.twitch.tv/kent_fr';
+        else if(ytLive) url = data.youtube.url || 'https://www.youtube.com/@Kent9Prod/live';
+
+        const isLive = twitchLive || ytLive;
+        badge.style.display = isLive ? 'inline-flex' : 'none';
+        if(url) badge.href = url;
+      }catch(e){
+        console.debug('LIVE status unavailable:', e.message);
+        badge.style.display = 'none';
+      }
+    }
+
+    refreshLive();
+    setInterval(refreshLive, 60000); // check every 60s
   </script>
 </body>
 </html>
+
