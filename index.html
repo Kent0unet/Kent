@@ -131,7 +131,7 @@
     document.getElementById('year').textContent = new Date().getFullYear();
     </script>
   <script>
-    // --- LIVE badge logic (auto via live.json) ---
+    // --- LIVE badge logic (Twitch only via live.json) ---
     const badge = document.getElementById('liveBadge');
     const LIVE_JSON = 'live.json';
 
@@ -141,14 +141,12 @@
         if(!res.ok) throw new Error('live.json not found');
         const data = await res.json();
         const twitchLive = !!(data && data.twitch && data.twitch.live);
-        const ytLive = !!(data && data.youtube && data.youtube.live);
-        let url = null;
-        if(twitchLive) url = data.twitch.url || 'https://www.twitch.tv/kent_fr';
-        else if(ytLive) url = data.youtube.url || 'https://www.youtube.com/@Kent9Prod/live';
-
-        const isLive = twitchLive || ytLive;
-        badge.style.display = isLive ? 'inline-flex' : 'none';
-        if(url) badge.href = url;
+        const url = (data && data.twitch && data.twitch.url) || 'https://www.twitch.tv/kent_fr';
+        const title = (data && data.twitch && data.twitch.title) || '';
+        badge.textContent = '🔴 EN LIVE sur Twitch';
+        badge.style.display = twitchLive ? 'inline-flex' : 'none';
+        badge.href = url;
+        badge.title = title ? `Twitch · ${title}` : 'Twitch live';
       }catch(e){
         console.debug('LIVE status unavailable:', e.message);
         badge.style.display = 'none';
@@ -160,4 +158,3 @@
   </script>
 </body>
 </html>
-
