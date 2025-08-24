@@ -64,6 +64,26 @@
     /* Contact link color */
     a.mail-link{color:#7c9bff; font-weight:600;}
     a.mail-link:hover{color:#a8c4ff;}
+
+    /* --- Games list styles --- */
+    .games-section{max-width:var(--maxw); margin:0 auto; padding: 0 var(--pad) 64px}
+    .games-section h2{margin:0 0 16px}
+    .search-wrap{position:sticky; top:0; padding:8px 0 16px; background:linear-gradient(180deg, rgba(15,18,38,.9), rgba(15,18,38,.6) 70%, transparent)}
+    .search-wrap input[type="search"]{
+      width:100%; padding:14px 16px 14px 44px; border-radius:14px; border:1px solid #2b2f59; background:#12163a; color:var(--text);
+      outline:none; box-shadow:0 6px 0 #0a0e2b;
+    }
+    .search-wrap .icon{position:absolute; left:12px; top:50%; transform:translateY(-50%); opacity:.7}
+    .game-grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:16px}
+    .game-card{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:18px; text-decoration:none; color:var(--text);
+      box-shadow:0 8px 24px rgba(0,0,0,.25); transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease}
+    .game-card:hover{transform:translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.35); border-color:#394085}
+    .game-card h4{margin:2px 0 0; font-size:16px; text-align:center}
+    .game-card .dots{position:absolute; right:12px; top:10px; opacity:.5}
+    .game-card .dots::after{content:"⋮"}
+    .empty{opacity:.7; color:#aeb4ff; padding:8px}
+    
+    a.mail-link:hover{color:#a8c4ff;}
   </style>
 </head>
 <body>
@@ -79,7 +99,6 @@
 
   <section class="hero">
     <div>
-      <span class="tag">GitHub Pages • Portfolio</span>
       <h1>Salut, c'est Kent 👋<br/>Créateur de contenu MultiGaming.</h1>
       <p>Je partage mes aventures sur plusieurs jeux (Fallout, Final Fantasy, Souls Like et bien d'autres) en live et en vidéo. Mon univers, c'est le gaming au sens large, toujours avec ma communauté.</p>
       <div class="cta">
@@ -97,11 +116,14 @@
     </div>
   </section>
 
-  <section id="jeux" class="card-grid">
-    <article class="card" style="grid-column:1/-1; text-align:center;">
-      <div class="pill">🏆 Les jeux terminés en Stream :</div>
-      <h3>Final Fantasy XVI • Elden Ring • Fallout New Vegas • ...</h3>
-    </article>
+  <section id="jeux" class="games-section">
+    <h2>🏆 Les jeux terminés en Stream</h2>
+    <div class="search-wrap" style="position:relative;">
+      <span class="icon">🔎</span>
+      <input id="searchGame" type="search" placeholder="Rechercher un jeu…" aria-label="Rechercher un jeu">
+    </div>
+    <div id="gamesGrid" class="game-grid" aria-live="polite"></div>
+    <p id="gamesEmpty" class="empty" style="display:none;">Aucun jeu ne correspond à votre recherche.</p>
   </section>
 
   <section id="videos" class="card-grid">
@@ -182,6 +204,45 @@
 
     refreshLive();
     setInterval(refreshLive, 60000); // check every 60s
+
+    // --- Games data & search ---
+    const GAMES = [
+      { title: 'Resident Evil Revelations', url: 'games/resident-evil-revelations.html' },
+      { title: 'Resident Evil 4', url: 'games/resident-evil-4.html' },
+      { title: 'Resident Evil 3', url: 'games/resident-evil-3.html' },
+      { title: 'Resident Evil 2', url: 'games/resident-evil-2.html' },
+      { title: 'Resident Evil 0', url: 'games/resident-evil-0.html' },
+      { title: 'Resident Evil', url: 'games/resident-evil.html' },
+      { title: "Asura's Wrath", url: 'games/asuras-wrath.html' },
+      { title: 'Metal Gear Solid 4', url: 'games/metal-gear-solid-4.html' },
+      { title: 'Ico', url: 'games/ico.html' }
+      { title: 'Fallout 3', url: 'games/fallout-3.html' }
+    ];
+
+    const grid = document.getElementById('gamesGrid');
+    const emptyMsg = document.getElementById('gamesEmpty');
+    const input = document.getElementById('searchGame');
+
+    function renderGames(list){
+      grid.innerHTML = '';
+      if(!list.length){ emptyMsg.style.display = 'block'; return; }
+      emptyMsg.style.display = 'none';
+      list.forEach(g=>{
+        const a = document.createElement('a');
+        a.className = 'game-card';
+        a.href = g.url;
+        a.innerHTML = `<div class="dots"></div><h4>${g.title}</h4>`;
+        grid.appendChild(a);
+      });
+    }
+
+    renderGames(GAMES);
+
+    input.addEventListener('input', ()=>{
+      const q = input.value.trim().toLowerCase();
+      const filtered = GAMES.filter(g => g.title.toLowerCase().includes(q));
+      renderGames(filtered);
+    });
   </script>
 </body>
 </html>
