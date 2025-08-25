@@ -56,7 +56,7 @@
       padding:18px; text-decoration:none; color:var(--text);}
     .game-card:hover{transform:translateY(-2px); border-color:#394085}
     .game-card h4{text-align:center; margin:2px 0}
-    .coming-soon{background:#2a2a2a !important; cursor:default; pointer-events:none; opacity:0.6;}
+    .coming-soon{background:#2a2a2a !important; opacity:0.75; cursor:pointer;}
 
     footer{max-width:var(--maxw); margin:0 auto; padding:32px var(--pad) 56px; color:#cbd0ff80}
   </style>
@@ -118,7 +118,6 @@
     const badge = document.getElementById('liveBadge');
     const CHANNEL = 'kent_fr';
     const UPTIME_URL = `https://r.jina.ai/http://decapi.me/twitch/uptime/${CHANNEL}`;
-    const TWITCH_URL = `https://www.twitch.tv/${CHANNEL}`;
     function setOnline(){ badge.textContent = '🔴 EN LIVE'; badge.classList.add('live-on'); badge.classList.remove('live-off'); }
     function setOffline(){ badge.textContent = '⚪ PAS EN LIVE'; badge.classList.add('live-off'); badge.classList.remove('live-on'); }
     async function refreshLive(){ try{ const u=await fetch(`${UPTIME_URL}?t=${Date.now()}`); const txt=(await u.text()).toLowerCase(); if(txt.includes('offline')){ setOffline(); return; } setOnline(); } catch(e){ setOffline(); } }
@@ -218,8 +217,10 @@
           card.href = g.url;
           card.innerHTML = `<h4>${g.title}</h4>`;
         } else {
+          const href = 'games/coming-soon.html?t=' + encodeURIComponent(g.title);
+          card.href = href;
           card.classList.add('coming-soon');
-          card.innerHTML = `<h4>${g.title}</h4><p style="text-align:center;opacity:.7">À venir...</p>`;
+          card.innerHTML = `<h4>${g.title}</h4><p style="text-align:center;opacity:.8">À venir...</p>`;
         }
         grid.appendChild(card);
       });
