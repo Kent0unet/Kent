@@ -23,48 +23,37 @@
       display:flex; align-items:center; justify-content:space-between; gap:16px;
     }
     .logo{font-weight:800; letter-spacing:.3px}
-    nav a{color:var(--muted); text-decoration:none; margin-left:16px; transition:color .2s ease;}
+    nav{display:flex; gap:16px; align-items:center;}
+    nav a{color:var(--muted); text-decoration:none; transition:color .2s ease;}
     nav a:hover{color:var(--accent)}
+
     .hero{max-width:var(--maxw); margin:0 auto; padding: 32px var(--pad) 56px; display:grid; gap:28px; align-items:center}
     .hero h1{font-size:clamp(32px,6vw,56px); line-height:1.05; margin:0}
     .hero p{font-size:clamp(16px,2.3vw,20px); color:var(--muted); margin:0}
-    .cta{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
-    .btn{appearance:none; border:none; background:var(--accent); color:#0b1025; font-weight:700; padding:12px 18px; border-radius:16px; cursor:pointer}
-    .btn.secondary{background:transparent; color:var(--text); border:1px solid #334; box-shadow: inset 0 0 0 1px rgba(255,255,255,.06)}
-    .card-grid{max-width:var(--maxw); margin:0 auto; padding:0 var(--pad) 80px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:26px}
-    .card{background:var(--card); border-radius:18px; padding:24px; border:1px solid rgba(255,255,255,.06); box-shadow: 0 10px 30px rgba(0,0,0,.25)}
-    .card h3{margin:6px 0 10px; font-size:18px}
-    .card p{margin:0; color:var(--muted)}
-    footer{max-width:var(--maxw); margin:0 auto; padding:32px var(--pad) 56px; color:#cbd0ff80}
-    .tag{display:inline-block; font-size:12px; padding:4px 10px; border-radius:999px; background:#22274d; color:#bfc6ff}
+
     .pill{display:inline-flex; align-items:center; gap:8px; border:1px solid #2b2f59; padding:8px 12px; border-radius:999px; color:#c9ceff80; text-decoration:none; transition:color .2s ease;}
     .pill:hover{color:var(--accent)}
     .stack{display:flex; gap:8px; flex-wrap:wrap}
     .code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:#0b0e24; padding:2px 6px; border-radius:6px}
 
-    /* --- Live Badge Special Style --- */
+    /* --- Live Badge Special --- */
     .live-badge{
-      background:#d60027;
-      color:#fff !important;
       font-weight:800;
-      border:2px solid #ff3355;
-      box-shadow:0 0 12px rgba(255,0,0,.8);
-      animation:pulse 1.2s infinite;
-      text-decoration:none;
-      padding:10px 16px;
+      padding:8px 14px;
       border-radius:999px;
+      text-decoration:none;
+      border:2px solid transparent;
+      transition: all .3s ease;
     }
-    @keyframes pulse{
-      0%{transform:scale(1); box-shadow:0 0 8px rgba(255,0,0,.7)}
-      50%{transform:scale(1.08); box-shadow:0 0 20px rgba(255,0,0,1)}
-      100%{transform:scale(1); box-shadow:0 0 8px rgba(255,0,0,.7)}
+    .live-on{
+      background:#d60027; border-color:#ff3355; color:#fff !important;
+      box-shadow:0 0 12px rgba(255,0,0,.8);
+    }
+    .live-off{
+      background:#333a; border-color:#555; color:#bbb !important;
     }
 
-    /* Contact link color */
-    a.mail-link{color:#7c9bff; font-weight:600; text-decoration:none;}
-    a.mail-link:hover{color:#a8c4ff; text-decoration:none;}
-
-    /* --- Games list styles --- */
+    /* Games */
     .games-section{max-width:var(--maxw); margin:0 auto; padding: 0 var(--pad) 64px}
     .games-section h2{margin:0 0 16px}
     .search-wrap{position:sticky; top:0; padding:8px 0 16px; background:linear-gradient(180deg, rgba(15,18,38,.9), rgba(15,18,38,.6) 70%, transparent)}
@@ -78,20 +67,19 @@
       box-shadow:0 8px 24px rgba(0,0,0,.25); transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease}
     .game-card:hover{transform:translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.35); border-color:#394085}
     .game-card h4{margin:2px 0 0; font-size:16px; text-align:center}
-    .game-card .dots{position:absolute; right:12px; top:10px; opacity:.5}
-    .game-card .dots::after{content:"⋮"}
     .empty{opacity:.7; color:#aeb4ff; padding:8px}
+
+    footer{max-width:var(--maxw); margin:0 auto; padding:32px var(--pad) 56px; color:#cbd0ff80}
   </style>
 </head>
 <body>
   <header>
     <div class="logo">Kent<span class="code">.gg</span></div>
     <nav>
+      <a id="liveBadge" class="live-badge live-off" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">⚪ PAS EN LIVE</a>
       <a href="#projets">Projets</a>
       <a href="#contact">Contact</a>
-      <!-- GitHub supprimé -->
     </nav>
-    <a id="liveBadge" class="live-badge" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener" style="display:none">🔴 EN LIVE</a>
   </header>
 
   <section class="hero">
@@ -99,9 +87,9 @@
       <h1>Salut, c'est Kent 👋<br/>Créateur de contenu MultiGaming.</h1>
       <p>Je partage mes aventures sur plusieurs jeux (Fallout, Final Fantasy, Souls Like et bien d'autres) en live et en vidéo. Mon univers, c'est le gaming au sens large, toujours avec ma communauté.</p>
       <div class="stack" style="margin-top:10px">
+        <a class="pill" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">🔴 Twitch</a>
         <a class="pill" href="https://www.youtube.com/@Kent9Prod" target="_blank" rel="noopener">▶️ YouTube (principal)</a>
         <a class="pill" href="https://www.youtube.com/@KentProd" target="_blank" rel="noopener">▶️ YouTube (secondaire)</a>
-        <a class="pill" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">🔴 Twitch</a>
         <a class="pill" href="https://www.instagram.com/micka_kent/" target="_blank" rel="noopener">📸 Instagram</a>
         <a class="pill" href="https://www.tiktok.com/@micka_kent" target="_blank" rel="noopener">🎵 TikTok</a>
         <a class="pill" href="https://discord.com/invite/sheygSg" target="_blank" rel="noopener">💬 Discord</a>
@@ -121,17 +109,14 @@
 
   <section id="projets" class="card-grid">
     <article class="card">
-      <div class="pill">❤️ Soutien</div>
       <h3>Me soutenir ❤️</h3>
       <p>Si tu souhaites me soutenir clique <a href="https://streamelements.com/kent_fr/tip" target="_blank" rel="noopener">ici</a>.</p>
     </article>
     <article class="card">
-      <div class="pill">👍🏻 Engagement</div>
       <h3>Watch Time et Like 👍🏻</h3>
       <p>N'oublie pas de mettre un petit pouce en l'air et de regarder toute la vidéo (le Watch Time aide énormément).</p>
     </article>
     <article class="card">
-      <div class="pill">⚡ Live</div>
       <h3>En Live tous les jours ! ⚡</h3>
       <p>N'hésite pas à passer et à participer dans le chat !</p>
     </article>
@@ -140,9 +125,9 @@
   <footer id="contact">
     <p>Tu veux collaborer ou en savoir plus ? Écris à <a class="mail-link" href="mailto:contactkentprod@gmail.com">contactkentprod@gmail.com</a> ou passe sur YouTube/Twitch.</p>
     <p class="stack" style="margin-top:8px">
+      <a class="pill" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">🔴 Twitch</a>
       <a class="pill" href="https://www.youtube.com/@Kent9Prod" target="_blank" rel="noopener">▶️ YouTube (principal)</a>
       <a class="pill" href="https://www.youtube.com/@KentProd" target="_blank" rel="noopener">▶️ YouTube (secondaire)</a>
-      <a class="pill" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">🔴 Twitch</a>
       <a class="pill" href="https://www.instagram.com/micka_kent/" target="_blank" rel="noopener">📸 Instagram</a>
       <a class="pill" href="https://www.tiktok.com/@micka_kent" target="_blank" rel="noopener">🎵 TikTok</a>
       <a class="pill" href="https://discord.com/invite/sheygSg" target="_blank" rel="noopener">💬 Discord</a>
@@ -151,7 +136,7 @@
   </footer>
 
   <script>
-    // --- LIVE badge logic (Twitch only via live.json) ---
+    // --- LIVE badge logic ---
     const badge = document.getElementById('liveBadge');
     const LIVE_JSON = 'live.json';
 
@@ -161,20 +146,24 @@
         if(!res.ok) throw new Error('live.json not found');
         const data = await res.json();
         const twitchLive = !!(data && data.twitch && data.twitch.live);
-        const url = (data && data.twitch && data.twitch.url) || 'https://www.twitch.tv/kent_fr';
-        const title = (data && data.twitch && data.twitch.title) || '';
-        badge.textContent = title ? `🔴 EN LIVE : ${title}` : '🔴 EN LIVE sur Twitch';
-        badge.style.display = twitchLive ? 'inline-flex' : 'none';
-        badge.href = url;
-        badge.title = title ? `Twitch · ${title}` : 'Twitch live';
+        if(twitchLive){
+          badge.textContent = "🔴 EN LIVE";
+          badge.classList.add("live-on");
+          badge.classList.remove("live-off");
+        } else {
+          badge.textContent = "⚪ PAS EN LIVE";
+          badge.classList.add("live-off");
+          badge.classList.remove("live-on");
+        }
       }catch(e){
-        console.debug('LIVE status unavailable:', e.message);
-        badge.style.display = 'none';
+        badge.textContent = "⚪ PAS EN LIVE";
+        badge.classList.add("live-off");
+        badge.classList.remove("live-on");
       }
     }
 
     refreshLive();
-    setInterval(refreshLive, 60000); // check every 60s
+    setInterval(refreshLive, 60000);
 
     // --- Games data & search ---
     const GAMES = [
@@ -193,7 +182,7 @@
         const a = document.createElement('a');
         a.className = 'game-card';
         a.href = g.url;
-        a.innerHTML = `<div class="dots"></div><h4>${g.title}</h4>`;
+        a.innerHTML = `<h4>${g.title}</h4>`;
         grid.appendChild(a);
       });
     }
