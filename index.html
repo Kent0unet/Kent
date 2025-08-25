@@ -77,7 +77,7 @@
     /* 👉 Un jeu par ligne */
     .game-grid{
       display:grid;
-      grid-template-columns: 1fr;   /* ← une seule colonne */
+      grid-template-columns: 1fr;   /* une seule colonne */
       gap:16px;
     }
     .game-card{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:18px; text-decoration:none; color:var(--text);
@@ -169,10 +169,84 @@
     /* Games : liste + recherche (tri alphabétique) */
     const GAMES = [
       { title: 'Fallout 3', url: 'games/fallout-3.html' },
-      { title: 'Fallout: New Vegas', url: 'games/fallout-new-vegas.html' }
+      { title: 'Fallout: New Vegas', url: 'games/fallout-new-vegas.html' },
+
+      { title: 'As Dusk Falls', url: '#' },
+      { title: 'Aska', url: '#' },
+      { title: 'Batman : Arkham Asylum', url: '#' },
+      { title: 'Batman : Arkham Knight', url: '#' },
+      { title: 'Batman : The Enemy Within', url: '#' },
+      { title: 'Batman : The Telltale Series', url: '#' },
+      { title: 'Black Myth: Wukong', url: '#' },
+      { title: 'Blue Prince', url: '#' },
+      { title: 'Clair Obscur : Expedition 33', url: '#' },
+      { title: 'Corepunk', url: '#' },
+      { title: 'Cyberpunk 2077', url: '#' },
+      { title: 'Dark Souls II : Scholar of the First Sin', url: '#' },
+      { title: 'Dead Island 2', url: '#' },
+      { title: 'Detroit : Become Human', url: '#' },
+      { title: 'Devil May Cry 5', url: '#' },
+      { title: 'Dragon\'s Dogma 2', url: '#' },
+      { title: 'Dying Light 2', url: '#' },
+      { title: 'Elden Ring', url: '#' },
+      { title: 'Elden Ring : Shadow of the Erdtree', url: '#' },
+      { title: 'Enotria : The Last Song', url: '#' },
+      { title: 'Enshrouded', url: '#' },
+      { title: 'Fantasy Life i', url: '#' },
+      { title: 'Final Fantasy', url: '#' },
+      { title: 'Final Fantasy VII : Crisis Core Remastered', url: '#' },
+      { title: 'Final Fantasy VII : Remake', url: '#' },
+      { title: 'Final Fantasy VII: Rebirth', url: '#' },
+      { title: 'Final Fantasy XVI', url: '#' },
+      { title: 'God of War 4', url: '#' },
+      { title: 'God of War Ragnarok', url: '#' },
+      { title: 'Gotham Knights', url: '#' },
+      { title: 'Harry Potter 2 (Game Cube)', url: '#' },
+      { title: 'Hogwarts Legacy', url: '#' },
+      { title: 'Kingdom Come : Deliverance 2', url: '#' },
+      { title: 'La Terre du Milieu : L\'ombre de la Guerre', url: '#' },
+      { title: 'Lego Harry Potter Années 1 à 4', url: '#' },
+      { title: 'Lego Harry Potter: Années 5 à 7', url: '#' },
+      { title: 'Lies of P', url: '#' },
+      { title: 'Life is Strange', url: '#' },
+      { title: 'Life is Strange 2', url: '#' },
+      { title: 'Life is Strange : Before the Storm', url: '#' },
+      { title: 'Life is Strange : True Colors', url: '#' },
+      { title: 'Little Nightmares', url: '#' },
+      { title: 'Little Nightmares 2', url: '#' },
+      { title: 'Lords of the Fallen (2014)', url: '#' },
+      { title: 'Marvel\'s Avengers', url: '#' },
+      { title: 'Marvel\'s Spider-Man', url: '#' },
+      { title: 'Marvel\'s Spider-Man 2', url: '#' },
+      { title: 'Marvel\'s Spider-Man : Miles Morales', url: '#' },
+      { title: 'My Friend Pedro', url: '#' },
+      { title: 'Nier Automata', url: '#' },
+      { title: 'Palworld', url: '#' },
+      { title: 'Pokemon Alpha Saphir', url: '#' },
+      { title: 'Pokemon Ecarlate', url: '#' },
+      { title: 'Pokemon Legendes : Arceus', url: '#' },
+      { title: 'Pokémon Épée', url: '#' },
+      { title: 'Remember Me', url: '#' },
+      { title: 'Rise of the Ronin', url: '#' },
+      { title: 'Road 96', url: '#' },
+      { title: 'Soulmask', url: '#' },
+      { title: 'Star Wars : Jedi Fallen Order', url: '#' },
+      { title: 'Star Wars : Outlaws', url: '#' },
+      { title: 'Suicide Squad : Kill the Justice League', url: '#' },
+      { title: 'Tales of Arise', url: '#' },
+      { title: 'Tekken 8', url: '#' },
+      { title: 'The First Berserker : Khazan', url: '#' },
+      { title: 'The Last of US', url: '#' },
+      { title: 'The Walking Dead : Saison 2', url: '#' },
+      { title: 'Tomb Raider : Rise of the Tomb Raider', url: '#' },
+      { title: 'Valheim', url: '#' },
+      { title: 'Wartales', url: '#' },
+      { title: 'Wolf Among Us', url: '#' },
+      { title: 'Wo Long : Fallen Dynasty', url: '#' },
+      { title: 'Yakuza : Like a Dragon', url: '#' }
     ];
 
-    // 👉 tri alphabétique automatique
+    // tri alphabétique automatique
     const SORTED_GAMES = [...GAMES].sort((a, b) => a.title.localeCompare(b.title));
 
     const grid = document.getElementById('gamesGrid');
