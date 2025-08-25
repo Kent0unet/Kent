@@ -31,10 +31,12 @@
     .cta{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
     .btn{appearance:none; border:none; background:var(--accent); color:#0b1025; font-weight:700; padding:12px 18px; border-radius:16px; cursor:pointer}
     .btn.secondary{background:transparent; color:var(--text); border:1px solid #334; box-shadow: inset 0 0 0 1px rgba(255,255,255,.06)}
+
     .card-grid{max-width:var(--maxw); margin:0 auto; padding:0 var(--pad) 80px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:26px}
     .card{background:var(--card); border-radius:18px; padding:24px; border:1px solid rgba(255,255,255,.06); box-shadow: 0 10px 30px rgba(0,0,0,.25)}
     .card h3{margin:6px 0 10px; font-size:18px}
     .card p{margin:0; color:var(--muted)}
+
     footer{max-width:var(--maxw); margin:0 auto; padding:32px var(--pad) 56px; color:#cbd0ff80}
     .tag{display:inline-block; font-size:12px; padding:4px 10px; border-radius:999px; background:#22274d; color:#bfc6ff}
     .pill{display:inline-flex; align-items:center; gap:8px; border:1px solid #2b2f59; padding:8px 12px; border-radius:999px; color:#c9ceff80; text-decoration:none; transition:color .2s ease;}
@@ -42,29 +44,19 @@
     .stack{display:flex; gap:8px; flex-wrap:wrap}
     .code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:#0b0e24; padding:2px 6px; border-radius:6px}
 
-    /* --- Live Badge Special Style --- */
+    /* Live badge */
     .live-badge{
-      background:#d60027;
-      color:#fff !important;
-      font-weight:800;
-      border:2px solid #ff3355;
-      box-shadow:0 0 12px rgba(255,0,0,.8);
-      animation:pulse 1.2s infinite;
-      text-decoration:none;
-      padding:10px 16px;
-      border-radius:999px;
+      background:#d60027; color:#fff !important; font-weight:800; border:2px solid #ff3355;
+      box-shadow:0 0 12px rgba(255,0,0,.8); animation:pulse 1.2s infinite; text-decoration:none;
+      padding:10px 16px; border-radius:999px;
     }
-    @keyframes pulse{
-      0%{transform:scale(1); box-shadow:0 0 8px rgba(255,0,0,.7)}
-      50%{transform:scale(1.08); box-shadow:0 0 20px rgba(255,0,0,1)}
-      100%{transform:scale(1); box-shadow:0 0 8px rgba(255,0,0,.7)}
-    }
+    @keyframes pulse{0%{transform:scale(1); box-shadow:0 0 8px rgba(255,0,0,.7)}50%{transform:scale(1.08); box-shadow:0 0 20px rgba(255,0,0,1)}100%{transform:scale(1); box-shadow:0 0 8px rgba(255,0,0,.7)}}
 
     /* Contact link color */
     a.mail-link{color:#7c9bff; font-weight:600; text-decoration:none;}
     a.mail-link:hover{color:#a8c4ff; text-decoration:none;}
 
-    /* --- Games list styles --- */
+    /* Games list */
     .games-section{max-width:var(--maxw); margin:0 auto; padding: 0 var(--pad) 64px}
     .games-section h2{margin:0 0 16px}
     .search-wrap{position:sticky; top:0; padding:8px 0 16px; background:linear-gradient(180deg, rgba(15,18,38,.9), rgba(15,18,38,.6) 70%, transparent)}
@@ -81,6 +73,19 @@
     .game-card .dots{position:absolute; right:12px; top:10px; opacity:.5}
     .game-card .dots::after{content:"⋮"}
     .empty{opacity:.7; color:#aeb4ff; padding:8px}
+
+    /* --- Dernières vidéos (3 petites cartes) --- */
+    .v-grid{max-width:var(--maxw); margin:0 auto; padding:0 var(--pad) 48px;
+      display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:26px}
+    a.v-card{display:block}
+    .v-card{background:var(--card); border-radius:18px; padding:16px; border:1px solid rgba(255,255,255,.06); box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      text-decoration:none; color:var(--text); transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease}
+    .v-card:hover{transform:translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.35); border-color:#394085}
+    .v-thumb{width:100%; aspect-ratio:16/9; border-radius:12px; overflow:hidden; background:#000; margin-bottom:10px}
+    .v-thumb img{width:100%; height:100%; object-fit:cover; display:block}
+    .v-title{font-weight:700; font-size:16px; margin:4px 0 6px}
+    .v-meta{font-size:13px; color:var(--muted)}
+    .section-title{max-width:var(--maxw); margin:0 auto; padding: 0 var(--pad); font-size:20px; opacity:.9}
   </style>
 </head>
 <body>
@@ -89,7 +94,7 @@
     <nav>
       <a href="#projets">Projets</a>
       <a href="#contact">Contact</a>
-      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      <!-- GitHub supprimé -->
     </nav>
     <a id="liveBadge" class="live-badge" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener" style="display:none">🔴 EN LIVE</a>
   </header>
@@ -113,6 +118,16 @@
     </div>
   </section>
 
+  <!-- 🆕 Dernières vidéos (3 petites cartes auto) -->
+  <h2 class="section-title">🆕 Dernières vidéos</h2>
+  <section id="videos" class="v-grid" aria-live="polite">
+    <a class="v-card" href="#" onclick="return false;">
+      <div class="v-thumb"></div>
+      <div class="v-title">Chargement…</div>
+      <div class="v-meta">Patiente un instant</div>
+    </a>
+  </section>
+
   <section id="jeux" class="games-section">
     <h2>🏆 Les jeux terminés en Stream</h2>
     <div class="search-wrap" style="position:relative;">
@@ -123,27 +138,7 @@
     <p id="gamesEmpty" class="empty" style="display:none;">Aucun jeu ne correspond à votre recherche.</p>
   </section>
 
-  <section id="videos" class="card-grid">
-    <article class="card">
-      <div class="pill">🆕 Dernières vidéos</div>
-      <h3>YouTube — Kent9Prod</h3>
-      <p>Les nouveautés arrivent en premier sur la chaîne principale. Clique pour voir la liste complète des dernières vidéos.</p>
-      <p style="margin-top:8px"><a class="btn secondary" href="https://www.youtube.com/@Kent9Prod/videos" target="_blank" rel="noopener">Voir les dernières vidéos</a></p>
-    </article>
-    <article class="card">
-      <div class="pill">🆕 Dernières vidéos</div>
-      <h3>YouTube — KentProd</h3>
-      <p>La chaîne secondaire pour d'autres formats et tests.</p>
-      <p style="margin-top:8px"><a class="btn secondary" href="https://www.youtube.com/@KentProd/videos" target="_blank" rel="noopener">Voir les dernières vidéos</a></p>
-    </article>
-    <article class="card">
-      <div class="pill">🔴 Live</div>
-      <h3>Twitch</h3>
-      <p>Quand je suis en live, le badge rouge s'allume en haut du site.</p>
-      <p style="margin-top:8px"><a class="btn" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">Aller sur le live</a></p>
-    </article>
-  </section>
-
+  <!-- Projets (Vinted retiré) -->
   <section id="projets" class="card-grid">
     <article class="card">
       <div class="pill">🎮 Chaînes & Lives</div>
@@ -154,11 +149,6 @@
       <div class="pill">👥 Communauté</div>
       <h3>Discord & Réseaux</h3>
       <p>Un espace convivial où on discute gaming, partage de tips et bonnes vibes. Rejoins le serveur !</p>
-    </article>
-    <article class="card">
-      <div class="pill">🛒 Vinted</div>
-      <h3>Jeux & Matériel</h3>
-      <p>Jeux vidéo, matos info, comics/BD. Écris si tu cherches une ref précise.</p>
     </article>
   </section>
 
@@ -232,6 +222,58 @@
       const filtered = GAMES.filter(g => g.title.toLowerCase().includes(q));
       renderGames(filtered);
     });
+
+    // --- Dernières vidéos auto (3 petites cartes) ---
+    (async () => {
+      const CHANNEL_ID = "UChcaGeb_yYslNd6F_RUVOTg"; // ta chaîne principale
+      const feedURL = `https://r.jina.ai/http://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
+
+      const toDate = (iso) => {
+        try { return new Date(iso).toLocaleDateString('fr-FR', { year:'numeric', month:'short', day:'2-digit' }); }
+        catch { return ""; }
+      };
+
+      try {
+        const res = await fetch(feedURL);
+        const text = await res.text();
+        const xmlText = (text.match(/<feed[\s\S]*<\/feed>/i) || [text])[0];
+        const xml = new DOMParser().parseFromString(xmlText, "text/xml");
+        if (xml.querySelector("parsererror")) throw new Error("Parse XML error");
+
+        const entries = Array.from(xml.querySelectorAll("entry")).slice(0, 3);
+        const container = document.getElementById("videos");
+        container.innerHTML = "";
+
+        if (!entries.length) {
+          container.innerHTML = `<p class="empty">Aucune vidéo trouvée pour le moment.</p>`;
+          return;
+        }
+
+        entries.forEach(entry => {
+          const title = entry.querySelector("title")?.textContent?.trim() || "Sans titre";
+          const link = entry.querySelector("link")?.getAttribute("href") || "#";
+          const published = entry.querySelector("published")?.textContent || "";
+          const thumbEl = entry.querySelector('media\\:thumbnail, thumbnail, *[local-name()="thumbnail"]');
+          const thumb = thumbEl ? thumbEl.getAttribute("url") : "";
+
+          const a = document.createElement("a");
+          a.className = "v-card";
+          a.href = link;
+          a.target = "_blank";
+          a.rel = "noopener noreferrer";
+          a.innerHTML = `
+            <div class="v-thumb">${thumb ? `<img loading="lazy" src="${thumb}" alt="">` : ""}</div>
+            <div class="v-title">${title}</div>
+            <div class="v-meta">Publié le ${toDate(published)}</div>
+          `;
+          container.appendChild(a);
+        });
+      } catch(e) {
+        console.error(e);
+        const container = document.getElementById("videos");
+        container.innerHTML = `<p class="empty">Impossible de charger les dernières vidéos pour le moment.</p>`;
+      }
+    })();
   </script>
 </body>
 </html>
