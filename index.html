@@ -150,16 +150,15 @@
   </footer>
 
   <script>
-    /* === LIVE badge auto (DecAPI via proxy) ============================== */
+    /* === LIVE badge auto (EN LIVE / PAS EN LIVE uniquement) =============== */
     const badge = document.getElementById('liveBadge');
     const CHANNEL = 'kent_fr';
     const UPTIME_URL = `https://r.jina.ai/http://decapi.me/twitch/uptime/${CHANNEL}`;
-    const TITLE_URL  = `https://r.jina.ai/http://decapi.me/twitch/title/${CHANNEL}`;
     const TWITCH_URL = `https://www.twitch.tv/${CHANNEL}`;
 
-    function setOnline(titleText) {
+    function setOnline() {
       badge.href = TWITCH_URL;
-      badge.textContent = titleText ? `🔴 EN LIVE : ${titleText}` : '🔴 EN LIVE';
+      badge.textContent = '🔴 EN LIVE';
       badge.classList.add('live-on'); badge.classList.remove('live-off');
     }
     function setOffline() {
@@ -169,19 +168,10 @@
     }
     async function refreshLive() {
       try {
-        // 1) En ligne ou pas
         const u = await fetch(`${UPTIME_URL}?t=${Date.now()}`);
         const uptimeText = (await u.text()).toLowerCase();
         if (uptimeText.includes('offline')) { setOffline(); return; }
-
-        // 2) Récupérer le titre et nettoyer le bruit renvoyé par le proxy
-        const t = await fetch(`${TITLE_URL}?t=${Date.now()}`);
-        let raw = await t.text();
-        let titleText = raw.split("Markdown Content:")[1] || raw;
-        titleText = titleText.trim();
-        if (titleText.toLowerCase() === 'null') titleText = '';
-
-        setOnline(titleText);
+        setOnline();
       } catch (e) {
         setOffline();
       }
