@@ -12,122 +12,65 @@
       --panel:#141416;
       --muted:#9aa3ad;
       --text:#f2f5f8;
-      --accent:#7ab8ff; /* couleur au survol */
+      --accent:#7ab8ff;
       --border:#22252a;
       --radius:14px;
       --maxw:1080px;
     }
 
-    /* Reset rapide */
     *,*::before,*::after{ box-sizing:border-box; }
     html,body{ margin:0; padding:0; background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif; }
     img{ max-width:100%; display:block; }
 
-    /* Liens (jamais de soulignement) */
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-    a:hover,
-    a:focus {
-      color: var(--accent);
-      text-decoration: none;
-    }
+    a{ color:inherit; text-decoration:none; }
+    a:hover,a:focus{ color:var(--accent); text-decoration:none; }
 
     h1,h2,h3{ margin:0 0 .5rem; line-height:1.15; }
     p{ margin:.5rem 0 0; color:var(--muted); }
 
-    /* Layout */
     .container{ width:100%; max-width:var(--maxw); margin:0 auto; padding:0 16px; }
 
-    /* Header */
     header{
       position:sticky; top:0; z-index:10;
       backdrop-filter:saturate(180%) blur(10px);
       background:linear-gradient(180deg, rgba(11,11,12,.85), rgba(11,11,12,.65));
       border-bottom:1px solid var(--border);
     }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-      height:60px;
-    }
-    .brand{ font-weight:800; letter-spacing:.3px; }
+    .nav{ display:flex; align-items:center; justify-content:space-between; gap:10px; height:60px; }
+    .brand{ font-weight:800; }
     .nav a{ opacity:.9; }
     .nav a:hover{ opacity:1; color:var(--accent); }
     .nav-links{ display:flex; gap:14px; }
 
-    /* Hero / bannière */
-    .hero{
-      margin:18px auto 24px;
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      overflow:hidden;
-      background: #000;
-    }
+    .hero{ margin:18px auto 24px; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; background:#000; }
     .hero figure{ margin:0; position:relative; }
-    .hero img{ width:100%; height:auto; display:block; }
+    .hero img{ width:100%; height:auto; }
     .hero .overlay{
       position:absolute; inset:auto 0 0 0;
       background:linear-gradient(180deg, transparent, rgba(0,0,0,.65));
       padding:18px;
       display:flex; justify-content:space-between; align-items:flex-end; gap:10px;
     }
-    .hero h1{ font-size:1.6rem; }
-    .hero small{ color:var(--muted); }
 
-    /* Sections */
     section{ margin:26px 0; }
-    .card{
-      background:var(--panel);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:16px;
-    }
-    .grid{
-      display:grid; gap:16px;
-      grid-template-columns: 1fr;
-    }
-    @media (min-width:900px){
-      .grid-2{ grid-template-columns: 1.2fr .8fr; }
-    }
+    .card{ background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:16px; }
 
-    /* Embed YouTube */
-    .yt-embed{
-      position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:12px; background:#000;
-      border:1px solid var(--border);
-    }
+    .yt-embed{ position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:12px; background:#000; border:1px solid var(--border); }
     .yt-embed iframe{ position:absolute; inset:0; width:100%; height:100%; }
 
-    /* Frise dernières vidéos */
-    .frise { margin: 6px 0 0; }
-    .frise h2 { margin: 0 0 12px; font-size: 1.4rem; }
-    .frise-track {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(260px, 1fr);
-      gap: 14px;
-      overflow-x: auto;
-      padding-bottom: 8px;
-      scroll-snap-type: x mandatory;
-    }
-    .frise-card {
-      display: flex; flex-direction: column; gap: 8px;
-      background: #111; border: 1px solid #222; border-radius: 12px;
-      padding: 10px; color: inherit;
-      scroll-snap-align: start;
-      transition: transform .15s ease, border-color .15s ease;
-    }
-    .frise-card:hover { transform: translateY(-2px); border-color: #555; }
-    .frise-thumb { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; background:#000; }
-    .frise-thumb img { width: 100%; height: 100%; object-fit: cover; display:block; }
-    .frise-title { font-weight: 600; line-height: 1.25; font-size: 0.98rem; }
-    .frise-meta { font-size: 0.85rem; color: var(--muted); }
+    .frise-track{ display:grid; grid-auto-flow:column; grid-auto-columns:minmax(260px,1fr); gap:14px; overflow-x:auto; padding-bottom:8px; scroll-snap-type:x mandatory; }
+    .frise-card{ display:flex; flex-direction:column; gap:8px; background:#111; border:1px solid #222; border-radius:12px; padding:10px; color:inherit; scroll-snap-align:start; }
+    .frise-card:hover{ transform:translateY(-2px); border-color:#555; }
+    .frise-thumb{ width:100%; aspect-ratio:16/9; border-radius:8px; overflow:hidden; background:#000; }
+    .frise-thumb img{ width:100%; height:100%; object-fit:cover; }
 
-    /* Footer */
-    footer{
-      margin:30px 0 40px; color:var(--muted);
-      display:flex; justify-content:center; font-size:.95rem;
-    }
+    /* Footer blocs */
+    footer{ margin:40px 0; }
+    .footer-grid{ display:grid; gap:20px; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
+    .footer-block h3{ margin-bottom:.4rem; font-size:1.1rem; }
+    .footer-block p, .footer-block a{ font-size:.95rem; color:var(--muted); }
+    .footer-block a:hover{ color:var(--accent); }
+    .copyright{ margin-top:20px; text-align:center; color:var(--muted); font-size:.9rem; }
   </style>
 </head>
 
@@ -146,131 +89,81 @@
   </header>
 
   <main class="container">
-    <!-- Bannière -->
     <div class="hero">
       <figure>
         <img src="fallout.jpg" alt="Bannière du site Kent9prod">
         <figcaption class="overlay">
           <div>
             <h1>Kent9prod — Gaming & Miniatures</h1>
-            <small>Fallout • The Outer Worlds • Soulframe • &amp; more</small>
+            <small>Fallout • The Outer Worlds • Soulframe • &amp; plus</small>
           </div>
           <div>
-            <a href="#videos" style="display:inline-block;padding:10px 14px;border:1px solid var(--border);border-radius:10px;background:#111;">Voir les vidéos</a>
+            <a href="#videos" style="padding:10px 14px;border:1px solid var(--border);border-radius:10px;background:#111;">Voir les vidéos</a>
           </div>
         </figcaption>
       </figure>
     </div>
 
-    <!-- Dernières vidéos (frise) -->
     <section id="videos" class="card">
       <h2>Dernières vidéos</h2>
-      <p>Les 3 plus récentes de la chaîne.</p>
-
-      <section id="last-videos" class="frise">
-        <div class="frise-track" id="videos-track" aria-live="polite">
-          <div class="frise-card">
-            <div class="frise-thumb"></div>
-            <div class="frise-title">Chargement…</div>
-            <div class="frise-meta">Veuillez patienter</div>
-          </div>
-        </div>
-      </section>
+      <div class="frise-track" id="videos-track">
+        <div class="frise-card"><div class="frise-thumb"></div><div>Chargement…</div></div>
+      </div>
     </section>
 
-    <!-- Playlist intégrée -->
-    <section id="playlist" class="grid grid-2">
-      <div class="card">
-        <h2>Playlist principale</h2>
-        <p>Lecture automatique de ta série (épisode 1 en tête).</p>
-        <div class="yt-embed" style="margin-top:10px;">
-          <iframe 
-            src="https://www.youtube.com/embed/videoseries?list=PLHbVCtNmmixGydzYg8EhKhbifCrI9aoiQ" 
-            title="Playlist Kent9prod"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
-          </iframe>
+    <section id="playlist" class="card">
+      <h2>Playlist principale</h2>
+      <div class="yt-embed" style="margin-top:10px;">
+        <iframe src="https://www.youtube.com/embed/videoseries?list=PLHbVCtNmmixGydzYg8EhKhbifCrI9aoiQ" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="footer-grid">
+        <div class="footer-block">
+          <h3>À propos</h3>
+          <p>Je suis Kent — gameplay, miniatures custom et univers post-apo. Abonne-toi et rejoins la communauté !</p>
+        </div>
+        <div class="footer-block">
+          <h3>Réseaux</h3>
+          <p><a href="https://www.youtube.com/@kent9prod" target="_blank">📺 YouTube</a></p>
+          <p><a href="#" target="_blank">🎮 Twitch (si tu en as)</a></p>
+          <p><a href="#" target="_blank">🐦 Twitter/X</a></p>
+        </div>
+        <div class="footer-block">
+          <h3>Contact</h3>
+          <p><a href="mailto:contact.kent9prod@example.com">📧 contact.kent9prod@example.com</a></p>
         </div>
       </div>
-
-      <aside class="card" id="contact">
-        <h2>À propos</h2>
-        <p>Je suis Kent. Miniatures custom, gameplay, univers post-apo et SF. Abonne-toi et laisse un com 💬</p>
-        <ul style="list-style:none;padding:0;margin:12px 0 0;display:grid;gap:8px;">
-          <li>📺 YouTube : <a href="https://www.youtube.com/@kent9prod" target="_blank" rel="noopener noreferrer">@kent9prod</a></li>
-          <li>🛒 Vinted : <a href="https://www.vinted.fr/member/xxxx" target="_blank" rel="noopener noreferrer">Mon profil</a></li>
-          <li>📧 Contact : <a href="mailto:contact.kent9prod@example.com">contact.kent9prod@example.com</a></li>
-        </ul>
-      </aside>
-    </section>
-
-    <footer>© <span id="year"></span> Kent9prod — Tous droits réservés.</footer>
+      <div class="copyright">© <span id="year"></span> Kent9prod — Tous droits réservés.</div>
+    </footer>
   </main>
 
-  <!-- ===== Scripts ===== -->
   <script>
-    // année dynamique
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // ===== Frise auto : 3 dernières vidéos =====
     (async () => {
       const CHANNEL_ID = "UChcaGeb_yYslNd6F_RUVOTg";
       const feedURL = `https://r.jina.ai/http://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
-
-      const toDate = (iso) => {
-        try {
-          return new Date(iso).toLocaleDateString('fr-FR', { year: 'numeric', month: 'short', day: '2-digit' });
-        } catch { return ""; }
-      };
-
       try {
         const res = await fetch(feedURL);
         const text = await res.text();
         const xmlText = (text.match(/<feed[\\s\\S]*<\\/feed>/i) || [text])[0];
         const xml = new DOMParser().parseFromString(xmlText, "text/xml");
-
-        if (xml.querySelector("parsererror")) throw new Error("Parse XML error");
-
-        const entries = Array.from(xml.querySelectorAll("entry")).slice(0, 3);
+        const entries = Array.from(xml.querySelectorAll("entry")).slice(0,3);
         const track = document.getElementById("videos-track");
         track.innerHTML = "";
-
-        if (!entries.length) {
-          track.innerHTML = `<p>Aucune vidéo trouvée pour le moment.</p>`;
-          return;
-        }
-
-        entries.forEach(entry => {
-          const title = entry.querySelector("title")?.textContent?.trim() || "Sans titre";
-          const link = entry.querySelector("link")?.getAttribute("href") || "#";
-          const published = entry.querySelector("published")?.textContent || "";
-          const thumbEl = entry.querySelector("media\\:thumbnail, thumbnail");
-          const thumb = thumbEl ? thumbEl.getAttribute("url") : "";
-
-          const card = document.createElement("a");
-          card.className = "frise-card";
-          card.href = link;
-          card.target = "_blank";
-          card.rel = "noopener noreferrer";
-
-          card.innerHTML = `
-            <div class="frise-thumb">
-              ${thumb ? `<img loading="lazy" src="${thumb}" alt="">` : ""}
-            </div>
-            <div class="frise-title">${title}</div>
-            <div class="frise-meta">Publié le ${toDate(published)}</div>
-          `;
-          track.appendChild(card);
+        entries.forEach(entry=>{
+          const title = entry.querySelector("title")?.textContent;
+          const link = entry.querySelector("link")?.getAttribute("href");
+          const thumb = entry.querySelector("media\\:thumbnail")?.getAttribute("url");
+          track.innerHTML += `
+            <a class="frise-card" href="${link}" target="_blank">
+              <div class="frise-thumb"><img src="${thumb}" alt=""></div>
+              <div>${title}</div>
+            </a>`;
         });
-      } catch (e) {
-        console.error(e);
-        const track = document.getElementById("videos-track");
-        track.innerHTML = `
-          <p>Impossible de charger la frise automatiquement.<br>
-          <small>Vérifie le Channel ID ou réessaie plus tard.</small></p>`;
-      }
+      } catch(e){ console.error(e); }
     })();
   </script>
 </body>
