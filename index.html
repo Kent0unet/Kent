@@ -18,6 +18,8 @@
       color:var(--text); background: radial-gradient(1200px 600px at 10% 10%, #1b2060 0%, #0f1226 60%), var(--bg);
       line-height:1.55;
     }
+
+    /* Header */
     header{
       max-width:var(--maxw); margin:0 auto; padding: calc(var(--pad)*1.5) var(--pad) var(--pad);
       display:flex; align-items:center; justify-content:space-between; gap:16px;
@@ -27,33 +29,36 @@
     nav a{color:var(--muted); text-decoration:none; transition:color .2s ease;}
     nav a:hover{color:var(--accent)}
 
+    /* Hero */
     .hero{max-width:var(--maxw); margin:0 auto; padding: 32px var(--pad) 56px; display:grid; gap:28px; align-items:center}
     .hero h1{font-size:clamp(32px,6vw,56px); line-height:1.05; margin:0}
     .hero p{font-size:clamp(16px,2.3vw,20px); color:var(--muted); margin:0}
 
+    /* Pills */
     .pill{display:inline-flex; align-items:center; gap:8px; border:1px solid #2b2f59; padding:8px 12px; border-radius:999px; color:#c9ceff80; text-decoration:none; transition:color .2s ease;}
     .pill:hover{color:var(--accent)}
     .stack{display:flex; gap:8px; flex-wrap:wrap}
     .code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:#0b0e24; padding:2px 6px; border-radius:6px}
 
-    /* --- Live Badge --- */
+    /* Live badge */
     .live-badge{
-      font-weight:800;
-      padding:8px 14px;
-      border-radius:999px;
-      text-decoration:none;
-      border:2px solid transparent;
-      transition: all .3s ease;
+      font-weight:800; padding:8px 14px; border-radius:999px; text-decoration:none;
+      border:2px solid transparent; transition: all .3s ease;
     }
-    .live-on{
-      background:#d60027; border-color:#ff3355; color:#fff !important;
-      box-shadow:0 0 12px rgba(255,0,0,.8);
-    }
-    .live-off{
-      background:#333a; border-color:#555; color:#bbb !important;
-    }
+    .live-on{ background:#d60027; border-color:#ff3355; color:#fff !important; box-shadow:0 0 12px rgba(255,0,0,.8); }
+    .live-off{ background:#333a; border-color:#555; color:#bbb !important; }
 
-    /* Games */
+    /* Cards / grids */
+    .card-grid{max-width:var(--maxw); margin:0 auto; padding:0 var(--pad) 80px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:26px}
+    .card{background:var(--card); border-radius:18px; padding:24px; border:1px solid rgba(255,255,255,.06); box-shadow: 0 10px 30px rgba(0,0,0,.25)}
+    .card h3{margin:6px 0 10px; font-size:18px}
+    .card p{margin:0; color:var(--muted)}
+
+    /* Contact link */
+    a.mail-link{color:#7c9bff; font-weight:600; text-decoration:none;}
+    a.mail-link:hover{color:#a8c4ff; text-decoration:none;}
+
+    /* Games list */
     .games-section{max-width:var(--maxw); margin:0 auto; padding: 0 var(--pad) 64px}
     .games-section h2{margin:0 0 16px}
     .search-wrap{position:sticky; top:0; padding:8px 0 16px; background:linear-gradient(180deg, rgba(15,18,38,.9), rgba(15,18,38,.6) 70%, transparent)}
@@ -76,7 +81,7 @@
   <header>
     <div class="logo">Kent<span class="code">.gg</span></div>
     <nav>
-      <!-- Badge EN LIVE automatique placé à gauche des liens -->
+      <!-- EN LIVE auto (à gauche) -->
       <a id="liveBadge" class="live-badge live-off" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">⚪ PAS EN LIVE</a>
       <a href="#projets">Projets</a>
       <a href="#contact">Contact</a>
@@ -109,16 +114,20 @@
     <p id="gamesEmpty" class="empty" style="display:none;">Aucun jeu ne correspond à votre recherche.</p>
   </section>
 
+  <!-- === PROJETS : 3 cartes ================================================= -->
   <section id="projets" class="card-grid">
     <article class="card">
+      <div class="pill">❤️ Soutien</div>
       <h3>Me soutenir ❤️</h3>
       <p>Si tu souhaites me soutenir clique <a href="https://streamelements.com/kent_fr/tip" target="_blank" rel="noopener">ici</a>.</p>
     </article>
     <article class="card">
+      <div class="pill">👍🏻 Engagement</div>
       <h3>Watch Time et Like 👍🏻</h3>
       <p>N'oublie pas de mettre un petit pouce en l'air et de regarder toute la vidéo (le Watch Time aide énormément).</p>
     </article>
     <article class="card">
+      <div class="pill">⚡ Live</div>
       <h3>En Live tous les jours ! ⚡</h3>
       <p>N'hésite pas à passer et à participer dans le chat !</p>
     </article>
@@ -139,11 +148,7 @@
   </footer>
 
   <script>
-    /* === LIVE badge auto (sans clé) =======================================
-       - Vérifie si la chaîne Twitch est en live via DecAPI (uptime)
-       - Récupère le titre si live
-       - Met à jour toutes les 60s
-       ==================================================================== */
+    /* === LIVE badge auto (DecAPI) ======================================= */
     const badge = document.getElementById('liveBadge');
     const CHANNEL = 'kent_fr';
     const UPTIME_URL = `https://r.jina.ai/http://decapi.me/twitch/uptime/${CHANNEL}`;
@@ -153,14 +158,12 @@
     function setOnline(titleText) {
       badge.href = TWITCH_URL;
       badge.textContent = titleText ? `🔴 EN LIVE : ${titleText}` : '🔴 EN LIVE';
-      badge.classList.add('live-on');
-      badge.classList.remove('live-off');
+      badge.classList.add('live-on'); badge.classList.remove('live-off');
     }
     function setOffline() {
       badge.href = TWITCH_URL;
       badge.textContent = '⚪ PAS EN LIVE';
-      badge.classList.add('live-off');
-      badge.classList.remove('live-on');
+      badge.classList.add('live-off'); badge.classList.remove('live-on');
     }
     async function refreshLive() {
       try {
@@ -192,7 +195,7 @@
         const a = document.createElement('a');
         a.className = 'game-card';
         a.href = g.url;
-        a.innerHTML = `<h4>${g.title}</h4>`;
+        a.innerHTML = `<div class="dots"></div><h4>${g.title}</h4>`;
         grid.appendChild(a);
       });
     }
