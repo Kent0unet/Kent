@@ -45,6 +45,13 @@
     .stack{display:flex; gap:8px; flex-wrap:wrap}
     .code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:#0b0e24; padding:2px 6px; border-radius:6px}
 
+    /* Pills agrandies pour titres */
+    .big-pill {
+      font-size: 18px;
+      font-weight: 700;
+      padding: 10px 14px;
+    }
+
     /* Live badge */
     .live-badge{
       font-weight:800; padding:8px 14px; border-radius:999px; text-decoration:none;
@@ -56,7 +63,6 @@
     /* Cards / grids */
     .card-grid{max-width:var(--maxw); margin:0 auto; padding:0 var(--pad) 80px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:26px}
     .card{background:var(--card); border-radius:18px; padding:24px; border:1px solid rgba(255,255,255,.06); box-shadow: 0 10px 30px rgba(0,0,0,.25)}
-    .card h3{margin:6px 0 10px; font-size:18px}
     .card p{margin:0; color:var(--muted)}
 
     /* Contact link */
@@ -123,18 +129,15 @@
   <!-- === PROJETS : 3 cartes ================================================= -->
   <section id="projets" class="card-grid">
     <article class="card">
-      <div class="pill">Me soutenir ❤️</div>
-      <h3>Me soutenir ❤️</h3>
+      <div class="pill big-pill">Me soutenir ❤️</div>
       <p>Si tu souhaites me soutenir clique <a class="mail-link" href="https://streamelements.com/kent_fr/tip" target="_blank" rel="noopener">ICI</a>.</p>
     </article>
     <article class="card">
-      <div class="pill">Watch Time et Like 👍🏻</div>
-      <h3>Watch Time et Like 👍🏻</h3>
+      <div class="pill big-pill">Watch Time et Like 👍🏻</div>
       <p>N'oublie pas de mettre un petit pouce en l'air et de regarder toute la vidéo (le Watch Time aide énormément).</p>
     </article>
     <article class="card">
-      <div class="pill">En Live tous les jours ! ⚡</div>
-      <h3>En Live tous les jours ! ⚡</h3>
+      <div class="pill big-pill">En Live tous les jours ! ⚡</div>
       <p>N'hésite pas à passer et à participer dans le chat !</p>
     </article>
   </section>
