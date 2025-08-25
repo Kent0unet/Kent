@@ -31,12 +31,10 @@
     .cta{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
     .btn{appearance:none; border:none; background:var(--accent); color:#0b1025; font-weight:700; padding:12px 18px; border-radius:16px; cursor:pointer}
     .btn.secondary{background:transparent; color:var(--text); border:1px solid #334; box-shadow: inset 0 0 0 1px rgba(255,255,255,.06)}
-
     .card-grid{max-width:var(--maxw); margin:0 auto; padding:0 var(--pad) 80px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:26px}
     .card{background:var(--card); border-radius:18px; padding:24px; border:1px solid rgba(255,255,255,.06); box-shadow: 0 10px 30px rgba(0,0,0,.25)}
     .card h3{margin:6px 0 10px; font-size:18px}
     .card p{margin:0; color:var(--muted)}
-
     footer{max-width:var(--maxw); margin:0 auto; padding:32px var(--pad) 56px; color:#cbd0ff80}
     .tag{display:inline-block; font-size:12px; padding:4px 10px; border-radius:999px; background:#22274d; color:#bfc6ff}
     .pill{display:inline-flex; align-items:center; gap:8px; border:1px solid #2b2f59; padding:8px 12px; border-radius:999px; color:#c9ceff80; text-decoration:none; transition:color .2s ease;}
@@ -74,18 +72,17 @@
     .game-card .dots::after{content:"⋮"}
     .empty{opacity:.7; color:#aeb4ff; padding:8px}
 
-    /* --- Dernières vidéos (3 petites cartes) --- */
-    .v-grid{max-width:var(--maxw); margin:0 auto; padding:0 var(--pad) 48px;
+    /* Dernières vidéos (même style que les blocs .card-grid/.card) */
+    .videos-grid{max-width:var(--maxw); margin:0 auto; padding:0 var(--pad) 80px;
       display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:26px}
-    a.v-card{display:block}
-    .v-card{background:var(--card); border-radius:18px; padding:16px; border:1px solid rgba(255,255,255,.06); box-shadow: 0 10px 30px rgba(0,0,0,.25);
-      text-decoration:none; color:var(--text); transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease}
-    .v-card:hover{transform:translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.35); border-color:#394085}
-    .v-thumb{width:100%; aspect-ratio:16/9; border-radius:12px; overflow:hidden; background:#000; margin-bottom:10px}
-    .v-thumb img{width:100%; height:100%; object-fit:cover; display:block}
-    .v-title{font-weight:700; font-size:16px; margin:4px 0 6px}
-    .v-meta{font-size:13px; color:var(--muted)}
-    .section-title{max-width:var(--maxw); margin:0 auto; padding: 0 var(--pad); font-size:20px; opacity:.9}
+    .video-card{background:var(--card); border-radius:18px; padding:16px; border:1px solid rgba(255,255,255,.06); box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      text-decoration:none; color:var(--text); transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease; display:block}
+    .video-card:hover{transform:translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.35); border-color:#394085}
+    .video-thumb{width:100%; aspect-ratio:16/9; border-radius:12px; overflow:hidden; background:#000; margin-bottom:10px}
+    .video-thumb img{width:100%; height:100%; object-fit:cover; display:block}
+    .video-title{font-weight:700; font-size:16px; margin:4px 0 6px}
+    .video-meta{font-size:13px; color:var(--muted)}
+    .videos-title{max-width:var(--maxw); margin:0 auto; padding:0 var(--pad); font-size:20px; opacity:.9}
   </style>
 </head>
 <body>
@@ -118,16 +115,7 @@
     </div>
   </section>
 
-  <!-- 🆕 Dernières vidéos (3 petites cartes auto) -->
-  <h2 class="section-title">🆕 Dernières vidéos</h2>
-  <section id="videos" class="v-grid" aria-live="polite">
-    <a class="v-card" href="#" onclick="return false;">
-      <div class="v-thumb"></div>
-      <div class="v-title">Chargement…</div>
-      <div class="v-meta">Patiente un instant</div>
-    </a>
-  </section>
-
+  <!-- 🕹️ Jeux terminés -->
   <section id="jeux" class="games-section">
     <h2>🏆 Les jeux terminés en Stream</h2>
     <div class="search-wrap" style="position:relative;">
@@ -138,7 +126,17 @@
     <p id="gamesEmpty" class="empty" style="display:none;">Aucun jeu ne correspond à votre recherche.</p>
   </section>
 
-  <!-- Projets (Vinted retiré) -->
+  <!-- 🆕 Dernières vidéos (SOUS les jeux, même taille que les blocs) -->
+  <h2 class="videos-title">🆕 Dernières vidéos</h2>
+  <section id="videosGrid" class="videos-grid" aria-live="polite">
+    <a class="video-card" href="#" onclick="return false;">
+      <div class="video-thumb"></div>
+      <div class="video-title">Chargement…</div>
+      <div class="video-meta">Patiente un instant</div>
+    </a>
+  </section>
+
+  <!-- Projets -->
   <section id="projets" class="card-grid">
     <article class="card">
       <div class="pill">🎮 Chaînes & Lives</div>
@@ -223,25 +221,40 @@
       renderGames(filtered);
     });
 
-    // --- Dernières vidéos auto (3 petites cartes) ---
+    // --- Dernières vidéos (3 cartes, sous les jeux) ---
     (async () => {
       const CHANNEL_ID = "UChcaGeb_yYslNd6F_RUVOTg"; // ta chaîne principale
-      const feedURL = `https://r.jina.ai/http://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
+      const endpoints = [
+        `https://r.jina.ai/http://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`,
+        `https://r.jina.ai/https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`
+      ];
 
       const toDate = (iso) => {
         try { return new Date(iso).toLocaleDateString('fr-FR', { year:'numeric', month:'short', day:'2-digit' }); }
         catch { return ""; }
       };
 
-      try {
-        const res = await fetch(feedURL);
+      async function fetchFeed(url){
+        const res = await fetch(url);
+        if(!res.ok) throw new Error('HTTP '+res.status);
         const text = await res.text();
         const xmlText = (text.match(/<feed[\s\S]*<\/feed>/i) || [text])[0];
         const xml = new DOMParser().parseFromString(xmlText, "text/xml");
         if (xml.querySelector("parsererror")) throw new Error("Parse XML error");
+        return xml;
+      }
+
+      const container = document.getElementById("videosGrid");
+
+      try {
+        let xml = null, lastErr = null;
+        for(const url of endpoints){
+          try { xml = await fetchFeed(url); break; }
+          catch(e){ lastErr = e; }
+        }
+        if(!xml) throw lastErr || new Error('Flux indisponible');
 
         const entries = Array.from(xml.querySelectorAll("entry")).slice(0, 3);
-        const container = document.getElementById("videos");
         container.innerHTML = "";
 
         if (!entries.length) {
@@ -257,20 +270,19 @@
           const thumb = thumbEl ? thumbEl.getAttribute("url") : "";
 
           const a = document.createElement("a");
-          a.className = "v-card";
+          a.className = "video-card";
           a.href = link;
           a.target = "_blank";
           a.rel = "noopener noreferrer";
           a.innerHTML = `
-            <div class="v-thumb">${thumb ? `<img loading="lazy" src="${thumb}" alt="">` : ""}</div>
-            <div class="v-title">${title}</div>
-            <div class="v-meta">Publié le ${toDate(published)}</div>
+            <div class="video-thumb">${thumb ? `<img loading="lazy" src="${thumb}" alt="">` : ""}</div>
+            <div class="video-title">${title}</div>
+            <div class="video-meta">Publié le ${toDate(published)}</div>
           `;
           container.appendChild(a);
         });
       } catch(e) {
         console.error(e);
-        const container = document.getElementById("videos");
         container.innerHTML = `<p class="empty">Impossible de charger les dernières vidéos pour le moment.</p>`;
       }
     })();
