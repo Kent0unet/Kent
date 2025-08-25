@@ -150,7 +150,7 @@
   </footer>
 
   <script>
-    /* === LIVE badge auto (DecAPI) ======================================= */
+    /* === LIVE badge auto (DecAPI via proxy) ============================== */
     const badge = document.getElementById('liveBadge');
     const CHANNEL = 'kent_fr';
     const UPTIME_URL = `https://r.jina.ai/http://decapi.me/twitch/uptime/${CHANNEL}`;
@@ -169,15 +169,24 @@
     }
     async function refreshLive() {
       try {
+        // 1) En ligne ou pas
         const u = await fetch(`${UPTIME_URL}?t=${Date.now()}`);
         const uptimeText = (await u.text()).toLowerCase();
         if (uptimeText.includes('offline')) { setOffline(); return; }
+
+        // 2) Récupérer le titre et nettoyer le bruit renvoyé par le proxy
         const t = await fetch(`${TITLE_URL}?t=${Date.now()}`);
-        let titleText = (await t.text() || '').trim();
+        let raw = await t.text();
+        let titleText = raw.split("Markdown Content:")[1] || raw;
+        titleText = titleText.trim();
         if (titleText.toLowerCase() === 'null') titleText = '';
+
         setOnline(titleText);
-      } catch (e) { setOffline(); }
+      } catch (e) {
+        setOffline();
+      }
     }
+
     refreshLive();
     setInterval(refreshLive, 60000);
 
