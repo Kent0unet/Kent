@@ -35,7 +35,12 @@
     .hero p{font-size:clamp(16px,2.3vw,20px); color:var(--muted); margin:0}
 
     /* Pills */
-    .pill{display:inline-flex; align-items:center; gap:8px; border:1px solid #2b2f59; padding:8px 12px; border-radius:999px; color:#c9ceff80; text-decoration:none; transition:color .2s ease;}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      border:1px solid #2b2f59; padding:8px 12px; border-radius:999px;
+      color:#fff;                 /* ← plus lisible */
+      text-decoration:none; transition:color .2s ease;
+    }
     .pill:hover{color:var(--accent)}
     .stack{display:flex; gap:8px; flex-wrap:wrap}
     .code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:#0b0e24; padding:2px 6px; border-radius:6px}
