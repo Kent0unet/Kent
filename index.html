@@ -31,10 +31,12 @@
     .cta{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
     .btn{appearance:none; border:none; background:var(--accent); color:#0b1025; font-weight:700; padding:12px 18px; border-radius:16px; cursor:pointer}
     .btn.secondary{background:transparent; color:var(--text); border:1px solid #334; box-shadow: inset 0 0 0 1px rgba(255,255,255,.06)}
+
     .card-grid{max-width:var(--maxw); margin:0 auto; padding:0 var(--pad) 80px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:26px}
     .card{background:var(--card); border-radius:18px; padding:24px; border:1px solid rgba(255,255,255,.06); box-shadow: 0 10px 30px rgba(0,0,0,.25)}
     .card h3{margin:6px 0 10px; font-size:18px}
     .card p{margin:0; color:var(--muted)}
+
     footer{max-width:var(--maxw); margin:0 auto; padding:32px var(--pad) 56px; color:#cbd0ff80}
     .tag{display:inline-block; font-size:12px; padding:4px 10px; border-radius:999px; background:#22274d; color:#bfc6ff}
     .pill{display:inline-flex; align-items:center; gap:8px; border:1px solid #2b2f59; padding:8px 12px; border-radius:999px; color:#c9ceff80; text-decoration:none; transition:color .2s ease;}
@@ -72,17 +74,11 @@
     .game-card .dots::after{content:"⋮"}
     .empty{opacity:.7; color:#aeb4ff; padding:8px}
 
-    /* Dernières vidéos (même style que les blocs .card-grid/.card) */
-    .videos-grid{max-width:var(--maxw); margin:0 auto; padding:0 var(--pad) 80px;
-      display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:26px}
-    .video-card{background:var(--card); border-radius:18px; padding:16px; border:1px solid rgba(255,255,255,.06); box-shadow: 0 10px 30px rgba(0,0,0,.25);
-      text-decoration:none; color:var(--text); transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease; display:block}
-    .video-card:hover{transform:translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.35); border-color:#394085}
-    .video-thumb{width:100%; aspect-ratio:16/9; border-radius:12px; overflow:hidden; background:#000; margin-bottom:10px}
-    .video-thumb img{width:100%; height:100%; object-fit:cover; display:block}
-    .video-title{font-weight:700; font-size:16px; margin:4px 0 6px}
-    .video-meta{font-size:13px; color:var(--muted)}
-    .videos-title{max-width:var(--maxw); margin:0 auto; padding:0 var(--pad); font-size:20px; opacity:.9}
+    /* Section titles */
+    .section-title{max-width:var(--maxw); margin:0 auto; padding: 0 var(--pad); font-size:20px; opacity:.9}
+    /* Thumbs dans cartes vidéos */
+    .thumb{width:100%; aspect-ratio:16/9; border-radius:12px; overflow:hidden; background:#000; margin-bottom:10px}
+    .thumb img{width:100%; height:100%; object-fit:cover; display:block}
   </style>
 </head>
 <body>
@@ -91,7 +87,6 @@
     <nav>
       <a href="#projets">Projets</a>
       <a href="#contact">Contact</a>
-      <!-- GitHub supprimé -->
     </nav>
     <a id="liveBadge" class="live-badge" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener" style="display:none">🔴 EN LIVE</a>
   </header>
@@ -105,9 +100,9 @@
         <a class="btn secondary" href="#contact">Me contacter</a>
       </div>
       <div class="stack" style="margin-top:10px">
+        <a class="pill" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">🔴 Twitch</a>
         <a class="pill" href="https://www.youtube.com/@Kent9Prod" target="_blank" rel="noopener">▶️ YouTube (principal)</a>
         <a class="pill" href="https://www.youtube.com/@KentProd" target="_blank" rel="noopener">▶️ YouTube (secondaire)</a>
-        <a class="pill" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">🔴 Twitch</a>
         <a class="pill" href="https://www.instagram.com/micka_kent/" target="_blank" rel="noopener">📸 Instagram</a>
         <a class="pill" href="https://www.tiktok.com/@micka_kent" target="_blank" rel="noopener">🎵 TikTok</a>
         <a class="pill" href="https://discord.com/invite/sheygSg" target="_blank" rel="noopener">💬 Discord</a>
@@ -126,14 +121,27 @@
     <p id="gamesEmpty" class="empty" style="display:none;">Aucun jeu ne correspond à votre recherche.</p>
   </section>
 
-  <!-- 🆕 Dernières vidéos (SOUS les jeux, même taille que les blocs) -->
-  <h2 class="videos-title">🆕 Dernières vidéos</h2>
-  <section id="videosGrid" class="videos-grid" aria-live="polite">
-    <a class="video-card" href="#" onclick="return false;">
-      <div class="video-thumb"></div>
-      <div class="video-title">Chargement…</div>
-      <div class="video-meta">Patiente un instant</div>
-    </a>
+  <!-- 🆕 Dernières vidéos -->
+  <h2 class="section-title">🆕 Dernières vidéos</h2>
+  <section id="videosGrid" class="card-grid" aria-live="polite">
+    <article class="card">
+      <div class="tag">YouTube — Kent9Prod</div>
+      <h3>Voir les dernières vidéos</h3>
+      <p>Visite la page pour toutes les nouveautés.</p>
+      <p style="margin-top:8px"><a class="btn secondary" href="https://www.youtube.com/@Kent9Prod/videos" target="_blank" rel="noopener">Ouvrir la page</a></p>
+    </article>
+    <article class="card">
+      <div class="tag">YouTube — KentProd</div>
+      <h3>Chaîne secondaire</h3>
+      <p>Formats alternatifs & tests.</p>
+      <p style="margin-top:8px"><a class="btn secondary" href="https://www.youtube.com/@KentProd/videos" target="_blank" rel="noopener">Ouvrir la page</a></p>
+    </article>
+    <article class="card">
+      <div class="tag">Twitch</div>
+      <h3>Live</h3>
+      <p>Le badge rouge s’allume en haut quand je suis en live.</p>
+      <p style="margin-top:8px"><a class="btn" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">Aller sur le live</a></p>
+    </article>
   </section>
 
   <!-- Projets -->
@@ -153,9 +161,9 @@
   <footer id="contact">
     <p>Tu veux collaborer ou en savoir plus ? Écris à <a class="mail-link" href="mailto:contactkentprod@gmail.com">contactkentprod@gmail.com</a> ou passe sur YouTube/Twitch.</p>
     <p class="stack" style="margin-top:8px">
+      <a class="pill" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">🔴 Twitch</a>
       <a class="pill" href="https://www.youtube.com/@Kent9Prod" target="_blank" rel="noopener">▶️ YouTube (principal)</a>
       <a class="pill" href="https://www.youtube.com/@KentProd" target="_blank" rel="noopener">▶️ YouTube (secondaire)</a>
-      <a class="pill" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">🔴 Twitch</a>
       <a class="pill" href="https://www.instagram.com/micka_kent/" target="_blank" rel="noopener">📸 Instagram</a>
       <a class="pill" href="https://www.tiktok.com/@micka_kent" target="_blank" rel="noopener">🎵 TikTok</a>
       <a class="pill" href="https://discord.com/invite/sheygSg" target="_blank" rel="noopener">💬 Discord</a>
@@ -166,10 +174,9 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // --- LIVE badge logic (Twitch only via live.json) ---
+    // --- LIVE badge logic ---
     const badge = document.getElementById('liveBadge');
     const LIVE_JSON = 'live.json';
-
     async function refreshLive(){
       try{
         const res = await fetch(`${LIVE_JSON}?t=${Date.now()}`);
@@ -182,110 +189,15 @@
         badge.style.display = twitchLive ? 'inline-flex' : 'none';
         badge.href = url;
         badge.title = title ? `Twitch · ${title}` : 'Twitch live';
-      }catch(e){
-        console.debug('LIVE status unavailable:', e.message);
-        badge.style.display = 'none';
-      }
+      }catch(e){ badge.style.display = 'none'; }
     }
+    refreshLive(); setInterval(refreshLive, 60000);
 
-    refreshLive();
-    setInterval(refreshLive, 60000); // check every 60s
-
-    // --- Games data & search ---
-    const GAMES = [
-      { title: 'Fallout 3', url: 'games/fallout-3.html' }
-    ];
-
-    const grid = document.getElementById('gamesGrid');
-    const emptyMsg = document.getElementById('gamesEmpty');
-    const input = document.getElementById('searchGame');
-
-    function renderGames(list){
-      grid.innerHTML = '';
-      if(!list.length){ emptyMsg.style.display = 'block'; return; }
-      emptyMsg.style.display = 'none';
-      list.forEach(g=>{
-        const a = document.createElement('a');
-        a.className = 'game-card';
-        a.href = g.url;
-        a.innerHTML = `<div class="dots"></div><h4>${g.title}</h4>`;
-        grid.appendChild(a);
-      });
-    }
-
-    renderGames(GAMES);
-
-    input.addEventListener('input', ()=>{
-      const q = input.value.trim().toLowerCase();
-      const filtered = GAMES.filter(g => g.title.toLowerCase().includes(q));
-      renderGames(filtered);
-    });
-
-    // --- Dernières vidéos (3 cartes, sous les jeux) ---
-    (async () => {
-      const CHANNEL_ID = "UChcaGeb_yYslNd6F_RUVOTg"; // ta chaîne principale
-      const endpoints = [
-        `https://r.jina.ai/http://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`,
-        `https://r.jina.ai/https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`
-      ];
-
-      const toDate = (iso) => {
-        try { return new Date(iso).toLocaleDateString('fr-FR', { year:'numeric', month:'short', day:'2-digit' }); }
-        catch { return ""; }
-      };
-
-      async function fetchFeed(url){
-        const res = await fetch(url);
-        if(!res.ok) throw new Error('HTTP '+res.status);
-        const text = await res.text();
-        const xmlText = (text.match(/<feed[\s\S]*<\/feed>/i) || [text])[0];
-        const xml = new DOMParser().parseFromString(xmlText, "text/xml");
-        if (xml.querySelector("parsererror")) throw new Error("Parse XML error");
-        return xml;
-      }
-
-      const container = document.getElementById("videosGrid");
-
-      try {
-        let xml = null, lastErr = null;
-        for(const url of endpoints){
-          try { xml = await fetchFeed(url); break; }
-          catch(e){ lastErr = e; }
-        }
-        if(!xml) throw lastErr || new Error('Flux indisponible');
-
-        const entries = Array.from(xml.querySelectorAll("entry")).slice(0, 3);
-        container.innerHTML = "";
-
-        if (!entries.length) {
-          container.innerHTML = `<p class="empty">Aucune vidéo trouvée pour le moment.</p>`;
-          return;
-        }
-
-        entries.forEach(entry => {
-          const title = entry.querySelector("title")?.textContent?.trim() || "Sans titre";
-          const link = entry.querySelector("link")?.getAttribute("href") || "#";
-          const published = entry.querySelector("published")?.textContent || "";
-          const thumbEl = entry.querySelector('media\\:thumbnail, thumbnail, *[local-name()="thumbnail"]');
-          const thumb = thumbEl ? thumbEl.getAttribute("url") : "";
-
-          const a = document.createElement("a");
-          a.className = "video-card";
-          a.href = link;
-          a.target = "_blank";
-          a.rel = "noopener noreferrer";
-          a.innerHTML = `
-            <div class="video-thumb">${thumb ? `<img loading="lazy" src="${thumb}" alt="">` : ""}</div>
-            <div class="video-title">${title}</div>
-            <div class="video-meta">Publié le ${toDate(published)}</div>
-          `;
-          container.appendChild(a);
-        });
-      } catch(e) {
-        console.error(e);
-        container.innerHTML = `<p class="empty">Impossible de charger les dernières vidéos pour le moment.</p>`;
-      }
-    })();
+    // --- Jeux ---
+    const GAMES=[{title:'Fallout 3',url:'games/fallout-3.html'}];
+    const grid=document.getElementById('gamesGrid');const emptyMsg=document.getElementById('gamesEmpty');const input=document.getElementById('searchGame');
+    function renderGames(list){grid.innerHTML='';if(!list.length){emptyMsg.style.display='block';return;}emptyMsg.style.display='none';list.forEach(g=>{const a=document.createElement('a');a.className='game-card';a.href=g.url;a.innerHTML=`<div class="dots"></div><h4>${g.title}</h4>`;grid.appendChild(a);});}
+    renderGames(GAMES);input.addEventListener('input',()=>{const q=input.value.trim().toLowerCase();renderGames(GAMES.filter(g=>g.title.toLowerCase().includes(q)));});
   </script>
 </body>
 </html>
