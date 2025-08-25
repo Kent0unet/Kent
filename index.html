@@ -2,261 +2,272 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kent — Créateur MultiGaming</title>
-  <link rel="icon" href="favicon.png" type="image/png">
-  <meta name="description" content="Portfolio / landing page minimaliste hébergé sur GitHub Pages. Créateur MultiGaming." />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kent9prod — Portfolio & Vidéos</title>
+  <meta name="description" content="Le site de Kent9prod : dernières vidéos, playlists et projets." />
+
   <style>
     :root{
-      --maxw:1000px; --pad: clamp(16px, 2.5vw, 28px);
-      --bg:#0f1226; --card:#15193a; --text:#e7e9ff; --muted:#aeb4ff; --accent:#7c9bff;
+      --bg:#0b0b0c;
+      --panel:#141416;
+      --muted:#9aa3ad;
+      --text:#f2f5f8;
+      --accent:#7ab8ff; /* couleur au survol */
+      --border:#22252a;
+      --radius:14px;
+      --maxw:1080px;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
-      color:var(--text); background: radial-gradient(1200px 600px at 10% 10%, #1b2060 0%, #0f1226 60%), var(--bg);
-      line-height:1.55;
-    }
+
+    /* Reset rapide */
+    *,*::before,*::after{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif; }
+    img{ max-width:100%; display:block; }
+    a{ color:inherit; text-decoration:none; }
+    a:hover{ color:var(--accent); }
+    h1,h2,h3{ margin:0 0 .5rem; line-height:1.15; }
+    p{ margin:.5rem 0 0; color:var(--muted); }
+
+    /* Layout */
+    .container{ width:100%; max-width:var(--maxw); margin:0 auto; padding:0 16px; }
+
+    /* Header */
     header{
-      max-width:var(--maxw); margin:0 auto; padding: calc(var(--pad)*1.5) var(--pad) var(--pad);
-      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      position:sticky; top:0; z-index:10;
+      backdrop-filter:saturate(180%) blur(10px);
+      background:linear-gradient(180deg, rgba(11,11,12,.85), rgba(11,11,12,.65));
+      border-bottom:1px solid var(--border);
     }
-    .logo{font-weight:800; letter-spacing:.3px}
-    nav a{color:var(--muted); text-decoration:none; margin-left:16px; transition:color .2s ease;}
-    nav a:hover{color:var(--accent)}
-    .hero{max-width:var(--maxw); margin:0 auto; padding: 32px var(--pad) 56px; display:grid; gap:28px; align-items:center}
-    .hero h1{font-size:clamp(32px,6vw,56px); line-height:1.05; margin:0}
-    .hero p{font-size:clamp(16px,2.3vw,20px); color:var(--muted); margin:0}
-    .cta{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap}
-    .btn{appearance:none; border:none; background:var(--accent); color:#0b1025; font-weight:700; padding:12px 18px; border-radius:16px; cursor:pointer}
-    .btn.secondary{background:transparent; color:var(--text); border:1px solid #334; box-shadow: inset 0 0 0 1px rgba(255,255,255,.06)}
-    .card-grid{max-width:var(--maxw); margin:0 auto; padding:0 var(--pad) 80px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:26px}
-    .card{background:var(--card); border-radius:18px; padding:24px; border:1px solid rgba(255,255,255,.06); box-shadow: 0 10px 30px rgba(0,0,0,.25)}
-    .card h3{margin:6px 0 10px; font-size:18px}
-    .card p{margin:0; color:var(--muted)}
-    footer{max-width:var(--maxw); margin:0 auto; padding:32px var(--pad) 56px; color:#cbd0ff80}
-    .tag{display:inline-block; font-size:12px; padding:4px 10px; border-radius:999px; background:#22274d; color:#bfc6ff}
-    .pill{display:inline-flex; align-items:center; gap:8px; border:1px solid #2b2f59; padding:8px 12px; border-radius:999px; color:#c9ceff80; text-decoration:none; transition:color .2s ease;}
-    .pill:hover{color:var(--accent)}
-    .stack{display:flex; gap:8px; flex-wrap:wrap}
-    .code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:#0b0e24; padding:2px 6px; border-radius:6px}
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      height:60px;
+    }
+    .brand{ font-weight:800; letter-spacing:.3px; }
+    .nav a{ opacity:.9; }
+    .nav a:hover{ opacity:1; color:var(--accent); }
+    .nav-links{ display:flex; gap:14px; }
 
-    /* --- Live Badge Special Style --- */
-    .live-badge{
-      background:#d60027;
-      color:#fff !important;
-      font-weight:800;
-      border:2px solid #ff3355;
-      box-shadow:0 0 12px rgba(255,0,0,.8);
-      animation:pulse 1.2s infinite;
-      text-decoration:none;
-      padding:10px 16px;
-      border-radius:999px;
+    /* Hero / bannière */
+    .hero{
+      margin:18px auto 24px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      overflow:hidden;
+      background: #000;
     }
-    @keyframes pulse{
-      0%{transform:scale(1); box-shadow:0 0 8px rgba(255,0,0,.7)}
-      50%{transform:scale(1.08); box-shadow:0 0 20px rgba(255,0,0,1)}
-      100%{transform:scale(1); box-shadow:0 0 8px rgba(255,0,0,.7)}
+    .hero figure{ margin:0; position:relative; }
+    .hero img{ width:100%; height:auto; display:block; }
+    .hero .overlay{
+      position:absolute; inset:auto 0 0 0;
+      background:linear-gradient(180deg, transparent, rgba(0,0,0,.65));
+      padding:18px;
+      display:flex; justify-content:space-between; align-items:flex-end; gap:10px;
+    }
+    .hero h1{ font-size:1.6rem; }
+    .hero small{ color:var(--muted); }
+
+    /* Sections */
+    section{ margin:26px 0; }
+    .card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:16px;
+    }
+    .grid{
+      display:grid; gap:16px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width:900px){
+      .grid-2{ grid-template-columns: 1.2fr .8fr; }
     }
 
-    /* Contact link color */
-    a.mail-link{color:#7c9bff; font-weight:600; text-decoration:none;}
-    a.mail-link:hover{color:#a8c4ff; text-decoration:none;}
+    /* Embed YouTube */
+    .yt-embed{
+      position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:12px; background:#000;
+      border:1px solid var(--border);
+    }
+    .yt-embed iframe{ position:absolute; inset:0; width:100%; height:100%; }
 
-    /* --- Games list styles --- */
-    .games-section{max-width:var(--maxw); margin:0 auto; padding: 0 var(--pad) 64px}
-    .games-section h2{margin:0 0 16px}
-    .search-wrap{position:sticky; top:0; padding:8px 0 16px; background:linear-gradient(180deg, rgba(15,18,38,.9), rgba(15,18,38,.6) 70%, transparent)}
-    .search-wrap input[type="search"]{
-      width:100%; padding:14px 16px 14px 44px; border-radius:14px; border:1px solid #2b2f59; background:#12163a; color:var(--text);
-      outline:none; box-shadow:0 6px 0 #0a0e2b;
+    /* Frise dernières vidéos */
+    .frise { margin: 6px 0 0; }
+    .frise h2 { margin: 0 0 12px; font-size: 1.4rem; }
+    .frise-track {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(260px, 1fr);
+      gap: 14px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scroll-snap-type: x mandatory;
     }
-    .search-wrap .icon{position:absolute; left:12px; top:50%; transform:translateY(-50%); opacity:.7}
-    .game-grid{display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:16px}
-    .game-card{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:18px; text-decoration:none; color:var(--text);
-      box-shadow:0 8px 24px rgba(0,0,0,.25); transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease}
-    .game-card:hover{transform:translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.35); border-color:#394085}
-    .game-card h4{margin:2px 0 0; font-size:16px; text-align:center}
-    .game-card .dots{position:absolute; right:12px; top:10px; opacity:.5}
-    .game-card .dots::after{content:"⋮"}
-    .empty{opacity:.7; color:#aeb4ff; padding:8px}
+    .frise-card {
+      display: flex; flex-direction: column; gap: 8px;
+      background: #111; border: 1px solid #222; border-radius: 12px;
+      padding: 10px; color: inherit;
+      scroll-snap-align: start;
+      transition: transform .15s ease, border-color .15s ease;
+    }
+    .frise-card:hover { transform: translateY(-2px); border-color: #555; }
+    .frise-thumb { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; background:#000; }
+    .frise-thumb img { width: 100%; height: 100%; object-fit: cover; display:block; }
+    .frise-title { font-weight: 600; line-height: 1.25; font-size: 0.98rem; }
+    .frise-meta { font-size: 0.85rem; color: var(--muted); }
 
-    /* --- Latest videos (frise) --- */
-    .videos-grid{
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-      gap:16px;
-      margin-top:12px;
+    /* Footer */
+    footer{
+      margin:30px 0 40px; color:var(--muted);
+      display:flex; justify-content:center; font-size:.95rem;
     }
-    .video-card{
-      display:block; background:var(--card); border:1px solid rgba(255,255,255,.08);
-      border-radius:14px; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,.25);
-      transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
-      text-decoration:none;
-    }
-    .video-card:hover{ transform:translateY(-2px); box-shadow:0 12px 30px rgba(0,0,0,.35); border-color:#394085; }
-    .video-thumb{ width:100%; display:block; }
-    .video-meta{ padding:12px; color:var(--muted); font-size:14px; line-height:1.35; }
   </style>
 </head>
+
 <body>
   <header>
-    <div class="logo">Kent<span class="code">.gg</span></div>
-    <nav>
-      <a href="#projets">Projets</a>
-      <a href="#contact">Contact</a>
-      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-    </nav>
-    <a id="liveBadge" class="live-badge" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener" style="display:none">🔴 EN LIVE</a>
+    <div class="container">
+      <nav class="nav">
+        <div class="brand">KENT9PROD</div>
+        <div class="nav-links">
+          <a href="#videos">Vidéos</a>
+          <a href="#playlist">Playlist</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero">
-    <div>
-      <h1>Salut, c'est Kent 👋<br/>Créateur de contenu MultiGaming.</h1>
-      <p>Je partage mes aventures sur plusieurs jeux (Fallout, Final Fantasy, Souls Like et bien d'autres) en live et en vidéo. Mon univers, c'est le gaming au sens large, toujours avec ma communauté.</p>
-      <div class="cta">
-        <a class="btn" href="#projets">Voir mes projets</a>
-        <a class="btn secondary" href="#contact">Me contacter</a>
-      </div>
-      <div class="stack" style="margin-top:10px">
-        <a class="pill" href="https://www.youtube.com/@Kent9Prod" target="_blank" rel="noopener">▶️ YouTube (principal)</a>
-        <a class="pill" href="https://www.youtube.com/@KentProd" target="_blank" rel="noopener">▶️ YouTube (secondaire)</a>
-        <a class="pill" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">🔴 Twitch</a>
-        <a class="pill" href="https://www.instagram.com/micka_kent/" target="_blank" rel="noopener">📸 Instagram</a>
-        <a class="pill" href="https://www.tiktok.com/@micka_kent" target="_blank" rel="noopener">🎵 TikTok</a>
-        <a class="pill" href="https://discord.com/invite/sheygSg" target="_blank" rel="noopener">💬 Discord</a>
-      </div>
+  <main class="container">
+    <!-- Bannière -->
+    <div class="hero">
+      <figure>
+        <!-- Remplace le fichier si besoin -->
+        <img src="fallout.jpg" alt="Bannière du site Kent9prod">
+        <figcaption class="overlay">
+          <div>
+            <h1>Kent9prod — Gaming & Miniatures</h1>
+            <small>Fallout • The Outer Worlds • Soulframe • &amp; more</small>
+          </div>
+          <div>
+            <!-- Bouton simple -->
+            <a href="#videos" style="display:inline-block;padding:10px 14px;border:1px solid var(--border);border-radius:10px;background:#111;">Voir les vidéos</a>
+          </div>
+        </figcaption>
+      </figure>
     </div>
-  </section>
 
-  <section id="jeux" class="games-section">
-    <h2>🏆 Les jeux terminés en Stream</h2>
-    <div class="search-wrap" style="position:relative;">
-      <span class="icon">🔎</span>
-      <input id="searchGame" type="search" placeholder="Rechercher un jeu…" aria-label="Rechercher un jeu">
-    </div>
-    <div id="gamesGrid" class="game-grid" aria-live="polite"></div>
-    <p id="gamesEmpty" class="empty" style="display:none;">Aucun jeu ne correspond à votre recherche.</p>
-  </section>
+    <!-- Dernières vidéos (frise) -->
+    <section id="videos" class="card">
+      <h2>Dernières vidéos</h2>
+      <p>Les 3 plus récentes de la chaîne.</p>
 
-  <!-- Frise auto YouTube -->
-  <section id="videos" class="card-grid">
-    <article class="card" style="grid-column:1/-1;">
-      <div class="pill">🆕 Dernières vidéos — Kent9Prod</div>
-      <div id="videosGrid" class="videos-grid"></div>
-    </article>
-  </section>
+      <section id="last-videos" class="frise">
+        <div class="frise-track" id="videos-track" aria-live="polite">
+          <div class="frise-card">
+            <div class="frise-thumb"></div>
+            <div class="frise-title">Chargement…</div>
+            <div class="frise-meta">Veuillez patienter</div>
+          </div>
+        </div>
+      </section>
+    </section>
 
-  <section id="projets" class="card-grid">
-    <article class="card">
-      <div class="pill">🎮 Chaînes & Lives</div>
-      <h3>YouTube & Twitch</h3>
-      <p>Lives MultiGaming, vidéos détente ou défis épiques. Fallout, RPG, FPS et découvertes de nouveaux univers.</p>
-    </article>
-    <article class="card">
-      <div class="pill">👥 Communauté</div>
-      <h3>Discord & Réseaux</h3>
-      <p>Un espace convivial où on discute gaming, partage de tips et bonnes vibes. Rejoins le serveur !</p>
-    </article>
-    <article class="card">
-      <div class="pill">🛒 Vinted</div>
-      <h3>Jeux & Matériel</h3>
-      <p>Jeux vidéo, matos info, comics/BD. Écris si tu cherches une ref précise.</p>
-    </article>
-  </section>
+    <!-- Playlist intégrée -->
+    <section id="playlist" class="grid grid-2">
+      <div class="card">
+        <h2>Playlist principale</h2>
+        <p>Lecture automatique de ta série (épisode 1 en tête).</p>
+        <div class="yt-embed" style="margin-top:10px;">
+          <iframe 
+            src="https://www.youtube.com/embed/videoseries?list=PLHbVCtNmmixGydzYg8EhKhbifCrI9aoiQ" 
+            title="Playlist Kent9prod"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
 
-  <footer id="contact">
-    <p>Tu veux collaborer ou en savoir plus ? Écris à <a class="mail-link" href="mailto:contactkentprod@gmail.com">contactkentprod@gmail.com</a> ou passe sur YouTube/Twitch.</p>
-    <p class="stack" style="margin-top:8px">
-      <a class="pill" href="https://www.youtube.com/@Kent9Prod" target="_blank" rel="noopener">▶️ YouTube (principal)</a>
-      <a class="pill" href="https://www.youtube.com/@KentProd" target="_blank" rel="noopener">▶️ YouTube (secondaire)</a>
-      <a class="pill" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">🔴 Twitch</a>
-      <a class="pill" href="https://www.instagram.com/micka_kent/" target="_blank" rel="noopener">📸 Instagram</a>
-      <a class="pill" href="https://www.tiktok.com/@micka_kent" target="_blank" rel="noopener">🎵 TikTok</a>
-      <a class="pill" href="https://discord.com/invite/sheygSg" target="_blank" rel="noopener">💬 Discord</a>
-    </p>
-    <p style="margin-top:8px">© <span id="year"></span> Kent. Fait avec ❤️ et hébergé sur GitHub Pages.</p>
-  </footer>
+      <aside class="card" id="contact">
+        <h2>À propos</h2>
+        <p>Je suis Kent. Miniatures custom, gameplay, univers post-apo et SF. Abonne-toi et laisse un com 💬</p>
+        <ul style="list-style:none;padding:0;margin:12px 0 0;display:grid;gap:8px;">
+          <li>📺 YouTube : <a href="https://www.youtube.com/@kent9prod" target="_blank" rel="noopener noreferrer">@kent9prod</a></li>
+          <li>🛒 Vinted : <a href="https://www.vinted.fr/member/xxxx" target="_blank" rel="noopener noreferrer">Mon profil</a></li>
+          <li>📧 Contact : <a href="mailto:contact.kent9prod@example.com">contact.kent9prod@example.com</a></li>
+        </ul>
+      </aside>
+    </section>
 
+    <!-- Spots pour d'autres sections si besoin -->
+    <!-- <section class="card"><h2>Projets</h2><p>À venir…</p></section> -->
+
+    <footer>© <span id="year"></span> Kent9prod — Tous droits réservés.</footer>
+  </main>
+
+  <!-- ===== Scripts ===== -->
   <script>
+    // année dynamique
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // --- LIVE badge logic (Twitch only via live.json) ---
-    const badge = document.getElementById('liveBadge');
-    const LIVE_JSON = 'live.json';
+    // ===== Frise auto : 3 dernières vidéos (via flux RSS YouTube) =====
+    (async () => {
+      const CHANNEL_ID = "UChcaGeb_yYslNd6F_RUVOTg";
+      // Proxy public en lecture seule pour contourner CORS côté navigateur
+      const feedURL = `https://r.jina.ai/http://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
 
-    async function refreshLive(){
-      try{
-        const res = await fetch(`${LIVE_JSON}?t=${Date.now()}`);
-        if(!res.ok) throw new Error('live.json not found');
-        const data = await res.json();
-        const twitchLive = !!(data && data.twitch && data.twitch.live);
-        const url = (data && data.twitch && data.twitch.url) || 'https://www.twitch.tv/kent_fr';
-        const title = (data && data.twitch && data.twitch.title) || '';
-        badge.textContent = title ? `🔴 EN LIVE : ${title}` : '🔴 EN LIVE sur Twitch';
-        badge.style.display = twitchLive ? 'inline-flex' : 'none';
-        badge.href = url;
-        badge.title = title ? `Twitch · ${title}` : 'Twitch live';
-      }catch(e){
-        console.debug('LIVE status unavailable:', e.message);
-        badge.style.display = 'none';
+      const toDate = (iso) => {
+        try {
+          return new Date(iso).toLocaleDateString('fr-FR', { year: 'numeric', month: 'short', day: '2-digit' });
+        } catch { return ""; }
+      };
+
+      try {
+        const res = await fetch(feedURL);
+        const text = await res.text();
+        const xmlText = (text.match(/<feed[\s\S]*<\/feed>/i) || [text])[0];
+        const xml = new DOMParser().parseFromString(xmlText, "text/xml");
+
+        if (xml.querySelector("parsererror")) throw new Error("Parse XML error");
+
+        const entries = Array.from(xml.querySelectorAll("entry")).slice(0, 3);
+        const track = document.getElementById("videos-track");
+        track.innerHTML = "";
+
+        if (!entries.length) {
+          track.innerHTML = `<p>Aucune vidéo trouvée pour le moment.</p>`;
+          return;
+        }
+
+        entries.forEach(entry => {
+          const title = entry.querySelector("title")?.textContent?.trim() || "Sans titre";
+          const link = entry.querySelector("link")?.getAttribute("href") || "#";
+          const published = entry.querySelector("published")?.textContent || "";
+          const thumbEl = entry.querySelector("media\\:thumbnail, thumbnail");
+          const thumb = thumbEl ? thumbEl.getAttribute("url") : "";
+
+          const card = document.createElement("a");
+          card.className = "frise-card";
+          card.href = link;
+          card.target = "_blank";
+          card.rel = "noopener noreferrer";
+
+          card.innerHTML = `
+            <div class="frise-thumb">
+              ${thumb ? `<img loading="lazy" src="${thumb}" alt="">` : ""}
+            </div>
+            <div class="frise-title">${title}</div>
+            <div class="frise-meta">Publié le ${toDate(published)}</div>
+          `;
+          track.appendChild(card);
+        });
+      } catch (e) {
+        console.error(e);
+        const track = document.getElementById("videos-track");
+        track.innerHTML = `
+          <p>Impossible de charger la frise automatiquement.<br>
+          <small>Vérifie le Channel ID ou réessaie plus tard.</small></p>`;
       }
-    }
-
-    refreshLive();
-    setInterval(refreshLive, 60000); // check every 60s
-
-    // --- Games data & search ---
-    const GAMES = [
-      { title: 'Fallout 3', url: 'games/fallout-3.html' }
-    ];
-
-    const grid = document.getElementById('gamesGrid');
-    const emptyMsg = document.getElementById('gamesEmpty');
-    const input = document.getElementById('searchGame');
-
-    function renderGames(list){
-      grid.innerHTML = '';
-      if(!list.length){ emptyMsg.style.display = 'block'; return; }
-      emptyMsg.style.display = 'none';
-      list.forEach(g=>{
-        const a = document.createElement('a');
-        a.className = 'game-card';
-        a.href = g.url;
-        a.innerHTML = `<div class="dots"></div><h4>${g.title}</h4>`;
-        grid.appendChild(a);
-      });
-    }
-
-    renderGames(GAMES);
-
-    input.addEventListener('input', ()=>{
-      const q = input.value.trim().toLowerCase();
-      const filtered = GAMES.filter(g => g.title.toLowerCase().includes(q));
-      renderGames(filtered);
-    });
-
-    // --- Latest YouTube vids (reads videos.json) ---
-    async function renderLatestVideos(){
-      try{
-        const res = await fetch('videos.json?t=' + Date.now());
-        if(!res.ok) throw new Error('videos.json not found');
-        const items = await res.json(); // [{id,title,thumbnail,publishedAt}]
-        const wrap = document.getElementById('videosGrid');
-        wrap.innerHTML = (items || []).map(v => `
-          <a class="video-card" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">
-            <img class="video-thumb" src="${v.thumbnail || ('https://img.youtube.com/vi/'+v.id+'/hqdefault.jpg')}" alt="${(v.title || '').replace(/"/g,'&quot;')}">
-            <div class="video-meta">${v.title || ''}</div>
-          </a>
-        `).join('');
-      }catch(e){
-        console.debug('Videos unavailable:', e.message);
-        const wrap = document.getElementById('videosGrid');
-        if(wrap) wrap.innerHTML = '<p class="empty">Impossible de charger les vidéos pour le moment.</p>';
-      }
-    }
-    renderLatestVideos();
+    })();
   </script>
 </body>
 </html>
