@@ -36,7 +36,7 @@
     .stack{display:flex; gap:8px; flex-wrap:wrap}
     .code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background:#0b0e24; padding:2px 6px; border-radius:6px}
 
-    /* --- Live Badge Special --- */
+    /* --- Live Badge --- */
     .live-badge{
       font-weight:800;
       padding:8px 14px;
@@ -76,6 +76,7 @@
   <header>
     <div class="logo">Kent<span class="code">.gg</span></div>
     <nav>
+      <!-- Badge EN LIVE automatique placé à gauche des liens -->
       <a id="liveBadge" class="live-badge live-off" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">⚪ PAS EN LIVE</a>
       <a href="#projets">Projets</a>
       <a href="#contact">Contact</a>
@@ -87,6 +88,7 @@
       <h1>Salut, c'est Kent 👋<br/>Créateur de contenu MultiGaming.</h1>
       <p>Je partage mes aventures sur plusieurs jeux (Fallout, Final Fantasy, Souls Like et bien d'autres) en live et en vidéo. Mon univers, c'est le gaming au sens large, toujours avec ma communauté.</p>
       <div class="stack" style="margin-top:10px">
+        <!-- Twitch tout à gauche -->
         <a class="pill" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">🔴 Twitch</a>
         <a class="pill" href="https://www.youtube.com/@Kent9Prod" target="_blank" rel="noopener">▶️ YouTube (principal)</a>
         <a class="pill" href="https://www.youtube.com/@KentProd" target="_blank" rel="noopener">▶️ YouTube (secondaire)</a>
@@ -125,6 +127,7 @@
   <footer id="contact">
     <p>Tu veux collaborer ou en savoir plus ? Écris à <a class="mail-link" href="mailto:contactkentprod@gmail.com">contactkentprod@gmail.com</a> ou passe sur YouTube/Twitch.</p>
     <p class="stack" style="margin-top:8px">
+      <!-- Twitch tout à gauche -->
       <a class="pill" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">🔴 Twitch</a>
       <a class="pill" href="https://www.youtube.com/@Kent9Prod" target="_blank" rel="noopener">▶️ YouTube (principal)</a>
       <a class="pill" href="https://www.youtube.com/@KentProd" target="_blank" rel="noopener">▶️ YouTube (secondaire)</a>
@@ -136,40 +139,47 @@
   </footer>
 
   <script>
-    // --- LIVE badge logic ---
+    /* === LIVE badge auto (sans clé) =======================================
+       - Vérifie si la chaîne Twitch est en live via DecAPI (uptime)
+       - Récupère le titre si live
+       - Met à jour toutes les 60s
+       ==================================================================== */
     const badge = document.getElementById('liveBadge');
-    const LIVE_JSON = 'live.json';
+    const CHANNEL = 'kent_fr';
+    const UPTIME_URL = `https://r.jina.ai/http://decapi.me/twitch/uptime/${CHANNEL}`;
+    const TITLE_URL  = `https://r.jina.ai/http://decapi.me/twitch/title/${CHANNEL}`;
+    const TWITCH_URL = `https://www.twitch.tv/${CHANNEL}`;
 
-    async function refreshLive(){
-      try{
-        const res = await fetch(`${LIVE_JSON}?t=${Date.now()}`);
-        if(!res.ok) throw new Error('live.json not found');
-        const data = await res.json();
-        const twitchLive = !!(data && data.twitch && data.twitch.live);
-        if(twitchLive){
-          badge.textContent = "🔴 EN LIVE";
-          badge.classList.add("live-on");
-          badge.classList.remove("live-off");
-        } else {
-          badge.textContent = "⚪ PAS EN LIVE";
-          badge.classList.add("live-off");
-          badge.classList.remove("live-on");
-        }
-      }catch(e){
-        badge.textContent = "⚪ PAS EN LIVE";
-        badge.classList.add("live-off");
-        badge.classList.remove("live-on");
-      }
+    function setOnline(titleText) {
+      badge.href = TWITCH_URL;
+      badge.textContent = titleText ? `🔴 EN LIVE : ${titleText}` : '🔴 EN LIVE';
+      badge.classList.add('live-on');
+      badge.classList.remove('live-off');
     }
-
+    function setOffline() {
+      badge.href = TWITCH_URL;
+      badge.textContent = '⚪ PAS EN LIVE';
+      badge.classList.add('live-off');
+      badge.classList.remove('live-on');
+    }
+    async function refreshLive() {
+      try {
+        const u = await fetch(`${UPTIME_URL}?t=${Date.now()}`);
+        const uptimeText = (await u.text()).toLowerCase();
+        if (uptimeText.includes('offline')) { setOffline(); return; }
+        const t = await fetch(`${TITLE_URL}?t=${Date.now()}`);
+        let titleText = (await t.text() || '').trim();
+        if (titleText.toLowerCase() === 'null') titleText = '';
+        setOnline(titleText);
+      } catch (e) { setOffline(); }
+    }
     refreshLive();
     setInterval(refreshLive, 60000);
 
-    // --- Games data & search ---
+    /* === Games : liste + recherche ====================================== */
     const GAMES = [
       { title: 'Fallout 3', url: 'games/fallout-3.html' }
     ];
-
     const grid = document.getElementById('gamesGrid');
     const emptyMsg = document.getElementById('gamesEmpty');
     const input = document.getElementById('searchGame');
@@ -186,7 +196,6 @@
         grid.appendChild(a);
       });
     }
-
     renderGames(GAMES);
 
     input.addEventListener('input', ()=>{
