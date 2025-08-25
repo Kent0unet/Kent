@@ -22,8 +22,18 @@
     *,*::before,*::after{ box-sizing:border-box; }
     html,body{ margin:0; padding:0; background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif; }
     img{ max-width:100%; display:block; }
-    a{ color:inherit; text-decoration:none; }
-    a:hover{ color:var(--accent); }
+
+    /* Liens (jamais de soulignement) */
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:hover,
+    a:focus {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
     h1,h2,h3{ margin:0 0 .5rem; line-height:1.15; }
     p{ margin:.5rem 0 0; color:var(--muted); }
 
@@ -139,7 +149,6 @@
     <!-- Bannière -->
     <div class="hero">
       <figure>
-        <!-- Remplace le fichier si besoin -->
         <img src="fallout.jpg" alt="Bannière du site Kent9prod">
         <figcaption class="overlay">
           <div>
@@ -147,7 +156,6 @@
             <small>Fallout • The Outer Worlds • Soulframe • &amp; more</small>
           </div>
           <div>
-            <!-- Bouton simple -->
             <a href="#videos" style="display:inline-block;padding:10px 14px;border:1px solid var(--border);border-radius:10px;background:#111;">Voir les vidéos</a>
           </div>
         </figcaption>
@@ -198,9 +206,6 @@
       </aside>
     </section>
 
-    <!-- Spots pour d'autres sections si besoin -->
-    <!-- <section class="card"><h2>Projets</h2><p>À venir…</p></section> -->
-
     <footer>© <span id="year"></span> Kent9prod — Tous droits réservés.</footer>
   </main>
 
@@ -209,10 +214,9 @@
     // année dynamique
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // ===== Frise auto : 3 dernières vidéos (via flux RSS YouTube) =====
+    // ===== Frise auto : 3 dernières vidéos =====
     (async () => {
       const CHANNEL_ID = "UChcaGeb_yYslNd6F_RUVOTg";
-      // Proxy public en lecture seule pour contourner CORS côté navigateur
       const feedURL = `https://r.jina.ai/http://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
 
       const toDate = (iso) => {
@@ -224,7 +228,7 @@
       try {
         const res = await fetch(feedURL);
         const text = await res.text();
-        const xmlText = (text.match(/<feed[\s\S]*<\/feed>/i) || [text])[0];
+        const xmlText = (text.match(/<feed[\\s\\S]*<\\/feed>/i) || [text])[0];
         const xml = new DOMParser().parseFromString(xmlText, "text/xml");
 
         if (xml.querySelector("parsererror")) throw new Error("Parse XML error");
