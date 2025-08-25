@@ -81,6 +81,23 @@
     .game-card .dots{position:absolute; right:12px; top:10px; opacity:.5}
     .game-card .dots::after{content:"⋮"}
     .empty{opacity:.7; color:#aeb4ff; padding:8px}
+
+    /* --- Latest videos (frise) --- */
+    .videos-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap:16px;
+      margin-top:12px;
+    }
+    .video-card{
+      display:block; background:var(--card); border:1px solid rgba(255,255,255,.08);
+      border-radius:14px; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,.25);
+      transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+      text-decoration:none;
+    }
+    .video-card:hover{ transform:translateY(-2px); box-shadow:0 12px 30px rgba(0,0,0,.35); border-color:#394085; }
+    .video-thumb{ width:100%; display:block; }
+    .video-meta{ padding:12px; color:var(--muted); font-size:14px; line-height:1.35; }
   </style>
 </head>
 <body>
@@ -123,24 +140,11 @@
     <p id="gamesEmpty" class="empty" style="display:none;">Aucun jeu ne correspond à votre recherche.</p>
   </section>
 
+  <!-- Frise auto YouTube -->
   <section id="videos" class="card-grid">
-    <article class="card">
-      <div class="pill">🆕 Dernières vidéos</div>
-      <h3>YouTube — Kent9Prod</h3>
-      <p>Les nouveautés arrivent en premier sur la chaîne principale. Clique pour voir la liste complète des dernières vidéos.</p>
-      <p style="margin-top:8px"><a class="btn secondary" href="https://www.youtube.com/@Kent9Prod/videos" target="_blank" rel="noopener">Voir les dernières vidéos</a></p>
-    </article>
-    <article class="card">
-      <div class="pill">🆕 Dernières vidéos</div>
-      <h3>YouTube — KentProd</h3>
-      <p>La chaîne secondaire pour d'autres formats et tests.</p>
-      <p style="margin-top:8px"><a class="btn secondary" href="https://www.youtube.com/@KentProd/videos" target="_blank" rel="noopener">Voir les dernières vidéos</a></p>
-    </article>
-    <article class="card">
-      <div class="pill">🔴 Live</div>
-      <h3>Twitch</h3>
-      <p>Quand je suis en live, le badge rouge s'allume en haut du site.</p>
-      <p style="margin-top:8px"><a class="btn" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">Aller sur le live</a></p>
+    <article class="card" style="grid-column:1/-1;">
+      <div class="pill">🆕 Dernières vidéos — Kent9Prod</div>
+      <div id="videosGrid" class="videos-grid"></div>
     </article>
   </section>
 
@@ -232,6 +236,27 @@
       const filtered = GAMES.filter(g => g.title.toLowerCase().includes(q));
       renderGames(filtered);
     });
+
+    // --- Latest YouTube vids (reads videos.json) ---
+    async function renderLatestVideos(){
+      try{
+        const res = await fetch('videos.json?t=' + Date.now());
+        if(!res.ok) throw new Error('videos.json not found');
+        const items = await res.json(); // [{id,title,thumbnail,publishedAt}]
+        const wrap = document.getElementById('videosGrid');
+        wrap.innerHTML = (items || []).map(v => `
+          <a class="video-card" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">
+            <img class="video-thumb" src="${v.thumbnail || ('https://img.youtube.com/vi/'+v.id+'/hqdefault.jpg')}" alt="${(v.title || '').replace(/"/g,'&quot;')}">
+            <div class="video-meta">${v.title || ''}</div>
+          </a>
+        `).join('');
+      }catch(e){
+        console.debug('Videos unavailable:', e.message);
+        const wrap = document.getElementById('videosGrid');
+        if(wrap) wrap.innerHTML = '<p class="empty">Impossible de charger les vidéos pour le moment.</p>';
+      }
+    }
+    renderLatestVideos();
   </script>
 </body>
 </html>
