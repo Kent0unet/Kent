@@ -15,10 +15,13 @@
       margin:0; font-family: system-ui, Arial;
       color:var(--text);
       background: radial-gradient(1200px 600px at 10% 10%, #1b2060 0%, #0f1226 60%), var(--bg);
+      line-height:1.55;
     }
 
-    header{max-width:var(--maxw); margin:0 auto; padding:32px var(--pad) 16px;
-      display:flex; align-items:center; justify-content:space-between;}
+    header{
+      max-width:var(--maxw); margin:0 auto; padding:32px var(--pad) 16px;
+      display:flex; align-items:center; justify-content:space-between;
+    }
     .logo{font-weight:800}
     nav{display:flex; gap:16px; align-items:center;}
     nav a{color:var(--muted); text-decoration:none;}
@@ -41,6 +44,7 @@
     .card-grid{max-width:var(--maxw); margin:0 auto; padding:0 var(--pad) 80px;
       display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:26px}
     .card{background:var(--card); border-radius:18px; padding:24px; border:1px solid rgba(255,255,255,.06)}
+    .card p{margin:0; color:var(--muted)}
 
     a.mail-link{color:#7c9bff; font-weight:600; text-decoration:none;}
     a.mail-link:hover{color:#a8c4ff;}
@@ -51,12 +55,17 @@
       background:#12163a; color:var(--text); outline:none;}
     .search-wrap .icon{position:absolute; left:12px; top:50%; transform:translateY(-50%); opacity:.7}
 
+    /* 1 jeu par ligne */
     .game-grid{display:grid; grid-template-columns:1fr; gap:16px;}
     .game-card{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:16px;
-      padding:18px; text-decoration:none; color:var(--text);}
+      padding:18px; text-decoration:none; color:var(--text); transition:transform .15s, border-color .15s}
     .game-card:hover{transform:translateY(-2px); border-color:#394085}
     .game-card h4{text-align:center; margin:2px 0}
-    .coming-soon{background:#2a2a2a !important; opacity:0.75; cursor:pointer;}
+
+    /* Cartes grisées mais cliquables */
+    .coming-soon{
+      background:#2a2a2a !important; opacity:0.75; cursor:pointer;
+    }
 
     footer{max-width:var(--maxw); margin:0 auto; padding:32px var(--pad) 56px; color:#cbd0ff80}
   </style>
@@ -115,6 +124,7 @@
   </footer>
 
   <script>
+    /* Live badge */
     const badge = document.getElementById('liveBadge');
     const CHANNEL = 'kent_fr';
     const UPTIME_URL = `https://r.jina.ai/http://decapi.me/twitch/uptime/${CHANNEL}`;
@@ -123,9 +133,11 @@
     async function refreshLive(){ try{ const u=await fetch(`${UPTIME_URL}?t=${Date.now()}`); const txt=(await u.text()).toLowerCase(); if(txt.includes('offline')){ setOffline(); return; } setOnline(); } catch(e){ setOffline(); } }
     refreshLive(); setInterval(refreshLive, 60000);
 
+    /* Liste des jeux */
     const GAMES = [
       { title: 'Fallout 3', url: 'games/fallout-3.html' },
       { title: 'Fallout: New Vegas', url: 'games/fallout-new-vegas.html' },
+
       { title: 'As Dusk Falls', url: null },
       { title: 'Aska', url: null },
       { title: 'Batman : Arkham Asylum', url: null },
@@ -141,7 +153,7 @@
       { title: 'Dead Island 2', url: null },
       { title: 'Detroit : Become Human', url: null },
       { title: 'Devil May Cry 5', url: null },
-      { title: 'Dragon\'s Dogma 2', url: null },
+      { title: "Dragon's Dogma 2", url: null },
       { title: 'Dying Light 2', url: null },
       { title: 'Elden Ring', url: null },
       { title: 'Elden Ring : Shadow of the Erdtree', url: null },
@@ -159,7 +171,7 @@
       { title: 'Harry Potter 2 (Game Cube)', url: null },
       { title: 'Hogwarts Legacy', url: null },
       { title: 'Kingdom Come : Deliverance 2', url: null },
-      { title: 'La Terre du Milieu : L\'ombre de la Guerre', url: null },
+      { title: "La Terre du Milieu : L'ombre de la Guerre", url: null },
       { title: 'Lego Harry Potter Années 1 à 4', url: null },
       { title: 'Lego Harry Potter: Années 5 à 7', url: null },
       { title: 'Lies of P', url: null },
@@ -170,10 +182,10 @@
       { title: 'Little Nightmares', url: null },
       { title: 'Little Nightmares 2', url: null },
       { title: 'Lords of the Fallen (2014)', url: null },
-      { title: 'Marvel\'s Avengers', url: null },
-      { title: 'Marvel\'s Spider-Man', url: null },
-      { title: 'Marvel\'s Spider-Man 2', url: null },
-      { title: 'Marvel\'s Spider-Man : Miles Morales', url: null },
+      { title: "Marvel's Avengers", url: null },
+      { title: "Marvel's Spider-Man", url: null },
+      { title: "Marvel's Spider-Man 2", url: null },
+      { title: "Marvel's Spider-Man : Miles Morales", url: null },
       { title: 'My Friend Pedro', url: null },
       { title: 'Nier Automata', url: null },
       { title: 'Palworld', url: null },
@@ -201,6 +213,7 @@
       { title: 'Yakuza : Like a Dragon', url: null }
     ];
 
+    /* Tri A→Z */
     const SORTED_GAMES = [...GAMES].sort((a, b) => a.title.localeCompare(b.title));
     const grid = document.getElementById('gamesGrid');
     const emptyMsg = document.getElementById('gamesEmpty');
@@ -210,6 +223,7 @@
       grid.innerHTML = '';
       if(!list.length){ emptyMsg.style.display = 'block'; return; }
       emptyMsg.style.display = 'none';
+
       list.forEach(g=>{
         const card = document.createElement('a');
         card.className = 'game-card';
@@ -220,7 +234,7 @@
           const href = 'games/coming-soon.html?t=' + encodeURIComponent(g.title);
           card.href = href;
           card.classList.add('coming-soon');
-          card.innerHTML = `<h4>${g.title}</h4><p style="text-align:center;opacity:.8">À venir...</p>`;
+          card.innerHTML = `<h4>${g.title}</h4>`;
         }
         grid.appendChild(card);
       });
@@ -228,6 +242,7 @@
 
     renderGames(SORTED_GAMES);
 
+    /* Recherche */
     input.addEventListener('input', ()=>{
       const q = input.value.trim().toLowerCase();
       const filtered = SORTED_GAMES.filter(g => g.title.toLowerCase().includes(q));
