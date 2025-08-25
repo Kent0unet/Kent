@@ -3,57 +3,53 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TITRE DU JEU — Kent</title>
+  <!-- 🔴 A MODIFIER (dans le code): remplace __TITRE_DU_JEU__ -->
+  <title>__TITRE_DU_JEU__ — Kent</title>
   <link rel="icon" href="../favicon.png" type="image/png">
   <style>
-    :root{ --bg:#0f1226; --card:#15193a; --text:#e7e9ff; --muted:#aeb4ff; --accent:#7c9bff; }
-    *{box-sizing:border-box}
-    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--text);}
-    .container{max-width:900px; margin:0 auto; padding:24px 16px 56px;}
-    a{color:var(--accent); text-decoration:none}
-    a:hover{opacity:.9}
-    .back{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; background:#12163a; border:1px solid #2b2f59}
-    h1{margin:16px 0 14px; font-size:clamp(24px,5vw,36px);}
-    .cover{width:100%; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    body { font-family: Arial, sans-serif; margin:0; background:#0f1226; color:#e7e9ff; }
+    .container { max-width:900px; margin:0 auto; padding:20px; }
+    .game-cover { width:100%; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
+    .review { margin-top:20px; background:#15193a; padding:20px; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
+    .review h2 { margin:0 0 10px; }
+    .stars { color:#ffcc33; font-size:22px; margin-bottom:10px; }
+    iframe { border:none; border-radius:12px; width:100%; height:450px; margin-top:25px; box-shadow:0 8px 20px rgba(0,0,0,.4);}
+    .back { display:inline-block; margin-bottom:20px; color:#7c9bff; text-decoration:none; }
 
-    .review{margin-top:16px; background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:18px; box-shadow:0 10px 30px rgba(0,0,0,.3)}
-    .review h2{margin:0 0 8px}
-    .stars{color:#ffcc33; font-size:22px; margin-bottom:10px; letter-spacing:1px}
-    .review p{margin:0; color:var(--muted)}
-
-    .vod{margin-top:28px}
-    iframe{width:100%; height:460px; border:none; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    /* Affichage rouge/gras dans le NAVIGATEUR pour repérer les zones texte à éditer */
+    .editme { color:#ff4d4d; font-weight:700; }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Lien retour -->
     <a class="back" href="../index.html#jeux">← Retour aux jeux terminés</a>
 
-    <!-- Titre du jeu -->
-    <h1>TITRE DU JEU</h1>
+    <!-- 🔴 A MODIFIER (texte affiché) -->
+    <h1><span class="editme">__TITRE_DU_JEU__</span></h1>
 
-    <!-- 1) Image du jeu (modifie le src) -->
-    <!-- Place l'image dans /images/ et change le chemin en conséquence -->
-    <img class="cover" src="../images/NOM-FICHIER.jpg" alt="TITRE DU JEU">
+    <!-- Image du jeu -->
+    <!-- 🔴 A MODIFIER (dans le code): remplace __IMAGE_FICHIER__ et __ALT_TITRE__ -->
+    <img src="../images/__IMAGE_FICHIER__" alt="__ALT_TITRE__" class="game-cover">
 
-    <!-- 2) Note & Avis (édites ces champs) -->
-    <section class="review">
+    <!-- Critique -->
+    <div class="review">
       <h2>Ma Note</h2>
-      <!-- Mets ta note fixe ici (ex: ★★★★☆) -->
-      <div class="stars">★★★★★</div>
-      <h3>Mon Avis</h3>
-      <p>
-        Écris ici ton avis personnel sur le jeu : ce que tu as aimé, moins aimé, points marquants,
-        rythme, narration, gameplay, OST, etc.
-      </p>
-    </section>
+      <!-- 🔴 A MODIFIER (texte affiché): remplace les étoiles si besoin -->
+      <div class="stars"><span class="editme">★★★★★</span></div>
 
-    <!-- 3) Playlist YouTube (remplace l'ID après list=) -->
-    <section class="vod">
-      <h2>VOD (playlist)</h2>
-      <iframe src="https://www.youtube.com/embed/videoseries?list=ID_DE_TA_PLAYLIST" allowfullscreen></iframe>
-    </section>
+      <h3>Mon Avis</h3>
+      <!-- 🔴 A MODIFIER (texte affiché): colle ton avis ici -->
+      <p class="editme">
+        __TON_AVIS_ICI__
+      </p>
+    </div>
+
+    <!-- Playlist YouTube -->
+    <h2 style="margin-top:30px;">VOD</h2>
+    <!-- 🔴 A MODIFIER (dans le code): remplace __URL_PLAYLIST__ par l’URL embed de ta playlist -->
+    <!-- Exemple d’URL embed: https://www.youtube.com/embed/videoseries?list=ID_DE_TA_PLAYLIST -->
+    <iframe src="__URL_PLAYLIST__" allowfullscreen></iframe>
+
   </div>
 </body>
 </html>
