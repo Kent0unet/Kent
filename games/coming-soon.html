@@ -7,18 +7,15 @@
   <link rel="icon" href="../favicon.png" type="image/png">
   <style>
     :root{ --maxw:900px; --pad: clamp(16px, 2.5vw, 28px);
-      --bg:#0f1226; --card:#15193a; --text:#e7e9ff; --muted:#aeb4ff; --accent:#7c9bff; }
+      --bg:#0f1226; --card:#15193a; --text:#e7e9ff; --muted:#aeb4ff; }
     *{box-sizing:border-box}
     body{ margin:0; font-family: system-ui, Arial; color:var(--text);
       background: radial-gradient(1200px 600px at 10% 10%, #1b2060 0%, #0f1226 60%), var(--bg); }
     .container{ max-width:var(--maxw); margin:0 auto; padding:24px var(--pad) 56px; }
     a.back{ display:inline-block; margin-bottom:16px; color:#7c9bff; text-decoration:none; }
     .card{ background:var(--card); border-radius:16px; padding:22px; border:1px solid rgba(255,255,255,.08); }
-    h1{ margin:8px 0 4px; font-size:clamp(26px,5vw,40px) }
-    p.muted{ color:var(--muted); margin:0 0 10px }
-    .links{ display:flex; gap:8px; flex-wrap:wrap; margin-top:12px }
-    .pill{ display:inline-flex; align-items:center; gap:8px; border:1px solid #2b2f59; padding:8px 12px; border-radius:999px; color:#fff; text-decoration:none; }
-    .pill:hover{ color:var(--accent) }
+    h1{ margin:8px 0 4px; font-size:clamp(28px,6vw,48px) }
+    .warn{ font-size:20px; color:#ffeb3b; margin-top:16px }
   </style>
 </head>
 <body>
@@ -27,17 +24,11 @@
 
     <div class="card">
       <h1 id="gameTitle">Jeu</h1>
-      <p class="muted">⚠️ Review à venir… repasse bientôt !</p>
-      <div class="links">
-        <a class="pill" href="https://www.twitch.tv/kent_fr" target="_blank" rel="noopener">🔴 Twitch</a>
-        <a class="pill" href="https://www.youtube.com/@Kent9Prod/videos" target="_blank" rel="noopener">▶️ YouTube</a>
-        <a class="pill" href="mailto:contactkentprod@gmail.com">📧 Contact</a>
-      </div>
+      <p class="warn">⚠️ Review à venir… repasse bientôt !</p>
     </div>
   </div>
 
   <script>
-    // Récupère le titre passé en paramètre ?t=Nom%20du%20jeu
     const params = new URLSearchParams(location.search);
     const t = params.get('t') || 'Jeu';
     document.getElementById('gameTitle').textContent = t;
