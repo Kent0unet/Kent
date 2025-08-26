@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "☢️⚡Fallout 4 config mods⚡ | Rejoins le !discord / !lvlgoal",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2025-08-26T17:47:32Z"
+  "updated": "2025-08-26T17:58:52Z"
 }
