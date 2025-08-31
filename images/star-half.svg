@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <!-- Base blanche -->
+  <!-- Contour de base -->
   <path d="M12 .587l3.668 7.568L24 9.423l-6 5.845 1.417 8.255L12 18.897 4.583 23.523 6 15.268 0 9.423l8.332-1.268z"
-        fill="white"/>
-  <!-- Moitié gauche jaune -->
+        fill="none" stroke="#FFC107" stroke-width="2"/>
+  <!-- Remplissage moitié gauche -->
   <defs>
     <clipPath id="half">
       <rect x="0" y="0" width="12" height="24"/>
     </clipPath>
   </defs>
   <path d="M12 .587l3.668 7.568L24 9.423l-6 5.845 1.417 8.255L12 18.897 4.583 23.523 6 15.268 0 9.423l8.332-1.268z"
-        fill="#FFC107" clip-path="url(#half)"/>
+        fill="#FFC107" clip-path="url(#half)" stroke="none"/>
 </svg>
