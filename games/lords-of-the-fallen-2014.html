@@ -12,7 +12,9 @@
     .game-cover { width:100%; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
     .review { margin-top:20px; background:#15193a; padding:20px; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
     .review h2 { margin:0 0 10px; }
-    .stars { color:#ffcc33; font-size:22px; margin-bottom:10px; }
+    <!-- 💡 Réglages notation par étoiles -->
+    .star { width:22px; height:22px; vertical-align:middle; }
+    .star { width:22px; height:22px; vertical-align:middle; }
     <!-- 💡 police un peu plus grande et espacée -->
     .review p { font-size:18px; line-height:1.4; }
     
@@ -39,7 +41,15 @@
     <div class="review">
       <h2>Ma Note</h2>
       <!-- 🔴 A MODIFIER: remplace les étoiles si besoin ★☆ -->
-      <div class="stars">★☆☆☆☆</div>
+      <div class="stars">
+      <!-- 🔴 A MODIFIER: remplace les étoiles si besoin, full, half, empty ★½☆ -->
+      <div class="stars">
+      <img class="star" src="../images/star-half.svg" alt="½">
+      <img class="star" src="../images/star-empty.svg" alt="☆">
+      <img class="star" src="../images/star-empty.svg" alt="☆">
+      <img class="star" src="../images/star-empty.svg" alt="☆">
+      <img class="star" src="../images/star-empty.svg" alt="☆">
+      </div>
       
       <h3>Mon Avis</h3>
       <!-- 🔴 A MODIFIER: colle ton avis ici -->
