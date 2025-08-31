@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- 🔴 A MODIFIER (dans le code): remplace __TITRE_DU_JEU__ -->
+  <!-- 🔴 A MODIFIER: remplace __TITRE_DU_JEU__ -->
   <title>Dark Souls II — Kent</title>
   <link rel="icon" href="../favicon.png" type="image/png">
   <style>
@@ -13,30 +13,38 @@
     .review { margin-top:20px; background:#15193a; padding:20px; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
     .review h2 { margin:0 0 10px; }
     .stars { color:#ffcc33; font-size:22px; margin-bottom:10px; }
-    .review p { font-size:18px; line-height:1.4; } <!-- 🔴 police un peu plus grande et espacée -->
+    <!-- 💡 police un peu plus grande et espacée -->
+    .review p { font-size:18px; line-height:1.4; }
+    
     iframe { border:none; border-radius:12px; width:100%; height:450px; margin-top:25px; box-shadow:0 8px 20px rgba(0,0,0,.4);}
     .back { display:inline-block; margin-bottom:20px; color:#7c9bff; text-decoration:none; }
+    <!-- 💡 Réglage dimension cadre VOD -->
+    .vod { width: 100% !important; height: 450px !important; display: block; border: 0; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,.4);}
+    <!-- 💡 Réglage pour voir toute la miniature VOD -->
+    .video-container { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
+    .video-container iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+    
   </style>
 </head>
 <body>
   <div class="container">
     <a class="back" href="../index.html#jeux">← Retour aux jeux terminés</a>
 
-    <!-- 🔴 A MODIFIER (texte affiché) -->
+    <!-- 🔴 A MODIFIER -->
     <h1>Dark Souls II</h1>
 
     <!-- Image du jeu -->
-    <!-- 🔴 A MODIFIER (dans le code): remplace __IMAGE_FICHIER__ et __ALT_TITRE__ -->
+    <!-- 🔴 A MODIFIER: remplace __IMAGE_FICHIER__ et __ALT_TITRE__ -->
     <img src="../images/dark-souls-ii.jpg" alt="Dark Souls II" class="game-cover">
 
     <!-- Critique -->
     <div class="review">
       <h2>Ma Note</h2>
-      <!-- 🔴 A MODIFIER (texte affiché): remplace les étoiles si besoin -->
+      <!-- 🔴 A MODIFIER: remplace les étoiles si besoin ★☆ -->
       <div class="stars">★★★★★</div>
 
       <h3>Mon Avis</h3>
-      <!-- 🔴 A MODIFIER (texte affiché): colle ton avis ici -->
+      <!-- 🔴 A MODIFIER: colle ton avis ici -->
       <p>
         
       Le mal-aimé de la licence Dark Souls, le jeu qui n’a pas été dirigé par Miyazaki.<br>
@@ -51,10 +59,9 @@
 
     <!-- Playlist YouTube -->
     <h2 style="margin-top:30px;">VOD</h2>
-    <!-- 🔴 A MODIFIER (dans le code): remplace __URL_PLAYLIST__ par l’URL embed de ta playlist -->
-    <!-- Exemple d’URL embed: <iframe src="https://www.youtube.com/embed/videoseries?list=ID_DE_TA_PLAYLIST" allowfullscreen></iframe> -->
-    <!-- 🔴 Pas de VOD pour l’instant : on affiche un message propre -->
-    <!-- <p>⚠️ VOD à venir… repasse bientôt !</p> -->
+    <div class="video-container">
+    <!-- 🔴 A MODIFIER: remplace __URL_PLAYLIST__ par l’URL embed de ta playlist, Exemple d’URL embed: <iframe src="https://www.youtube.com/embed/videoseries?list=ID_DE_TA_PLAYLIST" allowfullscreen></iframe> -->
+    <!-- 🔴 PAS DE VOD: on affiche un message propre, <p>⚠️ VOD à venir… repasse bientôt !</p> -->
     <p>⚠️ VOD à venir… repasse bientôt !</p>
 
   </div>
