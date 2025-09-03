@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- 🔴 A MODIFIER: remplace __TITRE_DU_JEU__ -->
+  <title>Enotria : The Last Song — Kent</title>
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background:#0f1226; color:#e7e9ff; }
+    .container { max-width:900px; margin:0 auto; padding:20px; }
+    .game-cover { width:100%; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
+    .review { margin: 20px 0; background:#15193a; padding:20px; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
+    .review h2 { margin:0 0 10px; }
+    .review h3 { margin-bottom:4px; }
+    .review p { margin-top:4px; }
+    .review h2, .review h3 { color:#7c9bff; font-weight:700; }
+    /* 💡 Réglages notation par étoiles */
+    .star { width:22px; height:22px; vertical-align:middle; }
+    .stars { margin-bottom:30px; }
+    /* 💡 Police un peu plus grande et espacée */
+    .review p { font-size:20px; line-height:1.3; }
+    /* 💡 Modifier la taille de Ma Note et Mon Avis */
+    .review h2, .review h3 { font-size:22px; margin:0 0 10px; }
+    /* 💡 YouTube est propre : pas de bordure, coins arrondis, belle ombre, bien centré sur la largeur. */
+    iframe { border:none; border-radius:12px; width:100%; height:auto; margin-top:10px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
+    .back { display:inline-block; margin-bottom:20px; color:#7c9bff; text-decoration:none; }
+    /* 💡 Réglage dimension cadre VOD */
+    .vod { width:100%; aspect-ratio:16/9; height:auto !important; display:block; border:0; border-radius:12px; margin-top:16px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
+    /* 💡 Réglage pour voir toute la miniature VOD */
+    .video-container { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
+    .video-container iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a class="back" href="../index.html#jeux">← RETOUR AUX JEUX TERMINÉS</a>
+    <!-- 🔴 A MODIFIER -->
+    <h1>Enotria : The Last Song</h1>
+
+    <!-- Image du jeu -->
+    <!-- 🔴 A MODIFIER: remplace __IMAGE_FICHIER__ et __ALT_TITRE__ -->
+    <img src="../images/enotria-the-last-song.jpg" alt="Enotria : The Last Song" class="game-cover">
+
+    <!-- Critique -->
+    <div class="review">
+      <h2>Ma Note</h2>
+      <!-- 🔴 A MODIFIER: remplace les étoiles si besoin, full, half, empty ★½☆ -->
+      <div class="stars">
+      <img class="star" src="../images/star-full.svg" alt="★">
+      <img class="star" src="../images/star-full.svg" alt="★">
+      <img class="star" src="../images/star-full.svg" alt="★">
+      <img class="star" src="../images/star-full.svg" alt="★">
+      <img class="star" src="../images/star-empty.svg" alt="☆">
+      </div>
+      
+      <h3>Mon Avis</h3>
+      <!-- 🔴 A MODIFIER: colle ton avis ici -->
+      <p>
+        
+      Rare très bon souls-like que j'ai apprécié ! Vous jouez un personnage qui peut
+      changer de masque, chaque masque donne des stats différentes. Un système de parade parfaite
+      qui rend les souls-like beaucoup plus appréciables et dynamiques !
+      Petit studio mais studio prometteur !
+      
+        
+      </p>
+    </div>
+
+    <!-- Playlist YouTube -->
+    <h2 style="margin-top:30px;">VOD</h2>
+    <!-- 🔴 A MODIFIER: remplace __URL_PLAYLIST__ par l’URL embed de ta playlist, Exemple d’URL embed: <iframe src="https://www.youtube.com/embed/videoseries?list=ID_DE_TA_PLAYLIST" allowfullscreen></iframe> -->
+    <iframe class="vod" src="https://www.youtube.com/embed/videoseries?list=PLHbVCtNmmixEitkOQPVkqcEQscWiRSm5m" allowfullscreen></iframe>
+    <!-- 🔴 Pas de VOD pour l’instant : on affiche un message propre, <p>⚠️ VOD à venir… repasse bientôt !</p> -->
+
+  </div>
+</body>
+</html>
