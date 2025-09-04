@@ -25,6 +25,7 @@
     /* 💡 YouTube est propre : pas de bordure, coins arrondis, belle ombre, bien centré sur la largeur. */
     iframe { border:none; border-radius:12px; width:100%; height:auto; margin-top:10px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
     .back { display:inline-block; margin-bottom:20px; color:#7c9bff; text-decoration:none; }
+    .nav-prev-next{display:flex;justify-content:space-between;margin-bottom:20px;}.nav-prev-next a{color:#7c9bff;text-decoration:none;font-weight:600;text-transform:uppercase;}.nav-prev-next a:hover{color:#a8c4ff;}
     /* 💡 Réglage dimension cadre VOD */
     .vod { width:100%; aspect-ratio:16/9; height:auto !important; display:block; border:0; border-radius:12px; margin-top:16px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
     /* 💡 Réglage pour voir toute la miniature VOD */
@@ -34,7 +35,10 @@
 </head>
 <body>
   <div class="container">
-    <a class="back" href="../index.html#jeux">← RETOUR AUX JEUX TERMINÉS</a>
+    <a class="back" href="../index.html#jeux">← RETOUR AUX JEUX TERMINÉS</a><div class="nav-prev-next">
+    <a href="fallout-2.html" class="prev">← JEU PRÉCÉDENT</a>
+    <a href="fallout-new-vegas.html" class="next">JEU SUIVANT →</a></div>
+
     <!-- 🔴 A MODIFIER -->
     <h1>FALLOUT 3</h1>
 
