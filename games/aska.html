@@ -30,10 +30,12 @@
     .nav-prev-next{ display:flex; justify-content:space-between; margin-bottom:20px; }
     .nav-prev-next a{color:#7c9bff; text-decoration:none; font-weight:600; text-transform:uppercase; }
     .nav-prev-next a:hover{color:#a8c4ff; }
-    .nav-prev-next a svg { width:18px; height:18px; vertical-align:-2px; stroke:#fff; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
-    .nav-prev-next a.prev svg { margin-right:8px; }
-    .nav-prev-next a.next svg { margin-left:8px; }
-    .nav-prev-next .disabled { opacity:.45; pointer-events:none; cursor:default; }
+    /* 💡 une seule série de règles pour tous les SVG (a et span) */
+    .nav-prev-next svg{width:18px;height:18px;vertical-align:-2px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .nav-prev-next .prev svg{margin-right:8px}
+    .nav-prev-next .next svg{margin-left:8px}
+    .nav-prev-next .disabled{opacity:.45;pointer-events:none;cursor:default}
+
     /* 💡 Réglage dimension cadre VOD */
     .vod { width:100%; aspect-ratio:16/9; height:auto !important; display:block; border:0; border-radius:12px; margin-top:16px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
     /* 💡 Réglage pour voir toute la miniature VOD */
