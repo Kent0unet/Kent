@@ -57,7 +57,7 @@ window.GAMES = [
       { title: 'Palworld', url: 'games/palworld.html' },
       { title: 'Pokémon Saphir Alpha', url: 'games/pokemon-saphir-alpha.html' },
       { title: 'Pokémon Écarlate', url: 'games/pokemon-ecarlate.html' },
-      { title: 'Légendes Pokémon : Arceus', url: 'games/pokemon-legendes-arceus.html' },
+      { title: 'Légendes Pokémon : Arceus', url: 'games/legendes-pokemon-arceus.html' },
       { title: 'Pokémon Épée', url: 'games/pokemon-epee.html' },
       { title: 'Remember Me', url: 'games/remember-me.html' },
       { title: 'Rise of the Ronin', url: 'games/rise-of-the-ronin.html' },
