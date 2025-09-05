@@ -24,7 +24,18 @@
     .review h2, .review h3 { font-size:22px; margin:0 0 10px; }
     /* 💡 YouTube est propre : pas de bordure, coins arrondis, belle ombre, bien centré sur la largeur. */
     iframe { border:none; border-radius:12px; width:100%; height:auto; margin-top:10px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
-    .back { display:inline-block; margin-bottom:20px; color:#7c9bff; text-decoration:none; }
+    /* 💡 Modifications de Precedent, Suivant et Retour aux jeux terminés. */
+    .back{ display:inline-block; margin-bottom:20px; color:#7c9bff; text-decoration:none; font-weight:600; }
+    .back svg { width:18px; height:18px; vertical-align:-2px; stroke:#fff; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; margin-right:8px; }
+    .nav-prev-next{ display:flex; justify-content:space-between; margin-bottom:20px; }
+    .nav-prev-next a{color:#7c9bff; text-decoration:none; font-weight:600; text-transform:uppercase; }
+    .nav-prev-next a:hover{color:#a8c4ff; }
+    /* 💡 une seule série de règles pour tous les SVG (a et span) */
+    .nav-prev-next svg{width:18px;height:18px;vertical-align:-2px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .nav-prev-next .prev svg{margin-right:8px}
+    .nav-prev-next .next svg{margin-left:8px}
+    .nav-prev-next .disabled{opacity:.45;pointer-events:none;cursor:default}
+
     /* 💡 Réglage dimension cadre VOD */
     .vod { width:100%; aspect-ratio:16/9; height:auto !important; display:block; border:0; border-radius:12px; margin-top:16px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
     /* 💡 Réglage pour voir toute la miniature VOD */
@@ -34,7 +45,24 @@
 </head>
 <body>
   <div class="container">
-    <a class="back" href="../index.html#jeux">← RETOUR AUX JEUX TERMINÉS</a>
+    <!-- 💡 Retour aux jeux terminés -->
+    <a class="back" href="../index.html#jeux">
+      <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/><path d="M9 12h10"/></svg>
+      RETOUR AUX JEUX TERMINÉS
+    </a>
+
+    <!-- 💡 Navigation précédente/suivante -->
+    <div class="nav-prev-next">
+      <span class="prev disabled">
+        <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/><path d="M9 12h10"/></svg>
+        JEU PRÉCÉDENT
+      </span>
+      <span class="next disabled">
+        JEU SUIVANT
+        <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/><path d="M5 12h10"/></svg>
+      </span>
+    </div>
+    
     <!-- 🔴 A MODIFIER -->
     <h1>Elden Ring : Shadow of the Erdtree</h1>
 
@@ -72,5 +100,46 @@
     <!-- 🔴 Pas de VOD pour l’instant : on affiche un message propre, <p>⚠️ VOD à venir… repasse bientôt !</p> -->
 
   </div>
+
+  <!-- 💡 Liste partagée -->
+  <script src="../games-list.js"></script>
+  <!-- 💡 Auto PRÉCÉDENT/SUIVANT -->
+  <script>
+  (function(){
+    if(!window.GAMES) return;
+    const playable = window.GAMES
+      .filter(g=>g.url)
+      .sort((a,b)=>a.title.localeCompare(b.title))
+      .map(g=>({ title:g.title, file:g.url.split('/').pop(), href:'../'+g.url }));
+
+    const file = location.pathname.split('/').pop();
+    const idx = playable.findIndex(g=>g.file===file);
+    const cont = document.querySelector('.nav-prev-next'); if(!cont) return;
+
+    const leftSVG  = '<svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/><path d="M9 12h10"/></svg>';
+    const rightSVG = '<svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/><path d="M5 12h10"/></svg>';
+
+    const makeLink = (cls, txt, href) => {
+      const a = document.createElement('a');
+      a.className = cls;
+      a.href = href;
+      if (cls.includes('prev')) {
+        a.innerHTML = leftSVG + ' ' + txt;
+      } else {
+        a.innerHTML = txt + ' ' + rightSVG;
+      }
+      return a;
+    };
+
+    const prevEl = cont.querySelector('.prev');
+    if(idx>0){
+      cont.replaceChild(makeLink('prev','JEU PRÉCÉDENT', playable[idx-1].href), prevEl);
+    }
+    const nextEl = cont.querySelector('.next');
+    if(idx>-1 && idx<playable.length-1){
+      cont.replaceChild(makeLink('next','JEU SUIVANT', playable[idx+1].href), nextEl);
+    }
+  })();
+  </script>
 </body>
 </html>
