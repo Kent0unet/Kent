@@ -91,6 +91,7 @@ window.GAMES = [
       { title: "SOUTH PARK : L'Annale du Destin", url: 'games/south-park-l-annale-du-destin.html' },
       { title: 'SOUTH PARK : Le Baton de la Vérité', url: 'games/south-park-le-baton-de-la-verite.html' },
       { title: 'Batman : Arkham Origins', url: 'games/batman-arkham-origins.html' },
+      { title: "La Terre du Milieu : L'Ombre du Mordor", url: 'games/la-terre-du-milieu-l-ombre-du-mordor.html' },
       
 
 
