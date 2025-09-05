@@ -101,5 +101,46 @@
     <!-- 🔴 Pas de VOD pour l’instant : on affiche un message propre, <p>⚠️ VOD à venir… repasse bientôt !</p> -->
 
   </div>
+  
+<!-- 💡 Liste partagée -->
+  <script src="../games-list.js"></script>
+  <!-- 💡 Auto PRÉCÉDENT/SUIVANT -->
+  <script>
+  (function(){
+    if(!window.GAMES) return;
+    const playable = window.GAMES
+      .filter(g=>g.url)
+      .sort((a,b)=>a.title.localeCompare(b.title))
+      .map(g=>({ title:g.title, file:g.url.split('/').pop(), href:'../'+g.url }));
+
+    const file = location.pathname.split('/').pop();
+    const idx = playable.findIndex(g=>g.file===file);
+    const cont = document.querySelector('.nav-prev-next'); if(!cont) return;
+
+    const leftSVG  = '<svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/><path d="M9 12h10"/></svg>';
+    const rightSVG = '<svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/><path d="M5 12h10"/></svg>';
+
+    const makeLink = (cls, txt, href) => {
+      const a = document.createElement('a');
+      a.className = cls;
+      a.href = href;
+      if (cls.includes('prev')) {
+        a.innerHTML = leftSVG + ' ' + txt;
+      } else {
+        a.innerHTML = txt + ' ' + rightSVG;
+      }
+      return a;
+    };
+
+    const prevEl = cont.querySelector('.prev');
+    if(idx>0){
+      cont.replaceChild(makeLink('prev','JEU PRÉCÉDENT', playable[idx-1].href), prevEl);
+    }
+    const nextEl = cont.querySelector('.next');
+    if(idx>-1 && idx<playable.length-1){
+      cont.replaceChild(makeLink('next','JEU SUIVANT', playable[idx+1].href), nextEl);
+    }
+  })();
+  </script>
 </body>
 </html>
