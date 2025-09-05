@@ -81,5 +81,21 @@ window.GAMES = [
       { title: 'Wartales', url: 'games/wartales.html' },
       { title: 'The Wolf Among Us', url: 'games/the-wolf-among-us.html' },
       { title: 'Wo Long : Fallen Dynasty', url: 'games/wo-long-fallen-dynasty.html' },
-      { title: 'Yakuza : Like a Dragon', url: 'games/yakuza-like-a-dragon.html' }
+      { title: 'Yakuza : Like a Dragon', url: 'games/yakuza-like-a-dragon.html' },
+      { title: 'The Outer Worlds', url: 'games/the-outer-worlds.html' },
+      { title: 'FALLOUT 4', url: 'games/fallout-4.html' },
+      { title: 'Sonic Adventure 2 Battle (Game Cube)', url: 'games/sonic-adventure-2-battle.html' },
+      { title: 'Lies of P : Overture', url: 'games/lies-of-p-overture.html' },
+      { title: 'Batman : Arkham City', url: 'games/batman-arkham-city.html' },
+      { title: 'Ori and the Blind Forest', url: 'games/ori-and-the-blind-forest.html' },
+      { title: "SOUTH PARK : L'Annale du Destin", url: 'games/south-park-l-annale-du-destin.html' },
+      { title: 'SOUTH PARK : Le Baton de la Vérité', url: 'games/south-park-le-baton-de-la-verite.html' },
+      
+
+
+
+
+
+
+  
 ];
