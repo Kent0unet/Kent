@@ -92,6 +92,7 @@ window.GAMES = [
       { title: 'SOUTH PARK : Le Baton de la Vérité', url: 'games/south-park-le-baton-de-la-verite.html' },
       { title: 'Batman : Arkham Origins', url: 'games/batman-arkham-origins.html' },
       { title: "La Terre du Milieu : L'Ombre du Mordor", url: 'games/la-terre-du-milieu-l-ombre-du-mordor.html' },
+      { title: "Animal Crossing : New Horizons", url: null },
       
 
 
