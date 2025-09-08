@@ -8,11 +8,19 @@
   <style>
     body { font-family: Arial, sans-serif; margin:0; background:#0f1226; color:#e7e9ff; line-height:1.6; }
     .container { max-width:900px; margin:0 auto; padding:20px; }
-    h1 { color:#fff; margin:0 0 16px; font-size:28px; }
-    h2 { color:#aeb4ff; margin:0 0 12px; font-size:22px; }
+
+    /* Titres */
+    h1 { color:#fff; margin:0 0 16px; font-size:28px; }            /* LVL Goal (blanc) */
+    h2 { color:#aeb4ff; margin:0 0 12px; font-size:22px; }         /* Sous-titres par défaut */
+    h2.lvl3 { color:#5d73ff; }                                      /* LVL Goal 3 = bleu plus foncé que #7c9bff */
+
+    /* Image style pages jeux */
+    .game-cover { width:100%; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
+
     ul { padding-left:20px; margin:0; }
     li { margin-bottom:6px; }
     .legend { margin-top:10px; font-size:14px; color:#cbd0ff80; }
+
     .back { display:inline-block; margin-bottom:20px; color:#7c9bff; text-decoration:none; font-weight:600; }
     .back:hover { color:#a8c4ff; }
 
@@ -31,29 +39,29 @@
 </head>
 <body>
   <div class="container">
-    <a class="back" href="index.html">
-      ← RETOUR À L'ACCUEIL
-    </a>
+    <a class="back" href="index.html">← RETOUR À L'ACCUEIL</a>
+
+    <!-- Titre + Image -->
+    <h1>⚡ LVL Goal</h1>
+    <img src="images/lvl-goal.jpg" alt="LVL Goal" class="game-cover">
 
     <!-- Encadré d'intro -->
     <div class="review">
-      <h1>⚡ Qu’est-ce que les LVL Goals ?</h1>
+      <h2>⚡ Qu’est-ce que les LVL Goals ?</h2>
       <p>
-      Le LVL Goal c'est quoi ?<br><br>
-
-      Les LVL Goals sont des paliers d’objectifs fixés avec ma communauté.<br>
-      Chaque niveau contient un défi ou un projet que je réalise en live ou en vidéo.<br>
-      Chaque palier est atteint à 100 € ! Donc il faudra atteindre 1000 € à la fin pour tout réaliser !<br>
-      Les objectifs ne sont pas figés dans le temps, si jamais on estime qu'on devrait modifier un objectif avec la communauté, on le fera et on l'a déjà fait !<br><br>
-        
-      ☑️ : Quand un objectif est atteint (atteint mais pas encore fait)<br>
-      ✅ : Quand un objectif est atteint et réalisé (fait en live/vidéo).
+        Le LVL Goal c'est quoi ?<br><br>
+        Les LVL Goals sont des paliers d’objectifs fixés avec ma communauté.<br>
+        Chaque niveau contient un défi ou un projet que je réalise en live ou en vidéo.<br>
+        Chaque palier est atteint à 100 € ! Donc il faudra atteindre 1000 € à la fin pour tout réaliser !<br>
+        Les objectifs ne sont pas figés dans le temps, si jamais on estime qu'on devrait modifier un objectif avec la communauté, on le fera et on l'a déjà fait !<br><br>
+        ☑️ : Quand un objectif est atteint (atteint mais pas encore fait)<br>
+        ✅ : Quand un objectif est atteint et réalisé (fait en live/vidéo).
       </p>
     </div>
 
     <!-- ⚡ LVL GOAL 3 -->
     <div class="review">
-      <h1>⚡ LVL Goal 3 :</h1>
+      <h2 class="lvl3">⚡ LVL Goal 3 :</h2>
       <ul>
         <li>1 - Let's Play sur The Walking Dead Saison 3</li>
         <li>2 - Let's Play sur un jeu de merde (Dragon Age Veilguard)</li>
@@ -66,9 +74,8 @@
         <li>9 - Let's Play sur un jeu horrifique interdit sur Twitch (Fear and Hunger)</li>
         <li>10 - Let's Play sur un jeu mythique que je n'ai jamais fait (Résifent Evil ?)</li>
       </ul>
-      <br><br>
-      <span class="donateurs">Donateurs :</span><br><br>
-      👑Jordy : 50,49€<br>
+      <span class="donateurs">Donateurs :</span><br>
+      Jordy : 50,49€<br>
       Amando : 25€<br>
       Personne (On a plus de buzz)
     </div>
@@ -88,8 +95,7 @@
         <li>9 - Let's Play sur Little Nightmares 2 ✅</li>
         <li>10 - Let's Play sur As Dusk Falls ✅</li>
       </ul>
-      <br><br>
-      <span class="donateurs">Donateurs :</span><br><br>
+      <span class="donateurs">Donateurs :</span><br>
       👑XxTurpinette100xX : 704€<br>
       Jordy6946 : 179€<br>
       Trixzou93 : 170€ (12500 bits)
@@ -110,8 +116,7 @@
         <li>9 - 2 heures sur un jeu d'horreur ✅</li>
         <li>10 - Teinture blanche/grise (cheveux) ✅</li>
       </ul>
-      <br><br>
-      <span class="donateurs">Donateurs :</span><br><br>
+      <span class="donateurs">Donateurs :</span><br>
       👑XxTurpinette100xX : 945€<br>
       WayneFR21 : 5€<br>
       Jordy6946 : 50€
