@@ -94,6 +94,7 @@ window.GAMES = [
       { title: "La Terre du Milieu : L'Ombre du Mordor", url: 'games/la-terre-du-milieu-l-ombre-du-mordor.html' },
       { title: 'Animal Crossing : New Horizons', url: 'games/animal-crossing-new-horizons.html' },
       { title: 'Final Fantasy XV', url: 'games/final-fantasy-xv.html' },
+      { title: 'It Takes Two', url: 'games/it-takes-two.html' },
 
 
 
