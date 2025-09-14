@@ -6,64 +6,80 @@
   <title>🪛 Ma Config — Kent</title>
   <link rel="icon" href="favicon.png" type="image/png">
   <style>
-    body{font-family:Arial,sans-serif;margin:0;background:#0f1226;color:#e7e9ff;line-height:1.6}
-    .container{max-width:900px;margin:0 auto;padding:20px}
-    .back{display:inline-block;margin-bottom:20px;color:#7c9bff;text-decoration:none;font-weight:600}
-    .back:hover{color:#a8c4ff}
-    h1{color:#fff;margin:0 0 16px;font-size:28px}
-    h2{color:#aeb4ff;margin:0 0 12px;font-size:22px}
-    .review{margin:20px 0;background:#15193a;padding:20px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.4)}
-    ul{padding-left:20px;margin:0}
-    li{margin-bottom:6px}
-    .label{color:#aeb4ff}
+    body { font-family: Arial, sans-serif; margin:0; background:#0f1226; color:#e7e9ff; line-height:1.6; }
+    .container { max-width:900px; margin:0 auto; padding:20px; }
+
+    /* Titres */
+    h1 { color:#fff; margin:0 0 16px; font-size:28px; }
+    h2 { color:#7c9bff; margin:16px 0 12px; font-size:22px; }
+
+    ul { padding-left:20px; margin:0; }
+    li { margin-bottom:6px; }
+
+    /* Bouton retour */
+    .back { display:inline-block; margin-bottom:20px; color:#7c9bff; text-decoration:none; font-weight:600; }
+    .back svg { width:18px; height:18px; vertical-align:-2px; stroke:#fff; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; margin-right:8px; }
+    .back:hover { color:#a8c4ff; }
+
+    /* Encadré style pages jeux */
+    .review {
+      margin: 20px 0;
+      background:#15193a;
+      padding:20px;
+      border-radius:12px;
+      box-shadow:0 8px 20px rgba(0,0,0,.4);
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <a class="back" href="index.html#projets">← RETOUR À L'ACCUEIL</a>
+    <!-- Bouton retour -->
+    <a class="back" href="index.html">
+      <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/><path d="M9 12h10"/></svg>
+      RETOUR À L'ACCUEIL
+    </a>
 
     <h1>🪛 Ma Config</h1>
 
     <div class="review">
-      <h2>PC</h2>
+      <h2>PC :</h2>
       <ul>
-        <li><span class="label">Système d’exploitation :</span> Windows 10 Professionnel (x64)</li>
-        <li><span class="label">Carte mère :</span> MSI MAG Z490 TOMAHAWK</li>
-        <li><span class="label">Processeur :</span> Intel Core i9-10850K (3.6 GHz)</li>
-        <li><span class="label">RAM :</span> DDR4 G.Skill Ripjaws V Noir 32 Go (2 × 16 Go) 3600 MHz — CAS 16</li>
-        <li><span class="label">Carte graphique :</span> ZOTAC GAMING GeForce RTX 4080 SUPER AMP Extreme AIRO 16 Go GDDR6X</li>
-        <li><span class="label">Stockage :</span>
+        <li>Système d'Exploitation : Windows 10 Professionnel ‎(X64)‎</li>
+        <li>Carte Mère : MSI MAG Z490 TOMAHAWK</li>
+        <li>Processeur : Intel Core i9-10850K (3.6 GHz)</li>
+        <li>RAM : DDR4 G.Skill Ripjaws V Noir 32 Go (2 x 16 Go) 3600 MHz - CAS 16</li>
+        <li>Carte Graphique : ZOTAC GAMING GeForce RTX 4080 SUPER AMP Extreme AIRO 16 Go GDDR6X</li>
+        <li>Disques Durs :
           <ul>
-            <li>1/ SSD Samsung SSD 840 EVO 120 GB — 111,79 Go (SATA III)</li>
-            <li>2/ HDD WD Green 3 To (WDC WD30EZRX-00DC0B0) — 2,73 To (SATA III)</li>
-            <li>3/ SSD Samsung SSD 860 EVO 1 TB — 931,51 Go (SATA III)</li>
+            <li>1/ SSD SamsungSSD840EVO120GB de 111.79 Go SATA III</li>
+            <li>2/ Disque dur WDCWD30EZRX-00DC0B0 de 2.73 To SATA III</li>
+            <li>3/ SSD SamsungSSD860EVO1TB de 931.51 Go SATA III</li>
           </ul>
         </li>
-        <li><span class="label">Refroidissement :</span> Noctua NH-U14S</li>
+        <li>Ventirad : Noctua NH-U14S</li>
       </ul>
     </div>
 
     <div class="review">
-      <h2>Périphériques</h2>
+      <h2>PÉRIPHÉRIQUES :</h2>
       <ul>
-        <li><span class="label">Clavier :</span> Razer BlackWidow Chroma</li>
-        <li><span class="label">Souris :</span> Redragon M913</li>
-        <li><span class="label">Écrans :</span> PHL 246V5 & ASUS VP278</li>
-        <li><span class="label">Webcam :</span> Logitech StreamCam</li>
-        <li><span class="label">Boîtier d’acquisition :</span> AVerMedia Live Gamer Extreme</li>
-        <li><span class="label">Logiciels :</span> OBS Studio</li>
+        <li>Clavier : Razer BlackWidow Chroma</li>
+        <li>Souris : RedDragon M913</li>
+        <li>Écrans : PHL 246V5 & ASUS VP278</li>
+        <li>Webcam : Logitech StreamCam</li>
+        <li>Boitier d'Acquisition : AverMedia Live Gamer Extreme</li>
+        <li>Logiciels : OBS Studio</li>
       </ul>
     </div>
 
     <div class="review">
-      <h2>Consoles</h2>
+      <h2>CONSOLES :</h2>
       <ul>
         <li>PlayStation 5</li>
         <li>PC</li>
         <li>Nintendo Switch</li>
       </ul>
     </div>
-
   </div>
 </body>
 </html>
