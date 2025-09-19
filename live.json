@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": false,
-    "title": null,
+    "live": true,
+    "title": "⚡Le meilleur jeu du monde est enfin sorti !⚡",
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2025-09-19T10:50:46Z"
+  "updated": "2025-09-19T11:25:34Z"
 }
