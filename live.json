@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": false,
-    "title": null,
+    "live": true,
+    "title": "⚡On rattrape le State of Play⚡",
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2025-09-25T12:35:09Z"
+  "updated": "2025-09-25T13:16:05Z"
 }
