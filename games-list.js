@@ -97,7 +97,7 @@ window.GAMES = [
       { title: 'It Takes Two', url: 'games/it-takes-two.html' },
       { title: "Baldur's Gate III", url: 'games/baldur-s-gate-iii.html' },
       { title: 'Borderlands 4', url: null },
-      { title: 'Dying Light : The Beast', url: null },
+      { title: 'Dying Light : The Beast', url: 'games/dying-light-the-beast.html' },
       { title: 'MegaBonk', url: null },
       { title: 'Sonic Racing : CrossWorlds', url: null },
 
