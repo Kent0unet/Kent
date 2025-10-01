@@ -34,7 +34,7 @@ window.GAMES = [
       { title: 'Final Fantasy', url: 'games/final-fantasy.html' },
       { title: 'Final Fantasy VII : Crisis Core Remastered', url: 'games/final-fantasy-vii-crisis-core-remastered.html' },
       { title: 'Final Fantasy VII : Remake', url: 'games/final-fantasy-vii-remake.html' },
-      { title: 'Final Fantasy VII: Rebirth', url: 'games/final-fantasy-vii-rebirth.html' },
+      { title: 'Final Fantasy VII : Rebirth', url: 'games/final-fantasy-vii-rebirth.html' },
       { title: 'Final Fantasy XVI', url: 'games/final-fantasy-xvi.html' },
       { title: 'God of War 4', url: 'games/god-of-war-4.html' },
       { title: 'God of War 5 : Ragnarok', url: 'games/god-of-war-5-ragnarok.html' },
