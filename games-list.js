@@ -3,7 +3,7 @@ window.GAMES = [
 // … ajoute tous tes jeux (url ou null si “coming soon”)
   
       { title: 'Fallout 3', url: 'games/fallout-3.html' },
-      { title: 'Fallout: New Vegas', url: 'games/fallout-new-vegas.html' },
+      { title: 'Fallout : New Vegas', url: 'games/fallout-new-vegas.html' },
       { title: 'Dark Souls II', url: 'games/dark-souls-ii.html' },
       { title: 'Elden Ring', url: 'games/elden-ring.html' },
       { title: 'Lords of the Fallen (2014)', url: 'games/lords-of-the-fallen-2014.html' },
