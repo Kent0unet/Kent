@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Le dernier succes⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2025-10-03T17:34:52Z"
+  "updated": "2025-10-03T17:46:34Z"
 }
