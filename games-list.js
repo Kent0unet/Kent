@@ -99,7 +99,7 @@ window.GAMES = [
       { title: 'Borderlands 4', url: null },
       { title: 'Dying Light : The Beast', url: 'games/dying-light-the-beast.html' },
       { title: 'MegaBonk', url: 'games/megabonk.html' },
-      { title: 'Sonic Racing : CrossWorlds', url: null },
+      { title: 'Sonic Racing : CrossWorlds', url: 'games/sonic-racing-crossworlds.html' },
 
 
 
