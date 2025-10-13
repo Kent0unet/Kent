@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡[DROPS ON✅] Je découvre le jeu en 2025⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2025-10-13T11:58:53Z"
+  "updated": "2025-10-13T12:55:32Z"
 }
