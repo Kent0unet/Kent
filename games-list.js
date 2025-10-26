@@ -100,8 +100,9 @@ window.GAMES = [
       { title: 'Dying Light : The Beast', url: 'games/dying-light-the-beast.html' },
       { title: 'MegaBonk', url: 'games/megabonk.html' },
       { title: 'Sonic Racing : CrossWorlds', url: 'games/sonic-racing-crossworlds.html' },
-
-
+      { title: 'Dying Light', url: null },
+      { title: 'Legendes Pokémon Z-A', url: null },
+      { title: 'Ghost of Yotei', url: null },
 
 
   
