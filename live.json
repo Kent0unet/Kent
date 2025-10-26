@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Dimanche chill sur CZN (J-2 Duet Night Abyss)⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2025-10-26T19:24:04Z"
+  "updated": "2025-10-26T19:49:08Z"
 }
