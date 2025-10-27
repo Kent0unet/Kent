@@ -143,13 +143,9 @@ window.GAMES = [
       { title: 'Jujutsu Kaisen Phantom Parade', url: null },
       { title: 'Harry Potter : Magic Awakened', url: null },
       { title: 'Astra : Knigths Of veda', url: null },
-      { title: 'Dislyte', url: null },
-      { title: 'Dislyte', url: null },
-      { title: 'Dislyte', url: null },
-      { title: 'Dislyte', url: null },
-      { title: 'Dislyte', url: null },
-      { title: 'Dislyte', url: null },
-      { title: 'Dislyte', url: null },
+      { title: 'Code Vein', url: null },
+      { title: 'Code Vein 2', url: null },
+      
 
 
   
