@@ -131,7 +131,7 @@ window.GAMES = [
       { title: 'Zenless Zone Zero', url: null },
       { title: 'Black Clover M', url: null },
       { title: 'Final Fantasy VII : Ever Crisis', url: null },
-      { title: 'War Of The Visions: Final Fantasy Brave Exvius', url: null },
+      { title: 'War Of The Visions : Final Fantasy Brave Exvius', url: null },
       { title: 'Solo Leveling : Arise', url: null },
       { title: 'King Arthur : Legends Rise', url: null },
       { title: 'Chaos Zero Nightmare', url: null },
