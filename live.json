@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Decouverte de Seven Deadly Sins Origin !⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2025-10-30T18:38:38Z"
+  "updated": "2025-10-30T18:55:16Z"
 }
