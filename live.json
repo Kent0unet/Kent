@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡GACHA TIME - Ça gacha un max en fait⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2025-11-01T17:50:27Z"
+  "updated": "2025-11-01T18:13:22Z"
 }
