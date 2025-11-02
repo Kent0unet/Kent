@@ -116,7 +116,7 @@ window.GAMES = [
       { title: 'Destiny : Rising', url: null },
       { title: 'Wuthering Waves', url: null },
       { title: 'Tower of Fantasy', url: null },
-      { title: 'Seven Deadl Sins : Grand Cross', url: null },
+      { title: 'Seven Deadly Sins : Grand Cross', url: null },
       { title: 'Seven Deadly Sins : Origins', url: null },
       { title: 'Rememento : White Shadow', url: null },
       { title: 'DC Legends', url: null },
