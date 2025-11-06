@@ -112,7 +112,7 @@ window.GAMES = [
       { title: 'Genshin Impact', url: null },
       { title: 'Etheria : Restart', url: null },
       { title: 'Persona 5 : The Phantom X', url: null },
-      { title: 'Blue protocol : Star Resonance', url: null },
+      { title: 'Blue protocol : Star Resonance', url: 'games/blue-protocol-star-resonance.html' },
       { title: 'Destiny : Rising', url: null },
       { title: 'Wuthering Waves', url: null },
       { title: 'Tower of Fantasy', url: null },
