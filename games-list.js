@@ -145,7 +145,7 @@ window.GAMES = [
       { title: 'Astra : Knigths Of veda', url: null },
       { title: 'Code Vein', url: null },
       { title: 'Code Vein 2', url: null },
-      { title: 'Duet Night Abyss', url: null },
+      { title: 'Duet Night Abyss', url: 'games/duet-night-abyss.html' },
       { title: 'Dispatch', url: 'games/dispatch.html' },
       
 
