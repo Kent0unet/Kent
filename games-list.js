@@ -102,7 +102,7 @@ window.GAMES = [
       { title: 'Sonic Racing : CrossWorlds', url: 'games/sonic-racing-crossworlds.html' },
       { title: 'Dying Light', url: null },
       { title: 'Legendes Pokémon Z-A', url: null },
-      { title: 'Ghost of Yotei', url: null },
+      { title: 'Ghost of Yotei', url: 'games/ghost-of-yotei.html' },
       { title: 'Dragon Ball Gekishin Squadra', url: null },
       { title: 'Dragon Ball Z : Dokkan Battle', url: null },
       { title: 'Might and Magic : Elemental Guardians', url: null },
