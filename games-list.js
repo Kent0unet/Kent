@@ -146,6 +146,7 @@ window.GAMES = [
       { title: 'Code Vein', url: null },
       { title: 'Code Vein 2', url: null },
       { title: 'Duet Night Abyss', url: null },
+      { title: 'Dispatch', url: 'games/dispatch.html' },
       
 
 
