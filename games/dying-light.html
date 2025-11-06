@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- 🔴 A MODIFIER: remplace __TITRE_DU_JEU__ -->
+  <title>Dying Light — Kent</title>
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background:#0f1226; color:#e7e9ff; }
+    .container { max-width:900px; margin:0 auto; padding:20px; }
+    .game-cover { width:100%; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
+    .review { margin: 20px 0; background:#15193a; padding:20px; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
+    .review h2 { margin:0 0 10px; }
+    .review h3 { margin-bottom:4px; }
+    .review p { margin-top:4px; }
+    .review h2, .review h3 { color:#7c9bff; font-weight:700; }
+    /* 💡 Réglages notation par étoiles */
+    .star { width:22px; height:22px; vertical-align:middle; }
+    .stars { margin-bottom:30px; }
+    /* 💡 Police un peu plus grande et espacée */
+    .review p { font-size:20px; line-height:1.3; }
+    /* 💡 Modifier la taille de Ma Note et Mon Avis */
+    .review h2, .review h3 { font-size:22px; margin:0 0 10px; }
+    /* 💡 YouTube est propre : pas de bordure, coins arrondis, belle ombre, bien centré sur la largeur. */
+    iframe { border:none; border-radius:12px; width:100%; height:auto; margin-top:10px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
+    /* 💡 Modifications de Precedent, Suivant et Retour aux jeux terminés. */
+    .back{ display:inline-block; margin-bottom:20px; color:#7c9bff; text-decoration:none; font-weight:600; }
+    .back:hover{ color:#a8c4ff; }
+    .back svg { width:18px; height:18px; vertical-align:-2px; stroke:#fff; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; margin-right:8px; }
+    .nav-prev-next{ display:flex; justify-content:space-between; margin-bottom:20px; }
+    .nav-prev-next a{color:#7c9bff; text-decoration:none; font-weight:600; text-transform:uppercase; }
+    .nav-prev-next a:hover{color:#a8c4ff; }
+    /* 💡 une seule série de règles pour tous les SVG (a et span) */
+    .nav-prev-next svg{width:18px;height:18px;vertical-align:-2px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .nav-prev-next .prev svg{margin-right:8px}
+    .nav-prev-next .next svg{margin-left:8px}
+    .nav-prev-next .disabled{opacity:.45;pointer-events:none;cursor:default}
+
+    /* 💡 Réglage dimension cadre VOD */
+    .vod { width:100%; aspect-ratio:16/9; height:auto !important; display:block; border:0; border-radius:12px; margin-top:16px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
+    /* 💡 Réglage pour voir toute la miniature VOD */
+    .video-container { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,.4); }
+    .video-container iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 💡 Retour aux jeux terminés -->
+    <a class="back" href="../index.html#jeux">
+      <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/><path d="M9 12h10"/></svg>
+      RETOUR AUX JEUX TERMINÉS
+    </a>
+
+    <!-- 💡 Navigation précédente/suivante -->
+    <div class="nav-prev-next">
+      <span class="prev disabled">
+        <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/><path d="M9 12h10"/></svg>
+        JEU PRÉCÉDENT
+      </span>
+      <span class="next disabled">
+        JEU SUIVANT
+        <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/><path d="M5 12h10"/></svg>
+      </span>
+    </div>
+  
+    <!-- 🔴 A MODIFIER -->
+    <h1>Dying Light</h1>
+
+    <!-- 🔴 A MODIFIER: remplace __IMAGE_FICHIER__ et __ALT_TITRE__ -->
+    <img src="../images/dying-light.jpg" alt="Dying Light" class="game-cover">
+
+    <!-- Critique -->
+    <div class="review">
+      <h2>Ma Note</h2>
+      <!-- 🔴 A MODIFIER: remplace les étoiles si besoin, full, half, empty ★½☆ -->
+      <div class="stars">
+        <img class="star" src="../images/star-full.svg" alt="★">
+        <img class="star" src="../images/star-full.svg" alt="★">
+        <img class="star" src="../images/star-full.svg" alt="★">
+        <img class="star" src="../images/star-full.svg" alt="★">
+        <img class="star" src="../images/star-half.svg" alt="½">
+      </div>
+      
+      <h3>Mon Avis</h3>
+      <!-- 🔴 A MODIFIER: colle ton avis ici -->
+      <p>
+        
+      Un jeu qui a révolutionné les jeux de zombies. Il a amené le parkour là où on ne l’attendait pas !<br>
+    Et c’est très réussi ! Ça dynamise le gameplay, ça rend l’exploration de la map jouissive.<br>
+    Au niveau des combats, le jeu a priorisé les armes de corps à corps au détriment de celles à distance,<br>
+    même si dans le jeu il y en a quand même. Mais elles sont bien plus rares au début du jeu du moins.<br>
+    Ils ont repris par contre un classique des jeux de zombies tels que Left 4 Dead, c’est-à-dire<br>
+    les zombies spéciaux, qui ont chacun leurs spécialités distinctes. Niveau histoire, c’est plutôt correct.<br>
+    Les personnages sont assez attachants dans l’ensemble, le méchant principal, lui aussi, est potable.<br><br>
+
+    Gros bémol par contre au niveau du DLC The Following, qui est pour moi une catastrophe. Dans cette partie de la carte,<br>
+    on supprime 99 % des bâtiments qu’on avait l’habitude d’emprunter dans le jeu de base, et on met des voitures. Je n’ai jamais compris<br>
+    pourquoi ils ont fait ça. On a un jeu de parkour mais on ne peut plus faire de parkour. Je pense que c’était un test pour pouvoir l’intégrer plus tard<br>
+    dans un de leurs futurs jeux (spoiler : Dying Light : The Beast).<br><br>
+
+    Sinon, si on ne compte pas ce DLC, le jeu est vraiment exceptionnel !
+      
+        
+      </p>
+    </div>
+
+    <!-- Playlist YouTube -->
+    <h2 style="margin-top:30px;">VOD</h2>
+    <!-- 🔴 A MODIFIER: remplace __URL_PLAYLIST__ par l’URL embed de ta playlist -->
+    <iframe class="vod" src="https://www.youtube.com/embed/videoseries?list=PLHbVCtNmmixHGSzb3SVhlY8hPgmy-hUhd" allowfullscreen></iframe>
+    <!-- 🔴 Pas de VOD pour l’instant : <p>⚠️ VOD à venir… repasse bientôt !</p> / <p>⚠️ Pas de VOD, désolé !</p> -->
+
+  </div>
+
+  <!-- 💡 Liste partagée -->
+  <script src="../games-list.js"></script>
+  <!-- 💡 Auto PRÉCÉDENT/SUIVANT -->
+  <script>
+  (function(){
+    if(!window.GAMES) return;
+    const playable = window.GAMES
+      .filter(g=>g.url)
+      .sort((a,b)=>a.title.localeCompare(b.title))
+      .map(g=>({ title:g.title, file:g.url.split('/').pop(), href:'../'+g.url }));
+
+    const file = location.pathname.split('/').pop();
+    const idx = playable.findIndex(g=>g.file===file);
+    const cont = document.querySelector('.nav-prev-next'); if(!cont) return;
+
+    const leftSVG  = '<svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/><path d="M9 12h10"/></svg>';
+    const rightSVG = '<svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/><path d="M5 12h10"/></svg>';
+
+    const makeLink = (cls, txt, href) => {
+      const a = document.createElement('a');
+      a.className = cls;
+      a.href = href;
+      if (cls.includes('prev')) {
+        a.innerHTML = leftSVG + ' ' + txt;
+      } else {
+        a.innerHTML = txt + ' ' + rightSVG;
+      }
+      return a;
+    };
+
+    const prevEl = cont.querySelector('.prev');
+    if(idx>0){
+      cont.replaceChild(makeLink('prev','JEU PRÉCÉDENT', playable[idx-1].href), prevEl);
+    }
+    const nextEl = cont.querySelector('.next');
+    if(idx>-1 && idx<playable.length-1){
+      cont.replaceChild(makeLink('next','JEU SUIVANT', playable[idx+1].href), nextEl);
+    }
+  })();
+  </script>
+</body>
+</html>
