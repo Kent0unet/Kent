@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡On note les jeux qu'on a fini recemment⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2025-11-06T19:29:25Z"
+  "updated": "2025-11-06T19:41:42Z"
 }
