@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡[DROPS ON✅] On continue de decouvrir le jeu en mode Legende⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2025-11-22T19:56:11Z"
+  "updated": "2025-11-22T20:25:45Z"
 }
