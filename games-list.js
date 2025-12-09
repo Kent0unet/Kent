@@ -142,7 +142,7 @@ window.GAMES = [
       { title: 'Mobius Final Fantasy', url: null },
       { title: 'Jujutsu Kaisen Phantom Parade', url: null },
       { title: 'Harry Potter : Magic Awakened', url: null },
-      { title: 'Astra : Knights Of veda', url: null },
+      { title: 'Astra : Knights Of veda', url: 'games/astra-knights-of-veda.html' },
       { title: 'Code Vein', url: null },
       { title: 'Code Vein 2', url: null },
       { title: 'Duet Night Abyss', url: 'games/duet-night-abyss.html' },
