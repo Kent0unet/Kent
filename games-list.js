@@ -129,7 +129,7 @@ window.GAMES = [
       { title: 'Summoners War : Chronicles', url: null },
       { title: 'Honkai Star Rail', url: null },
       { title: 'Zenless Zone Zero', url: null },
-      { title: 'Black Clover M', url: null },
+      { title: 'Black Clover M', url: 'games/black-clover-m.html' },
       { title: 'Final Fantasy VII : Ever Crisis', url: null },
       { title: 'War Of The Visions : Final Fantasy Brave Exvius', url: null },
       { title: 'Solo Leveling : Arise', url: null },
