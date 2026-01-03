@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Bonne année 2026 :) ! LE PREMIER LET'S PLAY DE 2026 - JOUR 3⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-01-03T18:37:49Z"
+  "updated": "2026-01-03T18:55:37Z"
 }
