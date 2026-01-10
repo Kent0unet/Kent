@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Moi addict ? Demande a mes potes si je suis addict, tu verras leurs reponses !⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-01-10T17:59:57Z"
+  "updated": "2026-01-10T18:40:23Z"
 }
