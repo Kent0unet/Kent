@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Journee decouverte de jeu⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-01-17T18:28:22Z"
+  "updated": "2026-01-17T18:51:54Z"
 }
