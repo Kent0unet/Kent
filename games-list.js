@@ -96,7 +96,7 @@ window.GAMES = [
       { title: 'Final Fantasy XV', url: 'games/final-fantasy-xv.html' },
       { title: 'It Takes Two', url: 'games/it-takes-two.html' },
       { title: "Baldur's Gate III", url: 'games/baldur-s-gate-iii.html' },
-      { title: 'Borderlands 4', url: null },
+      { title: 'Borderlands 4', url: 'games/borderlands-4.html' },
       { title: 'Dying Light : The Beast', url: 'games/dying-light-the-beast.html' },
       { title: 'MegaBonk', url: 'games/megabonk.html' },
       { title: 'Sonic Racing : CrossWorlds', url: 'games/sonic-racing-crossworlds.html' },
