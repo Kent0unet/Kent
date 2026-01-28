@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡DECOUVERTE DE CODE VEIN 2 ! (j'ai reussi a l'optimisé un peu)⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-01-28T18:32:15Z"
+  "updated": "2026-01-28T19:02:54Z"
 }
