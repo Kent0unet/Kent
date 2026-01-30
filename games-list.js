@@ -147,7 +147,12 @@ window.GAMES = [
       { title: 'Code Vein 2', url: null },
       { title: 'Duet Night Abyss', url: 'games/duet-night-abyss.html' },
       { title: 'Dispatch', url: 'games/dispatch.html' },
-      
+      { title: 'Dinkum', url: null },
+      { title: 'Arknights : Endfield', url: null },
+      { title: 'Hytale', url: null },
+      { title: 'Starsand Island', url: null },
+      { title: 'Tainted Grail : The Fall of Avalon', url: null },
+      { title: 'Heartopia', url: null },
 
 
   
