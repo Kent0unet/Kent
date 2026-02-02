@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡On continue notre aventure !⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-02-02T17:08:16Z"
+  "updated": "2026-02-02T17:57:45Z"
 }
