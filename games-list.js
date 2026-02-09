@@ -103,7 +103,7 @@ window.GAMES = [
       { title: 'Dying Light', url: 'games/dying-light.html' },
       { title: 'Légendes Pokémon : Z-A', url: 'games/legendes-pokemon-z-a.html' },
       { title: 'Ghost of Yotei', url: 'games/ghost-of-yotei.html' },
-      { title: 'Dragon Ball Gekishin Squadra', url: null },
+      { title: 'Dragon Ball Gekishin Squadra', url: 'games/dragon-ball-gekisin-squadra.html' },
       { title: 'Dragon Ball Z : Dokkan Battle', url: null },
       { title: 'Might and Magic : Elemental Guardians', url: null },
       { title: 'Epic Seven', url: null },
