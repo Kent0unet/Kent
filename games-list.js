@@ -120,7 +120,7 @@ window.GAMES = [
       { title: 'Seven Deadly Sins : Origins', url: null },
       { title: 'Rememento : White Shadow', url: null },
       { title: 'DC Legends', url: 'games/dc-legends.html' },
-      { title: 'DC Worlds Collide', url: 'games/dc-world-collide.html' },
+      { title: 'DC Worlds Collide', url: 'games/dc-worlds-collide.html' },
       { title: 'DC : Dark Legion', url: 'games/dc-dark-legion.html' },
       { title: 'DC Heroes and Vilains', url: 'games/dc-heroes-and-vilains.html' },
       { title: 'Watcher of Realms', url: null },
