@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Objectif : Débloquer tous les terrains de la maison ! (Cliquez sur le lien epingler et installer sur Mobile pour m'aider)⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-02-16T18:02:42Z"
+  "updated": "2026-02-16T19:00:03Z"
 }
