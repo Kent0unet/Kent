@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Derniere parcelle a debloquer ! (Cliquez sur le lien epingler et installer sur Mobile pour m'aider)⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-02-19T18:30:44Z"
+  "updated": "2026-02-19T19:26:23Z"
 }
