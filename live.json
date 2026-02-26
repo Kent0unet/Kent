@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": false,
-    "title": null,
+    "live": true,
+    "title": "⚡Le jeu le plus problématique de l'année ? (Cliquez sur le lien epingler et installer sur Mobile pour m'aider)⚡",
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-02-26T11:59:01Z"
+  "updated": "2026-02-26T13:38:15Z"
 }
