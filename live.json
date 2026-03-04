@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": false,
-    "title": null,
+    "live": true,
+    "title": "⚡On discute puis LOL ? (Cliquez sur le lien epingler et installer sur Mobile pour m'aider)⚡",
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-03-04T13:37:05Z"
+  "updated": "2026-03-04T14:25:02Z"
 }
