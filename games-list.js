@@ -105,7 +105,7 @@ window.GAMES = [
       { title: 'Ghost of Yotei', url: 'games/ghost-of-yotei.html' },
       { title: 'Dragon Ball Gekishin Squadra', url: 'games/dragon-ball-gekisin-squadra.html' },
       { title: 'Dragon Ball Z : Dokkan Battle', url: 'games/dragon-ball-z-dokkan-battle.html' },
-      { title: 'Might and Magic : Elemental Guardians', url: null },
+      { title: 'Might and Magic : Elemental Guardians', url: 'games/might-and-magic-elemental-guardians.html' },
       { title: 'Epic Seven', url: null },
       { title: 'Summoners War : Sky Arena', url: null },
       { title: 'Dragon Ball Legends', url: null },
