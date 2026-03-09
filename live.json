@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Le joueur le plus nul d'Europe ! (Cliquez sur le lien epingler et installer sur Mobile pour m'aider)⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-03-09T17:32:58Z"
+  "updated": "2026-03-09T18:27:15Z"
 }
