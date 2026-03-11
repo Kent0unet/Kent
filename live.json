@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡[SUB=DROPS✅] Il est temps de découvrir enfin Marathon ! (Cliquez sur le lien epingler et installer sur Mobile pour m'aider)⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-03-11T17:29:57Z"
+  "updated": "2026-03-11T18:29:38Z"
 }
