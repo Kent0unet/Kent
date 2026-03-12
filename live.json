@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Petit gacha et Marathon (Cliquez sur le lien epingler et installer sur Mobile pour m'aider)⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-03-12T18:29:51Z"
+  "updated": "2026-03-12T19:26:59Z"
 }
