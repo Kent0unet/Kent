@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Une daube intense ou un Banger ?⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-03-20T18:02:52Z"
+  "updated": "2026-03-20T19:04:12Z"
 }
