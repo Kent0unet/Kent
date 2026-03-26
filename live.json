@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": false,
-    "title": null,
+    "live": true,
+    "title": "⚡On va essayé de capturer le petit dragon bleu⚡",
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-03-26T12:38:19Z"
+  "updated": "2026-03-26T14:11:17Z"
 }
