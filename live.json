@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Le pire joueur d'Europe coincé en Silver⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-03-28T17:30:20Z"
+  "updated": "2026-03-28T17:57:47Z"
 }
