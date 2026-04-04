@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡[DROPS ON✅] On redécouvre le jeu sur la Saison 0⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-04-04T17:00:28Z"
+  "updated": "2026-04-04T17:42:47Z"
 }
