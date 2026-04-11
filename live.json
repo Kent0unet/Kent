@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡J'ai appris une mauvais nouvelle sur le DLC et c'est honteux⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-04-11T17:56:06Z"
+  "updated": "2026-04-11T18:53:57Z"
 }
