@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Je redécouvre l'histoire de GTA V après 10 ans⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-04-14T16:53:33Z"
+  "updated": "2026-04-14T18:03:17Z"
 }
