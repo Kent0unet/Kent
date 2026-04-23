@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Invocations Escanor⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-04-23T16:52:30Z"
+  "updated": "2026-04-23T18:03:38Z"
 }
