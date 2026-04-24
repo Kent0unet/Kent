@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡On farm pour Escanor et les autres persos⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-04-24T15:22:45Z"
+  "updated": "2026-04-24T16:31:16Z"
 }
