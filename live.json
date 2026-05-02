@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡On se termine en cercle avec les viewers⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-05-02T16:27:19Z"
+  "updated": "2026-05-02T17:25:28Z"
 }
