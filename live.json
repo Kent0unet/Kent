@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡[DROPS ON✅] On est deja en mode routine⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-05-04T16:18:42Z"
+  "updated": "2026-05-04T17:55:57Z"
 }
