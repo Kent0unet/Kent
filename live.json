@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Eh la qui va la, NIKO BELLIC ! Eh la ça va pas ! OUH OUH - JOUR 3⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-05-08T17:04:40Z"
+  "updated": "2026-05-08T18:21:28Z"
 }
