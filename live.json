@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Niko Bellic doit conquerir la ville - JOUR 5⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-05-11T14:19:54Z"
+  "updated": "2026-05-11T17:06:17Z"
 }
