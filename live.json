@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡LE JOUEUR LE PLUS NUL D'EUROPE⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-05-16T16:13:38Z"
+  "updated": "2026-05-16T17:17:26Z"
 }
