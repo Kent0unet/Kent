@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Dark Souls 2 Scholar en chill⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-05-25T17:24:08Z"
+  "updated": "2026-05-25T19:00:25Z"
 }
