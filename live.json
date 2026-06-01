@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Objectif Platine sur Dark Souls 1 Remastered⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-06-01T13:03:48Z"
+  "updated": "2026-06-01T18:46:23Z"
 }
