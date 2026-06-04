@@ -131,18 +131,18 @@ window.GAMES = [
       { title: 'Zenless Zone Zero', url: null },
       { title: 'Black Clover M', url: 'games/black-clover-m.html' },
       { title: 'Final Fantasy VII : Ever Crisis', url: null },
-      { title: 'War Of The Visions : Final Fantasy Brave Exvius', url: null },
+      { title: 'War of the Visions : Final Fantasy Brave Exvius', url: null },
       { title: 'Solo Leveling : Arise', url: null },
       { title: 'King Arthur : Legends Rise', url: null },
       { title: 'Chaos Zero Nightmare', url: 'games/chaos-zero-nightmare.html' },
       { title: 'Dislyte', url: null },
-      { title: 'Sword Of Convallaria', url: null },
+      { title: 'Sword of Convallaria', url: null },
       { title: 'Dissidia Final Fantasy Opera Omnia', url: null },
       { title: 'Exos Heroes', url: null },
       { title: 'Mobius Final Fantasy', url: null },
       { title: 'Jujutsu Kaisen Phantom Parade', url: null },
       { title: 'Harry Potter : Magic Awakened', url: null },
-      { title: 'Astra : Knights Of Veda', url: 'games/astra-knights-of-veda.html' },
+      { title: 'Astra : Knights of Veda', url: 'games/astra-knights-of-veda.html' },
       { title: 'Code Vein', url: 'games/code-vein.html' },
       { title: 'Code Vein 2', url: 'games/code-vein-2.html' },
       { title: 'Duet Night Abyss', url: 'games/duet-night-abyss.html' },
@@ -154,6 +154,15 @@ window.GAMES = [
       { title: 'Tainted Grail : The Fall of Avalon', url: null },
       { title: 'Heartopia', url: null },
       { title: 'Project Zomboid', url: null },
+      { title: 'Dark Souls : Remastered', url: null },
+      { title: 'Dark Souls 2', url: null },
+      { title: 'Dark Souls 2 : Scholar of the First Sin', url: null },
+      { title: 'Dark Souls 3', url: null },
+      { title: 'Bloodborne', url: null },
+
+
+
+
 
 
   
