@@ -113,7 +113,7 @@ window.GAMES = [
       { title: 'Etheria : Restart', url: null },
       { title: 'Persona 5 : The Phantom X', url: null },
       { title: 'Blue Protocol : Star Resonance', url: 'games/blue-protocol-star-resonance.html' },
-      { title: 'Destiny : Rising', url: null },
+      { title: 'Destiny : Rising', url: 'games/destiny-rising.html' },
       { title: 'Wuthering Waves', url: 'games/wuthering-waves.html' },
       { title: 'Tower of Fantasy', url: null },
       { title: 'Seven Deadly Sins : Grand Cross', url: null },
