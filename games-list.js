@@ -154,7 +154,7 @@ window.GAMES = [
       { title: 'Tainted Grail : The Fall of Avalon', url: null },
       { title: 'Heartopia', url: null },
       { title: 'Project Zomboid', url: null },
-      { title: 'Dark Souls : Remastered', url: null },
+      { title: 'Dark Souls : Remastered', url: 'games/dark-souls-remastered.html' },
       { title: 'Dark Souls 2', url: null },
       { title: 'Dark Souls 2 : Scholar of the First Sin', url: null },
       { title: 'Dark Souls 3', url: null },
