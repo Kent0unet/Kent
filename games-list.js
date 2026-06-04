@@ -155,9 +155,9 @@ window.GAMES = [
       { title: 'Heartopia', url: null },
       { title: 'Project Zomboid', url: null },
       { title: 'Dark Souls : Remastered', url: 'games/dark-souls-remastered.html' },
-      { title: 'Dark Souls 2', url: null },
-      { title: 'Dark Souls 2 : Scholar of the First Sin', url: null },
-      { title: 'Dark Souls 3', url: null },
+      { title: 'Dark Souls 2', url: 'games/dark-souls-2.html' },
+      { title: 'Dark Souls 2 : Scholar of the First Sin', url: 'games/dark-souls-scholar-of-the-first-sin.html' },
+      { title: 'Dark Souls 3', url: 'games/dark-souls-3.html' },
       { title: 'Bloodborne', url: null },
 
 
