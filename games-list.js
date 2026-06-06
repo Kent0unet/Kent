@@ -109,7 +109,7 @@ window.GAMES = [
       { title: 'Summoners War : Sky Arena', url: null },
       { title: 'Dragon Ball Legends', url: 'games/dragon-ball-legends.html' },
       { title: 'Genshin Impact', url: null },
-      { title: 'Etheria : Restart', url: 'games/dragon-ball-legends.html' },
+      { title: 'Etheria : Restart', url: 'games/etheria-restart.html' },
       { title: 'Persona 5 : The Phantom X', url: null },
       { title: 'Blue Protocol : Star Resonance', url: 'games/blue-protocol-star-resonance.html' },
       { title: 'Destiny : Rising', url: 'games/destiny-rising.html' },
