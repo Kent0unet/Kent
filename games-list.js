@@ -102,7 +102,7 @@ window.GAMES = [
       { title: 'Dying Light', url: 'games/dying-light.html' },
       { title: 'Légendes Pokémon : Z-A', url: 'games/legendes-pokemon-z-a.html' },
       { title: 'Ghost of Yotei', url: 'games/ghost-of-yotei.html' },
-      { title: 'Dragon Ball Gekishin Squadra', url: 'games/dragon-ball-gekisin-squadra.html' },
+      { title: 'Dragon Ball Gekishin Squadra', url: 'games/dragon-ball-gekishin-squadra.html' },
       { title: 'Dragon Ball Z : Dokkan Battle', url: 'games/dragon-ball-z-dokkan-battle.html' },
       { title: 'Might and Magic : Elemental Guardians', url: 'games/might-and-magic-elemental-guardians.html' },
       { title: 'Epic Seven', url: 'games/epic-seven.html' },
