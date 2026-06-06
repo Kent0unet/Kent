@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡SUMMER GAME FEST 2026 ! ON ATTEND LE PROCHAIN FFVII !⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-06-05T22:52:45Z"
+  "updated": "2026-06-06T00:03:06Z"
 }
