@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡4 jeux a essayer de la conférence du Summer Game Fest 2026 !⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-06-06T16:49:06Z"
+  "updated": "2026-06-06T17:57:06Z"
 }
