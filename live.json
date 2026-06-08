@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": false,
-    "title": null,
+    "live": true,
+    "title": "⚡On test les démos du Summer Game Fest 2026⚡",
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-06-08T11:23:48Z"
+  "updated": "2026-06-08T14:55:27Z"
 }
