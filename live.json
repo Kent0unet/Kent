@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": false,
-    "title": null,
+    "live": true,
+    "title": "⚡Il est temps de choisir la faction !⚡",
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-06-16T12:29:39Z"
+  "updated": "2026-06-16T17:34:31Z"
 }
