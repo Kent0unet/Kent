@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Débutons le chapitre 6 !⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-06-19T17:44:34Z"
+  "updated": "2026-06-19T19:18:29Z"
 }
