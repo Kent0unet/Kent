@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Découverte d'un RPG Exigeant⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-06-21T17:12:04Z"
+  "updated": "2026-06-21T18:53:52Z"
 }
