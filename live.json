@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Ma première fois sur Outward⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-06-24T16:04:32Z"
+  "updated": "2026-06-24T18:04:50Z"
 }
