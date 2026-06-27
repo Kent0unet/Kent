@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": false,
-    "title": null,
+    "live": true,
+    "title": "⚡J'ai due recommencer a zéro ma partie a cause d'un bug de sac... (No cam, il fait trop chaud)⚡",
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-06-27T12:02:45Z"
+  "updated": "2026-06-27T14:03:00Z"
 }
