@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Je laisse une seconde chance a Oblivion - Live Anniversaire⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-07-01T16:00:00Z"
+  "updated": "2026-07-01T18:06:43Z"
 }
