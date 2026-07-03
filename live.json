@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡Début de l'aventure de V⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-07-03T15:24:56Z"
+  "updated": "2026-07-03T16:55:12Z"
 }
