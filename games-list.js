@@ -158,6 +158,9 @@ window.GAMES = [
       { title: 'Dark Souls 2 : Scholar of the First Sin', url: 'games/dark-souls-2-scholar-of-the-first-sin.html' },
       { title: 'Dark Souls 3', url: 'games/dark-souls-3.html' },
       { title: 'Bloodborne', url: null },
+      { title: 'Gothic 1 Remake', url: null },
+      { title: 'Outward', url: null },
+      { title: 'The Elder Scrolls IV : Oblivion Remastered', url: null },
 
 
 
