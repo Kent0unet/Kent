@@ -117,7 +117,7 @@ window.GAMES = [
       { title: 'Tower of Fantasy', url: null },
       { title: 'Seven Deadly Sins : Grand Cross', url: null },
       { title: 'Seven Deadly Sins : Origins', url: null },
-      { title: 'Rememento : White Shadow', url: null },
+      { title: 'Rememento : White Shadow', url: 'games/rememento-white-shadow.html' },
       { title: 'DC Legends', url: 'games/dc-legends.html' },
       { title: 'DC Worlds Collide', url: 'games/dc-worlds-collide.html' },
       { title: 'DC : Dark Legion', url: 'games/dc-dark-legion.html' },
