@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡On commence le DLC aujourd'hui ?⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-07-16T14:50:56Z"
+  "updated": "2026-07-16T16:09:21Z"
 }
