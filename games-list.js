@@ -124,7 +124,7 @@ window.GAMES = [
       { title: 'DC Heroes and Vilains', url: 'games/dc-heroes-and-vilains.html' },
       { title: 'Watcher of Realms', url: 'games/watcher-of-realms.html' },
       { title: 'Raid : Shadow Legends', url: 'games/raid-shadow-legends.html' },
-      { title: 'Tribe Nine', url: null },
+      { title: 'Tribe Nine', url: 'games/tribe-nine.html' },
       { title: 'Summoners War : Chronicles', url: null },
       { title: 'Honkai Star Rail', url: 'games/honkai-star-rail.html' },
       { title: 'Zenless Zone Zero', url: null },
