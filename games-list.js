@@ -130,7 +130,7 @@ window.GAMES = [
       { title: 'Zenless Zone Zero', url: 'games/zenless-zone-zero.html' },
       { title: 'Black Clover M', url: 'games/black-clover-m.html' },
       { title: 'Final Fantasy VII : Ever Crisis', url: 'games/final-fantasy-vii-ever-crisis.html' },
-      { title: 'War of the Visions : Final Fantasy Brave Exvius', url: null },
+      { title: 'War of the Visions : Final Fantasy Brave Exvius', url: 'games/final-fantasy-brave-exvius.html' },
       { title: 'Solo Leveling : Arise', url: null },
       { title: 'King Arthur : Legends Rise', url: 'games/king-arthur-legends-rise.html' },
       { title: 'Chaos Zero Nightmare', url: 'games/chaos-zero-nightmare.html' },
