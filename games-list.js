@@ -114,7 +114,7 @@ window.GAMES = [
       { title: 'Blue Protocol : Star Resonance', url: 'games/blue-protocol-star-resonance.html' },
       { title: 'Destiny : Rising', url: 'games/destiny-rising.html' },
       { title: 'Wuthering Waves', url: 'games/wuthering-waves.html' },
-      { title: 'Tower of Fantasy', url: null },
+      { title: 'Tower of Fantasy', url: 'games/tower-of-fantasy.html' },
       { title: 'Seven Deadly Sins : Grand Cross', url: 'games/seven-deadly-sins-grand-cross.html' },
       { title: 'Seven Deadly Sins : Origin', url: 'games/seven-deadly-sins-origin.html' },
       { title: 'Rememento : White Shadow', url: 'games/rememento-white-shadow.html' },
