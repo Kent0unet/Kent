@@ -150,7 +150,7 @@ window.GAMES = [
       { title: 'Arknights : Endfield', url: 'games/arknights-endfield.html' },
       { title: 'Hytale', url: 'games/hytale.html' },
       { title: 'Starsand Island', url: 'games/starsand-island.html' },
-      { title: 'Tainted Grail : The Fall of Avalon', url: null },
+      { title: 'Tainted Grail : The Fall of Avalon', url: 'games/tainted-grail-the-fall-of-avalon.html' },
       { title: 'Heartopia', url: 'games/heartopia.html' },
       { title: 'Project Zomboid', url: 'games/project-zomboid.html' },
       { title: 'Dark Souls : Remastered', url: 'games/dark-souls-remastered.html' },
@@ -160,7 +160,7 @@ window.GAMES = [
       { title: 'Bloodborne', url: null },
       { title: 'Gothic 1 Remake', url: 'games/gothic-1-remake.html' },
       { title: 'Outward', url: 'games/outward.html' },
-      { title: 'The Elder Scrolls IV : Oblivion Remastered', url: null },
+      { title: 'The Elder Scrolls IV : Oblivion Remastered', url: 'games/the-elder-scrolls-iv-oblivion-remastered.html' },
 
 
 
