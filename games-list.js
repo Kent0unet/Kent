@@ -127,7 +127,7 @@ window.GAMES = [
       { title: 'Tribe Nine', url: 'games/tribe-nine.html' },
       { title: 'Summoners War : Chronicles', url: 'games/summoners-war-chronicles.html },
       { title: 'Honkai Star Rail', url: 'games/honkai-star-rail.html' },
-      { title: 'Zenless Zone Zero', url: null },
+      { title: 'Zenless Zone Zero', url: 'games/zenless-zone-zero.html' },
       { title: 'Black Clover M', url: 'games/black-clover-m.html' },
       { title: 'Final Fantasy VII : Ever Crisis', url: 'games/final-fantasy-vii-ever-crisis.html' },
       { title: 'War of the Visions : Final Fantasy Brave Exvius', url: null },
