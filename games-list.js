@@ -106,7 +106,7 @@ window.GAMES = [
       { title: 'Dragon Ball Z : Dokkan Battle', url: 'games/dragon-ball-z-dokkan-battle.html' },
       { title: 'Might and Magic : Elemental Guardians', url: 'games/might-and-magic-elemental-guardians.html' },
       { title: 'Epic Seven', url: 'games/epic-seven.html' },
-      { title: 'Summoners War : Sky Arena', url: null },
+      { title: 'Summoners War : Sky Arena', url: 'games/summoners-war-sky-arena.html' },
       { title: 'Dragon Ball Legends', url: 'games/dragon-ball-legends.html' },
       { title: 'Genshin Impact', url: 'games/genshin-impact.html' },
       { title: 'Etheria : Restart', url: 'games/etheria-restart.html' },
