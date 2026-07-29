@@ -116,7 +116,7 @@ window.GAMES = [
       { title: 'Wuthering Waves', url: 'games/wuthering-waves.html' },
       { title: 'Tower of Fantasy', url: null },
       { title: 'Seven Deadly Sins : Grand Cross', url: 'games/seven-deadly-sins-grand-cross.html' },
-      { title: 'Seven Deadly Sins : Origins', url: 'games/seven-deadly-sins-origins.html' },
+      { title: 'Seven Deadly Sins : Origin', url: 'games/seven-deadly-sins-origin.html' },
       { title: 'Rememento : White Shadow', url: 'games/rememento-white-shadow.html' },
       { title: 'DC Legends', url: 'games/dc-legends.html' },
       { title: 'DC Worlds Collide', url: 'games/dc-worlds-collide.html' },
