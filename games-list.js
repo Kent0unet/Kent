@@ -122,7 +122,7 @@ window.GAMES = [
       { title: 'DC Worlds Collide', url: 'games/dc-worlds-collide.html' },
       { title: 'DC : Dark Legion', url: 'games/dc-dark-legion.html' },
       { title: 'DC Heroes and Vilains', url: 'games/dc-heroes-and-vilains.html' },
-      { title: 'Watcher of Realms', url: null },
+      { title: 'Watcher of Realms', url: 'games/watcher-of-realms.html' },
       { title: 'Raid : Shadow Legends', url: 'games/raid-shadow-legends.html' },
       { title: 'Tribe Nine', url: null },
       { title: 'Summoners War : Chronicles', url: null },
