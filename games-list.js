@@ -135,7 +135,7 @@ window.GAMES = [
       { title: 'King Arthur : Legends Rise', url: 'games/king-arthur-legends-rise.html' },
       { title: 'Chaos Zero Nightmare', url: 'games/chaos-zero-nightmare.html' },
       { title: 'Dislyte', url: 'games/dislyte.html' },
-      { title: 'Sword of Convallaria', url: null },
+      { title: 'Sword of Convallaria', url: 'games/sword-of-convallaria.html' },
       { title: 'Dissidia Final Fantasy Opera Omnia', url: 'games/dissidia-final-fantasy-opera-omnia.html' },
       { title: 'Exos Heroes', url: 'games/exos-heroes.html' },
       { title: 'Mobius Final Fantasy', url: 'games/mobius-final-fantasy.html' },
