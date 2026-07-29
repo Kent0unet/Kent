@@ -149,7 +149,7 @@ window.GAMES = [
       { title: 'Dinkum', url: 'games/dinkum.html' },
       { title: 'Arknights : Endfield', url: 'games/arknights-endfield.html' },
       { title: 'Hytale', url: 'games/hytale.html' },
-      { title: 'Starsand Island', url: null },
+      { title: 'Starsand Island', url: 'games/starsand-island.html' },
       { title: 'Tainted Grail : The Fall of Avalon', url: null },
       { title: 'Heartopia', url: 'games/heartopia.html' },
       { title: 'Project Zomboid', url: 'games/project-zomboid.html' },
