@@ -125,7 +125,7 @@ window.GAMES = [
       { title: 'Watcher of Realms', url: 'games/watcher-of-realms.html' },
       { title: 'Raid : Shadow Legends', url: 'games/raid-shadow-legends.html' },
       { title: 'Tribe Nine', url: 'games/tribe-nine.html' },
-      { title: 'Summoners War : Chronicles', url: 'games/summoners-war-chronicles.html },
+      { title: 'Summoners War : Chronicles', url: 'games/summoners-war-chronicles.html' },
       { title: 'Honkai Star Rail', url: 'games/honkai-star-rail.html' },
       { title: 'Zenless Zone Zero', url: 'games/zenless-zone-zero.html' },
       { title: 'Black Clover M', url: 'games/black-clover-m.html' },
