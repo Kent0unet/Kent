@@ -161,6 +161,7 @@ window.GAMES = [
       { title: 'Gothic 1 Remake', url: 'games/gothic-1-remake.html' },
       { title: 'Outward', url: 'games/outward.html' },
       { title: 'The Elder Scrolls IV : Oblivion Remastered', url: 'games/the-elder-scrolls-iv-oblivion-remastered.html' },
+      { title: 'The Outer Worlds 2', url: 'games/the-outer-worlds-2.html' },
 
 
 
