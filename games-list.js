@@ -162,6 +162,11 @@ window.GAMES = [
       { title: 'Outward', url: 'games/outward.html' },
       { title: 'The Elder Scrolls IV : Oblivion Remastered', url: 'games/the-elder-scrolls-iv-oblivion-remastered.html' },
       { title: 'The Outer Worlds 2', url: 'games/the-outer-worlds-2.html' },
+      { title: 'Grand Theft Auto IV', url: 'games/grand-theft-auto-iv.html' },
+      { title: 'Grand Theft Auto V', url: 'games/grand-theft-auto-v.html' },
+      { title: 'Marathon', url: 'games/marathon.html' },
+      { title: 'Crimson Desert', url: 'games/crimson-desert.html' },
+      { title: 'HumanitZ', url: 'games/humanitz.html' },
 
 
 
