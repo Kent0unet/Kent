@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡On continue l'aventure ! - JOUR 6⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-08-02T16:12:07Z"
+  "updated": "2026-08-02T17:17:43Z"
 }
