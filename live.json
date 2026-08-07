@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": true,
-    "title": "⚡On se termine sur Invokers⚡",
+    "live": false,
+    "title": null,
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-08-07T17:07:52Z"
+  "updated": "2026-08-07T18:00:26Z"
 }
