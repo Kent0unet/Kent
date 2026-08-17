@@ -167,6 +167,7 @@ window.GAMES = [
       { title: 'Marathon', url: 'games/marathon.html' },
       { title: 'Crimson Desert', url: 'games/crimson-desert.html' },
       { title: 'HumanitZ', url: 'games/humanitz.html' },
+      { title: 'Invokers : Titan Legacy', url: 'games/invokers-titan-legacy.html' },
 
 
 
