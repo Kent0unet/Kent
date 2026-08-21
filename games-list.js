@@ -168,6 +168,8 @@ window.GAMES = [
       { title: 'Crimson Desert', url: 'games/crimson-desert.html' },
       { title: 'HumanitZ', url: 'games/humanitz.html' },
       { title: 'Invokers : Titan Legacy', url: 'games/invokers-titan-legacy.html' },
+      { title: 'Mortal Shell 2', url: 'games/mortal-shell-2.html' },
+      { title: 'Starfield', url: 'games/starfield.html' },
 
 
 
