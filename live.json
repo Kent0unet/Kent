@@ -1,8 +1,8 @@
 {
   "twitch": {
-    "live": false,
-    "title": null,
+    "live": true,
+    "title": "⚡On discute de tout et de rien en farmant⚡",
     "url": "https://www.twitch.tv/kent_fr"
   },
-  "updated": "2026-08-29T10:51:19Z"
+  "updated": "2026-08-29T15:23:17Z"
 }
