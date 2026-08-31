@@ -170,6 +170,7 @@ window.GAMES = [
       { title: 'Invokers : Titan Legacy', url: 'games/invokers-titan-legacy.html' },
       { title: 'Mortal Shell 2', url: 'games/mortal-shell-2.html' },
       { title: 'Starfield', url: 'games/starfield.html' },
+      { title: 'The Walking Dead : A New Frontier', url: 'games/the-walking-dead-a-new-frontier.html' },
 
 
 
