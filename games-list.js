@@ -171,6 +171,8 @@ window.GAMES = [
       { title: 'Mortal Shell 2', url: 'games/mortal-shell-2.html' },
       { title: 'Starfield', url: 'games/starfield.html' },
       { title: 'The Walking Dead : A New Frontier', url: 'games/the-walking-dead-a-new-frontier.html' },
+      { title: 'Onimusha : Way of the Sword', url: 'games/onimusha-way-of-the-sword.html' },
+      { title: 'The Blood of Dawnwalker', url: 'games/the-blood-of-dawnwalker.html' },
 
 
 
