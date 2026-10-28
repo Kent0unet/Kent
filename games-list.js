@@ -173,6 +173,7 @@ window.GAMES = [
       { title: 'The Walking Dead : A New Frontier', url: 'games/the-walking-dead-a-new-frontier.html' },
       { title: 'Onimusha : Way of the Sword', url: 'games/onimusha-way-of-the-sword.html' },
       { title: 'The Blood of Dawnwalker', url: 'games/the-blood-of-dawnwalker.html' },
+      { title: 'Valor Mortis', url: 'games/valor-mortis.html' },
 
 
 
