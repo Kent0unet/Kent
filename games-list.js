@@ -174,6 +174,9 @@ window.GAMES = [
       { title: 'Onimusha : Way of the Sword', url: 'games/onimusha-way-of-the-sword.html' },
       { title: 'The Blood of Dawnwalker', url: 'games/the-blood-of-dawnwalker.html' },
       { title: 'Valor Mortis', url: 'games/valor-mortis.html' },
+      { title: 'Final Fantasy Resonance', url: 'games/final-fantasy-resonance.html' },
+      { title: 'Grand Theft Auto VI', url: 'games/gta-vi.html' },
+      { title: 'Phantom Blade Zero', url: 'games/phantom-blade-zero.html' },
 
 
 
